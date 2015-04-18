@@ -1,0 +1,49 @@
+{
+    "name": "hiqdev/yii2-thememanager",
+    "type": "yii2-extension",
+    "description": "Theme Manager for Yii 2",
+    "keywords": ["theme","manager","yii2","extension"],
+    "homepage": "https://hiqdev.com/yii2-thememanager",
+    "license": "BSD-3-clause",
+    "support": {
+        "email":  "support@hiqdev.com",
+        "source": "https://github.com/hiqdev/yii2-thememanager",
+        "issues": "https://github.com/hiqdev/yii2-thememanager/issues",
+        "wiki":   "https://github.com/hiqdev/yii2-thememanager/wiki",
+        "forum":  "https://forum.hiqdev.com/yii2"
+    },
+    "authors": [
+        {
+            "role":     "Project lead",
+            "name":     "Andrii Vasyliev",
+            "email":    "sol@hiqdev.com",
+            "homepage": "https://hipanel.com/"
+        },
+        {
+            "role":     "Lead backend developer",
+            "name":     "Dmitry Naumenko",
+            "email":    "silverfire@hiqdev.com",
+            "homepage": "https://hiqdev.com/"
+        },
+        {
+            "role":     "Lead frontend developer",
+            "name":     "Andrey Klochok",
+            "email":    "tafid@hiqdev.com",
+            "homepage": "https://hiqdev.com/"
+        },
+        {
+            "role":     "QA Lead",
+            "name":     "Yuriy Myronchuk",
+            "email":    "bladeroot@hiqdev.com",
+            "homepage": "https://hiqdev.com/"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "hiqdev\\thememanager\\": ""
+        }
+    }
+}

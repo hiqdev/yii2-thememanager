@@ -1,0 +1,27 @@
+# yii console command
+/yii
+
+# composer vendor dir
+/vendor
+
+# composer itself and lock file
+composer.phar
+composer.lock
+
+# phpunit itself and local config
+phpunit.phar
+/phpunit.xml
+
+# IDE project files
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
