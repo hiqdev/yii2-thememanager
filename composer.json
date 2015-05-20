@@ -2,44 +2,49 @@
     "name": "hiqdev/yii2-thememanager",
     "type": "yii2-extension",
     "description": "Theme Manager for Yii 2",
-    "keywords": ["theme","manager","yii2","extension"],
+    "keywords": [
+        "theme",
+        "manager",
+        "yii2",
+        "extension"
+    ],
     "homepage": "https://hiqdev.com/yii2-thememanager",
-    "license": "BSD-3-clause",
+    "license": "BSD-3-Clause",
     "support": {
-        "email":  "support@hiqdev.com",
+        "email": "support@hiqdev.com",
         "source": "https://github.com/hiqdev/yii2-thememanager",
         "issues": "https://github.com/hiqdev/yii2-thememanager/issues",
-        "wiki":   "https://github.com/hiqdev/yii2-thememanager/wiki",
-        "forum":  "https://forum.hiqdev.com/yii2"
+        "wiki": "https://github.com/hiqdev/yii2-thememanager/wiki",
+        "forum": "https://forum.hiqdev.com/yii2"
     },
     "authors": [
         {
-            "role":     "Project lead",
-            "name":     "Andrii Vasyliev",
-            "email":    "sol@hiqdev.com",
+            "name": "Andrii Vasyliev",
+            "role": "Project lead",
+            "email": "sol@hiqdev.com",
             "homepage": "https://hipanel.com/"
         },
         {
-            "role":     "Lead backend developer",
-            "name":     "Dmitry Naumenko",
-            "email":    "silverfire@hiqdev.com",
+            "name": "Dmitry Naumenko",
+            "role": "Lead backend developer",
+            "email": "silverfire@hiqdev.com",
+            "homepage": "http://silverfire.me/"
+        },
+        {
+            "name": "Andrey Klochok",
+            "role": "Lead frontend developer",
+            "email": "tafid@hiqdev.com",
             "homepage": "https://hiqdev.com/"
         },
         {
-            "role":     "Lead frontend developer",
-            "name":     "Andrey Klochok",
-            "email":    "tafid@hiqdev.com",
-            "homepage": "https://hiqdev.com/"
-        },
-        {
-            "role":     "QA Lead",
-            "name":     "Yuriy Myronchuk",
-            "email":    "bladeroot@hiqdev.com",
+            "name": "Yuriy Myronchuk",
+            "role": "QA Lead",
+            "email": "bladeroot@hiqdev.com",
             "homepage": "https://hiqdev.com/"
         }
     ],
     "require": {
-        "yiisoft/yii2": "2.*"
+        "hiqdev/yii2-pluginmanager": "*@dev"
     },
     "autoload": {
         "psr-4": {
