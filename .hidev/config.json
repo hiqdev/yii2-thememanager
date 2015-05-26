@@ -1,0 +1,57 @@
+{
+    "package": {
+        "name":         "yii2-thememanager",
+        "label":        "ThemeManager",
+        "title":        "Theme Manager for Yii2",
+        "type":         "yii2-extension",
+        "features":     "yii2, extension",
+        "license":      "BSD-3-Clause",
+        "forum":        "https://forum.hiqdev.com/yii2",
+        "language":     "PHP",
+        "keywords":     "theme, manager, extension, yii2",
+        "description":  "Theme Manager with auto loading from extension, choose and setup widgets",
+        "year":         2015
+    },
+    "vendor": {
+        "name":         "hiqdev",
+        "title":        "HiQDev",
+        "homepage":     "https://hiqdev.com/",
+        "email":        "support@hiqdev.com",
+        "authors": {
+            "Andrii Vasyliev": {
+                "role":     "Project lead",
+                "email":    "sol@hiqdev.com",
+                "homepage": "https://hipanel.com/"
+            },
+            "Dmitry Naumenko": {
+                "role":     "Lead backend developer",
+                "email":    "silverfire@hiqdev.com",
+                "homepage": "http://silverfire.me/"
+            },
+            "Andrey Klochok": {
+                "role":     "Lead frontend developer",
+                "email":    "tafid@hiqdev.com",
+                "homepage": "https://hiqdev.com/"
+            },
+            "Yuriy Myronchuk": {
+                "role":     "QA Lead",
+                "email":    "bladeroot@hiqdev.com",
+                "homepage": "https://hiqdev.com/"
+            }
+        }
+    },
+    "deps": "all",
+    "all": {
+        "deps": "git, composer, LICENSE, README.md, CHANGELOG.md"
+    },
+    "composer.json": {
+        "require": {
+            "hiqdev/yii2-pluginmanager":    "*@dev"
+        },
+        "autoload": {
+            "psr-4": {
+                "hiqdev\\thememanager\\": ""
+            }
+        }
+    }
+}

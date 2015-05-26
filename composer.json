@@ -1,12 +1,12 @@
 {
     "name": "hiqdev/yii2-thememanager",
     "type": "yii2-extension",
-    "description": "Theme Manager for Yii 2",
+    "description": "Theme Manager for Yii2",
     "keywords": [
         "theme",
         "manager",
-        "yii2",
-        "extension"
+        "extension",
+        "yii2"
     ],
     "homepage": "https://hiqdev.com/yii2-thememanager",
     "license": "BSD-3-Clause",
