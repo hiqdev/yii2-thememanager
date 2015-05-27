@@ -9,7 +9,7 @@ namespace hiqdev\thememanager;
 
 use Yii;
 use yii\base\BootstrapInterface;
-use yii\helpers\StringHelper;
+use hiqdev\thememanager\models\Settings;
 
 /**
  * Theme Manager
@@ -37,14 +37,9 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
     public $defaultTheme;
 
     /**
-     * @var string default skin name
-     */
-    public $defaultSkin;
-
-    /**
      * @var Theme current theme object
      */
-    public $theme;
+    private $_theme;
 
     /**
      * Changes theme.
@@ -58,8 +53,13 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
         if (!$this->has($name)) {
             throw new InvalidConfigException('unknown theme: '.$name);
         }
-        $this->theme = $this->getItem($name);
-        Yii::$app->view->theme = $this->theme;
+        $this->_theme = $this->getItem($name);
+        Yii::$app->view->theme = $this->_theme;
+    }
+
+    public function getTheme()
+    {
+        return $this->_theme;
     }
 
     /**
@@ -79,10 +79,12 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
         $app->pluginManager->bootstrap($app);
         $cached = null;
         if ($cached) {
-            $app->themeManager->mset($cached);
+            $this->mset($cached);
         } else {
             $this->putItems($app->pluginManager->themes);
-            $theme = Yii::$app->session->get('user.theme', $this->defaultTheme);
+            $model = new Settings;
+            $model->load();
+            $theme = $model->theme ?: $this->defaultTheme;
             if (!$this->has($theme)) {
                 $theme = reset($this->keys());
             }
@@ -91,4 +93,5 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
         }
         $this->_isBootstrapped = true;
     }
+
 }

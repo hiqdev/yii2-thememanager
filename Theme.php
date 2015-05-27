@@ -22,9 +22,9 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     public $name;
 
     /**
-     * @var array readonly pathMap
+     * @var string theme label
      */
-    protected $_pathMap;
+    public $label;
 
     /**
      * Getter for pathMap
@@ -33,20 +33,40 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     {
         parent::init();
         if (!$this->pathMap) {
-            $ref = new ReflectionClass($this);
-            $dir = dirname($ref->getFilename());
+            $dirs = $this->calcPathDirs();
             $this->pathMap = [
-                '@app/views'    => $dir . DIRECTORY_SEPARATOR . 'views',
-                '@app/widgets'  => $dir . DIRECTORY_SEPARATOR . 'widgets',
+                '@app/views'    => $this->buildPathes($dirs, 'views'),
+                '@app/widgets'  => $this->buildPathes($dirs, 'widgets'),
             ];
         }
     }
 
-    private $_baseUrl;
+    public function calcPathDirs()
+    {
+        $ref = $this->getReflection();
+        for ($depth=0;$depth<10;$depth++) {
+            $dirs[] = dirname($ref->getFilename());
+            $ref = $ref->getParentClass();
+            if (__CLASS__ === $ref->name) {
+                break;
+            }
+        }
+        return $dirs;
+    }
+
+    public function buildPathes($dirs,$name)
+    {
+        foreach ($dirs as $dir) {
+            $res[] = $dir . DIRECTORY_SEPARATOR . $name;
+        }
+        return $res;
+    }
+
+    protected $_baseUrl;
 
     /**
-     * @return string the base URL (without ending slash) for this theme. All resources of this theme are considered
-     * to be under this base URL.
+     * @return string the base URL (without ending slash) for this theme.
+     * All resources of this theme are considered to be under this base URL.
      */
     public function getBaseUrl()
     {
@@ -57,4 +77,48 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
         return $this->_baseUrl;
     }
 
+    protected $_reflection;
+
+    public function getReflection()
+    {
+        if (!$this->_reflection) {
+            $this->_reflection = new ReflectionClass($this);
+        }
+
+        return $this->_reflection;
+    }
+
+    private $_settings;
+
+    /**
+     * @param $settings string theme settings model class name
+     */
+    public function setSettings($settings)
+    {
+        $this->_settings = $settings;
+    }
+
+    public function getSettings()
+    {
+        if (!is_object($this->_settings)) {
+            if (!$this->_settings) {
+                $class = static::calcSettingsClass(get_called_class());
+                $this->_settings = class_exists($class) ? $class : static::calcSettingsClass(get_parent_class($this));
+            }
+            $this->_settings = Yii::createObject($this->_settings);
+            $this->_settings->load();
+        }
+
+        return $this->_settings;
+    }
+
+    static public function calcSettingsClass($class)
+    {
+        return substr($class, 0, strrpos($class, '\\')) . '\\models\\Settings';
+    }
+
+    public function getBodyClasses()
+    {
+        return $this->getSettings()->getBodyClasses();
+    }
 }
