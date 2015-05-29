@@ -117,8 +117,4 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
         return substr($class, 0, strrpos($class, '\\')) . '\\models\\Settings';
     }
 
-    public function getBodyClasses()
-    {
-        return $this->getSettings()->getBodyClasses();
-    }
 }

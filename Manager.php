@@ -62,6 +62,11 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
         return $this->_theme;
     }
 
+    public function getSettings()
+    {
+        return $this->getTheme()->getSettings();
+    }
+
     /**
      * @var boolean is already bootstrapped.
      */

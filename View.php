@@ -18,7 +18,7 @@ class View extends \yii\web\View
      */
     public function getBodyClasses()
     {
-        return $this->getManager()->getTheme()->getBodyClasses();
+        return $this->getManager()->getSettings()->getBodyClasses();
     }
 
     /**

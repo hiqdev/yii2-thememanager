@@ -9,7 +9,7 @@ class SettingsController extends \yii\web\Controller
 {
     public function getModel()
     {
-        return $this->module->getManager()->getTheme()->getSettings();
+        return $this->module->getManager()->getSettings();
     }
 
     /**
