@@ -10,6 +10,7 @@ namespace hiqdev\thememanager;
 use Yii;
 use yii\base\BootstrapInterface;
 use hiqdev\thememanager\models\Settings;
+use yii\base\InvalidConfigException;
 
 /**
  * Theme Manager
