@@ -7,9 +7,9 @@ use Yii;
 class Settings extends \yii\base\Model
 {
     /**
-     * @var string name of vat to save theme settings
+     * @var string name of variable to save theme settings
      */
-    public $varName;
+    public $varName = 'theme_settings';
 
     /**
      * @var string theme name

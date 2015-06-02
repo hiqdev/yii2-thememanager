@@ -9,8 +9,8 @@ namespace hiqdev\thememanager;
 
 use Yii;
 use yii\base\BootstrapInterface;
-use hiqdev\thememanager\models\Settings;
 use yii\base\InvalidConfigException;
+use hiqdev\thememanager\models\Settings;
 
 /**
  * Theme Manager
@@ -81,6 +81,7 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
         if ($this->_isBootstrapped) {
             return;
         }
+        $this->_isBootstrapped = true;
 
         $app->pluginManager->bootstrap($app);
         $cached = null;
@@ -97,7 +98,6 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
             $this->setTheme($theme);
             $cached = $this->toArray();
         }
-        $this->_isBootstrapped = true;
     }
 
 }
