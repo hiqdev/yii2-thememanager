@@ -102,8 +102,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     {
         if (!is_object($this->_settings)) {
             if (!$this->_settings) {
-                $class = static::calcSettingsClass(get_called_class());
-                $this->_settings = class_exists($class) ? $class : static::calcSettingsClass(get_parent_class($this));
+                $this->_settings = static::findSettingsClass(get_called_class());
             }
             $this->_settings = Yii::createObject($this->_settings);
             $this->_settings->load();
@@ -115,6 +114,12 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     static public function calcSettingsClass($class)
     {
         return substr($class, 0, strrpos($class, '\\')) . '\\models\\Settings';
+    }
+
+    static public function findSettingsClass($class)
+    {
+        $res = static::calcSettingsClass($class);
+        return class_exists($res) ? $res : static::findSettingsClass(get_parent_class($class));
     }
 
 }
