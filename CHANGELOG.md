@@ -1,7 +1,8 @@
 hiqdev/yii2-thememanager changelog
 ----------------------------------
 
-### 0.1.0 under development
+## Under development
 
-- inited
+
+## Development started April 18, 2015
 
