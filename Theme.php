@@ -27,6 +27,75 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     public $label;
 
     /**
+     * @var array assets to be registered for this theme
+     */
+    public $assets = [];
+
+    public function getAssets()
+    {
+        return $assets ?: [substr(get_called_class(), 0, -5) . 'Asset'];
+    }
+
+    public function registerAssets()
+    {
+        foreach ($this->getAssets() as $asset) {
+            $asset::register($this->view);
+        }
+    }
+
+    private $_manager;
+
+    /**
+     * Returns the manager object that can be used to render views or view files.
+     * If not set, it will default to the "themeManager" application component.
+     * @return Manager the manager object
+     */
+    public function getManager()
+    {
+        if ($this->_manager === null) {
+            $this->_manager = Yii::$app->get('themeManager');
+        }
+
+        return $this->_manager;
+    }
+
+    /**
+     * Sets the manager object to be used by this theme.
+     * @param Manager $manager the manager object.
+     */
+    public function setManager($manager)
+    {
+        $this->_manager = $manager;
+    }
+
+    private $_view;
+
+    /**
+     * Returns the view object that can be used to render views or view files.
+     * The [[render()]] and [[renderFile()]] methods will use
+     * this view object to implement the actual view rendering.
+     * If not set, it will default to the "view" application component.
+     * @return \yii\web\View the view object that can be used to render views or view files.
+     */
+    public function getView()
+    {
+        if ($this->_view === null) {
+            $this->_view = $this->getManager()->getView();
+        }
+
+        return $this->_view;
+    }
+
+    /**
+     * Sets the view object to be used
+     * @param View $view the view object that can be used to render views or view files.
+     */
+    public function setView($view)
+    {
+        $this->_view = $view;
+    }
+
+    /**
      * Getter for pathMap
      */
     public function init()

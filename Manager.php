@@ -37,6 +37,33 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
      */
     public $defaultTheme;
 
+    private $_view;
+
+    /**
+     * Returns the view object that can be used to render views or view files.
+     * The [[render()]] and [[renderFile()]] methods will use
+     * this view object to implement the actual view rendering.
+     * If not set, it will default to the "view" application component.
+     * @return \yii\web\View the view object that can be used to render views or view files.
+     */
+    public function getView()
+    {
+        if ($this->_view === null) {
+            $this->_view = Yii::$app->getView();
+        }
+
+        return $this->_view;
+    }
+
+    /**
+     * Sets the view object to be used
+     * @param View $view the view object that can be used to render views or view files.
+     */
+    public function setView($view)
+    {
+        $this->_view = $view;
+    }
+
     /**
      * @var Theme current theme object
      */
@@ -55,7 +82,7 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
             throw new InvalidConfigException('unknown theme: '.$name);
         }
         $this->_theme = $this->getItem($name);
-        Yii::$app->view->theme = $this->_theme;
+        $this->view->theme = $this->_theme;
     }
 
     public function getTheme()
