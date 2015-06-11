@@ -33,7 +33,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
 
     public function getAssets()
     {
-        return $assets ?: [substr(get_called_class(), 0, -5) . 'Asset'];
+        return $this->assets ?: [substr(get_called_class(), 0, -5) . 'Asset'];
     }
 
     public function registerAssets()

@@ -19,13 +19,13 @@ use hiqdev\thememanager\models\Settings;
  * ~~~
  * 'components' => [
  *     'themeManager' => [
- *         'class' => 'hiqdev\thememanager\Manager',
+ *         'class' => 'hiqdev\thememanager\ThemeManager',
  *     ],
  * ]
  * ~~~
  * That's it, nothing more.
  */
-class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
+class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterface
 {
     /**
      * @inheritdoc
@@ -109,8 +109,16 @@ class Manager extends \hiqdev\collection\Manager implements BootstrapInterface
             return;
         }
         $this->_isBootstrapped = true;
-
         $app->pluginManager->bootstrap($app);
+
+/*
+        $assetManager = Yii::$app->getComponents(true)['assetManager'];
+        if ($assetManager['class'] === Yii::$app->coreComponents()['assetManager']['class']) {
+            $assetManager['class'] = 'hiqdev\thememanager\AssetManager';
+            Yii::$app->set('assetManager', $assetManager);
+        }
+*/
+
         $cached = null;
         if ($cached) {
             $this->mset($cached);
