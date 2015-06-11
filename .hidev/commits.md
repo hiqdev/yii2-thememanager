@@ -3,6 +3,8 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+- + AssetManager and AssetConverter
+    - 28c4cd5 2015-06-11 + AssetConverter (sol@hiqdev.com)
     - a64ccb3 2015-06-11 + AssetManager, renamed to ThemeManager (sol@hiqdev.com)
     - a703a1b 2015-06-10 * Theme: + assets and get/registerAssets (sol@hiqdev.com)
 - hideved
