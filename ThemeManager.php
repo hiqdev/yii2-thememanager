@@ -111,13 +111,11 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
         $this->_isBootstrapped = true;
         $app->pluginManager->bootstrap($app);
 
-/*
         $assetManager = Yii::$app->getComponents(true)['assetManager'];
         if ($assetManager['class'] === Yii::$app->coreComponents()['assetManager']['class']) {
             $assetManager['class'] = 'hiqdev\thememanager\AssetManager';
             Yii::$app->set('assetManager', $assetManager);
         }
-*/
 
         $cached = null;
         if ($cached) {
