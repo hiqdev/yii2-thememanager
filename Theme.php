@@ -31,18 +31,6 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
      */
     public $assets = [];
 
-    public function getAssets()
-    {
-        return $this->assets ?: [substr(get_called_class(), 0, -5) . 'Asset'];
-    }
-
-    public function registerAssets()
-    {
-        foreach ($this->getAssets() as $asset) {
-            $asset::register($this->view);
-        }
-    }
-
     private $_manager;
 
     /**

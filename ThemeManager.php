@@ -37,7 +37,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
      */
     public $defaultTheme;
 
-    private $_view;
+    protected $_view;
 
     /**
      * Returns the view object that can be used to render views or view files.
@@ -67,7 +67,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     /**
      * @var Theme current theme object
      */
-    private $_theme;
+    protected $_theme;
 
     /**
      * Changes theme.
@@ -93,6 +93,21 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     public function getSettings()
     {
         return $this->getTheme()->getSettings();
+    }
+
+    /**
+     * @var array assets of the application
+     */
+    public $assets = [];
+
+    /**
+     * Register all the assets.
+     */
+    public function registerAssets()
+    {
+        foreach (array_merge($this->assets, $this->getTheme()->assets) as $asset) {
+            $asset::register($this->getView());
+        }
     }
 
     /**
