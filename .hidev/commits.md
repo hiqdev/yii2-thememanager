@@ -3,6 +3,8 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+- improved registerAssets()
+    - 87ca207 2015-06-12 improved RegisterAssets - moved to ThemeManager (sol@hiqdev.com)
 - + AssetManager and AssetConverter
     - 28c4cd5 2015-06-11 + AssetConverter (sol@hiqdev.com)
     - a64ccb3 2015-06-11 + AssetManager, renamed to ThemeManager (sol@hiqdev.com)
