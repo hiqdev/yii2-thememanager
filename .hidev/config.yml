@@ -1,6 +1,3 @@
-parent:
-    github:         hiqdev/hidev-config
-
 package:
     name:           yii2-thememanager
     namespace:      hiqdev\thememanager
@@ -8,9 +5,9 @@ package:
     title:          Theme Manager for Yii2
     type:           yii2-extension
     keywords:       theme, manager, extension, yii2
-    description:    Theme Manager with auto loading from extension, choose and setup widgets
     year:           2015
+    description:    Theme Manager with auto loading from extension, choose and setup widgets
 
-composer.json:
-    require:
-        hiqdev/yii2-pluginmanager:      "*@dev"
+require:
+    hiqdev/hidev-config:        "*"
+    hiqdev/hidev-config-php:    "*"
