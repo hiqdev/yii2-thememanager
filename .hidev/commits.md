@@ -3,6 +3,10 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+- Changed: moved to src
+    - f46612a 2015-08-18 moved to src (sol@hiqdev.com)
+    - 10f3fa6 2015-08-18 moved to src (sol@hiqdev.com)
+    - b0aa3f5 2015-08-18 moved to src (sol@hiqdev.com)
     - 68e389d 2015-08-18 rehideved with new features: better README and .gitignore (sol@hiqdev.com)
 - Added better getting default theme
     - d3afbe9 2015-08-18 + better getting default theme (sol@hiqdev.com)
