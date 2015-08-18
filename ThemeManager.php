@@ -35,7 +35,29 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     /**
      * @var string default theme name
      */
-    public $defaultTheme;
+    protected $_defaultTheme;
+
+    /**
+     * Sets the default theme name.
+     * @param string $theme default theme name.
+     */
+    public function setDefaultTheme($theme)
+    {
+        $this->_defaultTheme = $theme;
+    }
+
+    /**
+     * Returns the default theme. Returns the first of available themes by default.
+     * @return string default theme name.
+     */
+    public function getDefaultTheme()
+    {
+        if (!$this->_defaultTheme) {
+            $this->_defaultTheme = reset($this->keys());
+        }
+
+        return $this->_defaultTheme;
+    }
 
     protected $_view;
 
@@ -139,10 +161,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
             $this->putItems($app->pluginManager->themes);
             $model = new Settings;
             $model->load();
-            $theme = $model->theme ?: $this->defaultTheme;
-            if (!$this->has($theme)) {
-                $theme = reset($this->keys());
-            }
+            $theme = $model->theme ?: $this->getDefaultTheme();
             $this->setTheme($theme);
             $cached = $this->toArray();
         }
