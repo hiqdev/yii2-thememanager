@@ -1,17 +1,20 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-thememanager
- * @license http://hiqdev.com/yii2-thememanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
 
 use Yii;
-use yii\base\InvalidConfigException;
 
 /**
- * Asset Converter
+ * Asset Converter.
  */
 class AssetConverter extends \yii\web\AssetConverter
 {
@@ -23,7 +26,7 @@ class AssetConverter extends \yii\web\AssetConverter
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function runCommand($command, $basePath, $asset, $result)
     {

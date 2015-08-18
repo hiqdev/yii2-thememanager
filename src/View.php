@@ -1,20 +1,22 @@
 <?php
-/**
- * @link        http://hiqdev.com/yii2-thememanager
- * @license     BSD 3-clause
- * @copyright   Copyright (c) 2015 HiQDev
+
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
-
-use Yii;
 
 class View extends \yii\web\View
 {
     use GetManagerTrait;
 
     /**
-     * Returns classes for HTML body
+     * Returns classes for HTML body.
      */
     public function getBodyClasses()
     {
@@ -24,8 +26,8 @@ class View extends \yii\web\View
     /**
      * Magic setter.
      *
-     * @param int|string   $name
-     * @param mixed        $value the element value
+     * @param int|string $name
+     * @param mixed      $value the element value
      */
     public function __set($name, $value)
     {
@@ -77,5 +79,4 @@ class View extends \yii\web\View
             unset($this->params[$name]);
         }
     }
-
 }

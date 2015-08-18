@@ -1,9 +1,18 @@
 <?php
 
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
+ */
+
 namespace hiqdev\thememanager\controllers;
 
-use Yii;
 use hiqdev\thememanager\models\Settings;
+use Yii;
 
 class SettingsController extends \yii\web\Controller
 {
@@ -13,11 +22,12 @@ class SettingsController extends \yii\web\Controller
     }
 
     /**
-     * Settings form
+     * Settings form.
      *
      * @return Response
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $model = $this->getModel();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -29,22 +39,25 @@ class SettingsController extends \yii\web\Controller
         } else {
             $model->load();
         }
+
         return $this->render('index', compact('model'));
     }
 
-    public function actionChangeTheme($theme) {
+    public function actionChangeTheme($theme)
+    {
         if ($this->module->getManager()->has($theme)) {
-            $model = $this->getModel();
+            $model        = $this->getModel();
             $model->theme = $theme;
             $model->save();
         }
+
         return $this->redirect(['index']);
     }
 
     public function actionCollapsedSidebar()
     {
         if (Yii::$app->request->isAjax) {
-            $model = $this->getModel();
+            $model                    = $this->getModel();
             $model->collapsed_sidebar = Yii::$app->request->post('collapsed_sidebar');
             $model->save();
         }

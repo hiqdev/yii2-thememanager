@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
+ */
+
 namespace hiqdev\thememanager\models;
 
 use Yii;
@@ -34,6 +43,7 @@ class Settings extends \yii\base\Model
     public function save()
     {
         Yii::$app->session->set($this->varName, $this->getAttributes());
+
         return true;
     }
 
@@ -51,16 +61,20 @@ class Settings extends \yii\base\Model
                 $this->$k = $v;
             }
         }
+
         return true;
     }
 
     /**
      * Default css provider - returns plain value, fits for attributes like skin and layout.
+     *
      * @param $name  string         attribute name
      * @param $value boolean|string attribute value
+     *
      * @return string css class
      */
-    public static function cssClassProvider($name, $value) {
+    public static function cssClassProvider($name, $value)
+    {
         return $value;
     }
 
@@ -77,5 +91,4 @@ class Settings extends \yii\base\Model
 
         return implode(' ', array_filter($classes));
     }
-
 }

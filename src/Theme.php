@@ -1,21 +1,24 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-thememanager
- * @license http://hiqdev.com/yii2-thememanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
 
-use Yii;
 use ReflectionClass;
+use Yii;
 
 /**
- * Menu is a manageable collection of child [[Menu]]s
+ * Menu is a manageable collection of child [[Menu]]s.
  */
 class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameInterface
 {
-
     /**
      * @var string theme name
      */
@@ -36,6 +39,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     /**
      * Returns the manager object that can be used to render views or view files.
      * If not set, it will default to the "themeManager" application component.
+     *
      * @return Manager the manager object
      */
     public function getManager()
@@ -49,6 +53,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
 
     /**
      * Sets the manager object to be used by this theme.
+     *
      * @param Manager $manager the manager object.
      */
     public function setManager($manager)
@@ -63,6 +68,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
      * The [[render()]] and [[renderFile()]] methods will use
      * this view object to implement the actual view rendering.
      * If not set, it will default to the "view" application component.
+     *
      * @return \yii\web\View the view object that can be used to render views or view files.
      */
     public function getView()
@@ -75,7 +81,8 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     }
 
     /**
-     * Sets the view object to be used
+     * Sets the view object to be used.
+     *
      * @param View $view the view object that can be used to render views or view files.
      */
     public function setView($view)
@@ -84,16 +91,16 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     }
 
     /**
-     * Getter for pathMap
+     * Getter for pathMap.
      */
     public function init()
     {
         parent::init();
         if (!$this->pathMap) {
-            $dirs = $this->calcPathDirs();
+            $dirs          = $this->calcPathDirs();
             $this->pathMap = [
-                '@app/views'    => $this->buildPathes($dirs, 'views'),
-                '@app/widgets'  => $this->buildPathes($dirs, 'widgets'),
+                '@app/views'   => $this->buildPathes($dirs, 'views'),
+                '@app/widgets' => $this->buildPathes($dirs, 'widgets'),
             ];
         }
     }
@@ -101,21 +108,23 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
     public function calcPathDirs()
     {
         $ref = $this->getReflection();
-        for ($depth=0;$depth<10;$depth++) {
+        for ($depth = 0;$depth < 10;++$depth) {
             $dirs[] = dirname($ref->getFilename());
-            $ref = $ref->getParentClass();
+            $ref    = $ref->getParentClass();
             if (__CLASS__ === $ref->name) {
                 break;
             }
         }
+
         return $dirs;
     }
 
-    public function buildPathes($dirs,$name)
+    public function buildPathes($dirs, $name)
     {
         foreach ($dirs as $dir) {
             $res[] = $dir . DIRECTORY_SEPARATOR . $name;
         }
+
         return $res;
     }
 
@@ -123,12 +132,12 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
 
     /**
      * @return string the base URL (without ending slash) for this theme.
-     * All resources of this theme are considered to be under this base URL.
+     *                All resources of this theme are considered to be under this base URL.
      */
     public function getBaseUrl()
     {
         if (!$this->_baseUrl) {
-            $this->_baseUrl = '@web/themes/'.$this->name;
+            $this->_baseUrl = '@web/themes/' . $this->name;
         }
 
         return $this->_baseUrl;
@@ -168,15 +177,15 @@ class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameIn
         return $this->_settings;
     }
 
-    static public function calcSettingsClass($class)
+    public static function calcSettingsClass($class)
     {
         return substr($class, 0, strrpos($class, '\\')) . '\\models\\Settings';
     }
 
-    static public function findSettingsClass($class)
+    public static function findSettingsClass($class)
     {
         $res = static::calcSettingsClass($class);
+
         return class_exists($res) ? $res : static::findSettingsClass(get_parent_class($class));
     }
-
 }

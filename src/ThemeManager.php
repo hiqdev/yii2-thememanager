@@ -1,19 +1,23 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-thememanager
- * @license http://hiqdev.com/yii2-thememanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
 
+use hiqdev\thememanager\models\Settings;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\base\InvalidConfigException;
-use hiqdev\thememanager\models\Settings;
 
 /**
- * Theme Manager
+ * Theme Manager.
  *
  * Usage, in config:
  * ~~~
@@ -28,7 +32,7 @@ use hiqdev\thememanager\models\Settings;
 class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterface
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected $_itemClass = 'hiqdev\thememanager\Theme';
 
@@ -39,6 +43,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
 
     /**
      * Sets the default theme name.
+     *
      * @param string $theme default theme name.
      */
     public function setDefaultTheme($theme)
@@ -48,6 +53,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
 
     /**
      * Returns the default theme. Returns the first of available themes by default.
+     *
      * @return string default theme name.
      */
     public function getDefaultTheme()
@@ -66,6 +72,7 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
      * The [[render()]] and [[renderFile()]] methods will use
      * this view object to implement the actual view rendering.
      * If not set, it will default to the "view" application component.
+     *
      * @return \yii\web\View the view object that can be used to render views or view files.
      */
     public function getView()
@@ -78,7 +85,8 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     }
 
     /**
-     * Sets the view object to be used
+     * Sets the view object to be used.
+     *
      * @param View $view the view object that can be used to render views or view files.
      */
     public function setView($view)
@@ -101,9 +109,9 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     public function setTheme($name)
     {
         if (!$this->has($name)) {
-            throw new InvalidConfigException('unknown theme: '.$name);
+            throw new InvalidConfigException('unknown theme: ' . $name);
         }
-        $this->_theme = $this->getItem($name);
+        $this->_theme      = $this->getItem($name);
         $this->view->theme = $this->_theme;
     }
 
@@ -133,12 +141,12 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     }
 
     /**
-     * @var boolean is already bootstrapped.
+     * @var bool is already bootstrapped.
      */
     protected $_isBootstrapped = false;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function bootstrap($app)
     {
@@ -159,12 +167,11 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
             $this->mset($cached);
         } else {
             $this->putItems($app->pluginManager->themes);
-            $model = new Settings;
+            $model = new Settings();
             $model->load();
             $theme = $model->theme ?: $this->getDefaultTheme();
             $this->setTheme($theme);
             $cached = $this->toArray();
         }
     }
-
 }

@@ -1,17 +1,20 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-thememanager
- * @license http://hiqdev.com/yii2-thememanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
 
 use Yii;
-use yii\base\InvalidConfigException;
 
 /**
- * Asset Manager
+ * Asset Manager.
  */
 class AssetManager extends \yii\web\AssetManager
 {
@@ -21,7 +24,7 @@ class AssetManager extends \yii\web\AssetManager
     protected $_ac;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getConverter()
     {
@@ -38,11 +41,10 @@ class AssetManager extends \yii\web\AssetManager
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setConverter($value)
     {
         $this->_ac = $value;
     }
-
 }
