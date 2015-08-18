@@ -3,10 +3,11 @@ hiqdev/yii2-thememanager changelog
 
 ## Under development
 
-- improved registerAssets()
-- + AssetManager and AssetConverter
+- Added better getting default theme
+- Fixed: improved registerAssets()
+- Added AssetManager and AssetConverter
 - hideved
-- inited
+- Inited
 
 ## Development started April 18, 2015
 
