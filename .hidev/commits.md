@@ -3,7 +3,9 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
-- Changed: moved to src
+- Changed: moved to src and php-cs-fixed
+    - 18e4255 2015-08-18 php-cs-fixed (sol@hiqdev.com)
+    - 9fc695f 2015-08-18 + .php_cs (sol@hiqdev.com)
     - f46612a 2015-08-18 moved to src (sol@hiqdev.com)
     - 10f3fa6 2015-08-18 moved to src (sol@hiqdev.com)
     - b0aa3f5 2015-08-18 moved to src (sol@hiqdev.com)
