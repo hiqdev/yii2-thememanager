@@ -3,6 +3,8 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+- Fixed getting current theme
+    - 3b8e173 2015-08-25 fixed getting current theme (sol@hiqdev.com)
 - Changed: moved to src and php-cs-fixed
     - 18e4255 2015-08-18 php-cs-fixed (sol@hiqdev.com)
     - 9fc695f 2015-08-18 + .php_cs (sol@hiqdev.com)
