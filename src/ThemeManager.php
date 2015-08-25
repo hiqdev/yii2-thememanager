@@ -169,7 +169,8 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
             $this->putItems($app->pluginManager->themes);
             $model = new Settings();
             $model->load();
-            $theme = $model->theme ?: $this->getDefaultTheme();
+            $theme = $this->hasItem($model->theme) ? $model->theme : null;
+            $theme = $theme ?: $this->getDefaultTheme();
             $this->setTheme($theme);
             $cached = $this->toArray();
         }
