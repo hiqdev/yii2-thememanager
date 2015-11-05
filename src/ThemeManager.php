@@ -13,8 +13,12 @@ namespace hiqdev\thememanager;
 
 use hiqdev\thememanager\models\Settings;
 use Yii;
+use yii\base\Application;
 use yii\base\BootstrapInterface;
 use yii\base\InvalidConfigException;
+use yii\caching\Dependency;
+use yii\caching\FileDependency;
+use yii\web\AssetBundle;
 
 /**
  * Theme Manager.
@@ -24,6 +28,7 @@ use yii\base\InvalidConfigException;
  * 'components' => [
  *     'themeManager' => [
  *         'class' => 'hiqdev\thememanager\ThemeManager',
+ *         'cacheDuration' => false // disable caching
  *     ],
  * ]
  * ~~~
@@ -31,6 +36,13 @@ use yii\base\InvalidConfigException;
  */
 class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterface
 {
+    /**
+     * @var int|boolean the duration of caching in seconds
+     * When false - caching is disabled.
+     * Defaults to 3600.
+     */
+    public $cacheDuration = 3600;
+
     /**
      * {@inheritdoc}
      */
@@ -136,6 +148,9 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
     public function registerAssets()
     {
         foreach (array_merge($this->assets, $this->getTheme()->assets) as $asset) {
+            /**
+             * @var $asset AssetBundle
+             */
             $asset::register($this->getView());
         }
     }
@@ -154,6 +169,8 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
             return;
         }
         $this->_isBootstrapped = true;
+
+        Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
         $app->pluginManager->bootstrap($app);
 
         $assetManager = Yii::$app->getComponents(true)['assetManager'];
@@ -161,18 +178,13 @@ class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterf
             $assetManager['class'] = 'hiqdev\thememanager\AssetManager';
             Yii::$app->set('assetManager', $assetManager);
         }
+        Yii::trace('Loading themes from plugins', get_called_class() . '::bootstrap');
 
-        $cached = null;
-        if ($cached) {
-            $this->mset($cached);
-        } else {
-            $this->putItems($app->pluginManager->themes);
-            $model = new Settings();
-            $model->load();
-            $theme = $this->hasItem($model->theme) ? $model->theme : null;
-            $theme = $theme ?: $this->getDefaultTheme();
-            $this->setTheme($theme);
-            $cached = $this->toArray();
-        }
+        $this->putItems($app->pluginManager->themes);
+        $model = new Settings();
+        $model->load();
+        $theme = $this->hasItem($model->theme) ? $model->theme : null;
+        $theme = $theme ?: $this->getDefaultTheme();
+        $this->setTheme($theme);
     }
 }
