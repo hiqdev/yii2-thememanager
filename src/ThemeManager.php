@@ -34,7 +34,7 @@ use yii\web\AssetBundle;
  * ~~~
  * That's it, nothing more.
  */
-class ThemeManager extends \hiqdev\collection\Manager implements BootstrapInterface
+class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapInterface
 {
     /**
      * @var int|boolean the duration of caching in seconds

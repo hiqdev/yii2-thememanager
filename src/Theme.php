@@ -17,7 +17,7 @@ use Yii;
 /**
  * Menu is a manageable collection of child [[Menu]]s.
  */
-class Theme extends \yii\base\Theme implements \hiqdev\collection\ItemWithNameInterface
+class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithNameInterface
 {
     /**
      * @var string theme name
