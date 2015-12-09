@@ -47,7 +47,7 @@ class Settings extends \yii\base\Model
         return true;
     }
 
-    public function load($data = null)
+    public function load($data = null, $formName = null)
     {
         if (is_null($data)) {
             $data = [$this->formName() => Yii::$app->session->get($this->varName)];
