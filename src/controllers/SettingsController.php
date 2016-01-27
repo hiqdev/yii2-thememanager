@@ -39,7 +39,9 @@ class SettingsController extends \yii\web\Controller
         } else {
             $model->load();
         }
-
+        if (Yii::$app->request->isAjax) {
+            return $this->renderAjax('//settings/_form', compact('model'));
+        }
         return $this->render('index', compact('model'));
     }
 
