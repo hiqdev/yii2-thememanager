@@ -71,7 +71,8 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapI
     public function getDefaultTheme()
     {
         if (!$this->_defaultTheme) {
-            $this->_defaultTheme = reset($this->keys());
+            $keys = $this->keys(); /// shame to PHP it can't be done in single line :(
+            $this->_defaultTheme = reset($keys);
         }
 
         return $this->_defaultTheme;
