@@ -121,6 +121,9 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapI
      */
     public function setTheme($name)
     {
+        if (!$name) {
+            throw new InvalidConfigException('no theme to set');
+        }
         if (!$this->has($name)) {
             throw new InvalidConfigException('unknown theme: ' . $name);
         }
@@ -181,7 +184,9 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapI
         }
         Yii::trace('Loading themes from plugins', get_called_class() . '::bootstrap');
 
-        $this->putItems($app->pluginManager->themes);
+        if ($app->pluginManager->themes) {
+            $this->putItems($app->pluginManager->themes);
+        }
         $model = new Settings();
         $model->load();
         $theme = $this->hasItem($model->theme) ? $model->theme : null;
