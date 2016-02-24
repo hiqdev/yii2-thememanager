@@ -6,7 +6,7 @@
  * @link      https://github.com/hiqdev/yii2-thememanager
  * @package   yii2-thememanager
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
+ * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
@@ -16,8 +16,6 @@ use Yii;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
 use yii\base\InvalidConfigException;
-use yii\caching\Dependency;
-use yii\caching\FileDependency;
 use yii\web\AssetBundle;
 
 /**
@@ -153,7 +151,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapI
     {
         foreach (array_merge($this->assets, $this->getTheme()->assets) as $asset) {
             /**
-             * @var $asset AssetBundle
+             * @var AssetBundle
              */
             $asset::register($this->getView());
         }
