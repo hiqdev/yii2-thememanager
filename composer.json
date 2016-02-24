@@ -42,9 +42,6 @@
             "homepage": "http://hiqdev.com/"
         }
     ],
-    "require": {
-        "hiqdev/yii2-pluginmanager": "*@dev"
-    },
     "autoload": {
         "psr-4": {
             "hiqdev\\thememanager\\": "src"
