@@ -3,32 +3,33 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
-    - c5ad453 2016-02-24 added parameters checks (sol@hiqdev.com)
+- Fixed minor issues
+    - 7f5d47f 2016-02-24 phpcsfixed (sol@hiqdev.com)
+    - 650863d 2016-02-24 rehideved (sol@hiqdev.com)
     - c85f4dd 2016-02-17 fixed PHP notice (sol@hiqdev.com)
     - 3898f12 2016-01-27 Add renderAjax if request isAjax (andreyklochok@gmail.com)
     - 219c4e1 2015-12-09 Fixed Settings::load() signature (d.naumenko.a@gmail.com)
     - 108f84d 2015-11-23 Changed namespace to yii2-collection (d.naumenko.a@gmail.com)
     - 479f995 2015-11-05 Chaching placeholders removed (d.naumenko.a@gmail.com)
 - Fixed getting current theme
+    - c5ad453 2016-02-24 added parameters checks (sol@hiqdev.com)
     - 3b8e173 2015-08-25 fixed getting current theme (sol@hiqdev.com)
-- Changed: moved to src and php-cs-fixed
+    - d3afbe9 2015-08-18 + better getting default theme (sol@hiqdev.com)
+- Changed: moved to src
     - 18e4255 2015-08-18 php-cs-fixed (sol@hiqdev.com)
-    - 9fc695f 2015-08-18 + .php_cs (sol@hiqdev.com)
+    - 9fc695f 2015-08-18 + `.php_cs` (sol@hiqdev.com)
     - f46612a 2015-08-18 moved to src (sol@hiqdev.com)
     - 10f3fa6 2015-08-18 moved to src (sol@hiqdev.com)
     - b0aa3f5 2015-08-18 moved to src (sol@hiqdev.com)
     - 68e389d 2015-08-18 rehideved with new features: better README and .gitignore (sol@hiqdev.com)
-- Added better getting default theme
-    - d3afbe9 2015-08-18 + better getting default theme (sol@hiqdev.com)
 - Fixed: improved registerAssets()
     - 87ca207 2015-06-12 improved RegisterAssets - moved to ThemeManager (sol@hiqdev.com)
 - Added AssetManager and AssetConverter
     - 28c4cd5 2015-06-11 + AssetConverter (sol@hiqdev.com)
     - a64ccb3 2015-06-11 + AssetManager, renamed to ThemeManager (sol@hiqdev.com)
     - a703a1b 2015-06-10 * Theme: + assets and get/registerAssets (sol@hiqdev.com)
-- hideved
-    - 765ff2a 2015-06-10 hideved (sol@hiqdev.com)
 - Inited
+    - 765ff2a 2015-06-10 hideved (sol@hiqdev.com)
     - 7c492ea 2015-06-10 + proper finding settings class at Theme (sol@hiqdev.com)
     - a95617b 2015-06-02 fixed theme saving (sol@hiqdev.com)
     - b0d0772 2015-05-29 simplified access to current theme settings (sol@hiqdev.com)
