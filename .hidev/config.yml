@@ -1,13 +1,12 @@
 package:
-    name:           yii2-thememanager
-    namespace:      hiqdev\thememanager
-    label:          ThemeManager
-    title:          Theme Manager for Yii2
     type:           yii2-extension
-    keywords:       theme, manager, extension, yii2
-    year:           2015
-    description:    Theme Manager with auto loading from extension, choose and setup widgets
+    name:           yii2-thememanager
+    title:          Theme Manager for Yii2
+    headline:       Yii2 Theme Manager
+    keywords:       yii2, theme, manager
+    namespace:      hiqdev\thememanager
+    description:    Theme Manager with auto loading, choose and setup widgets
 
 require:
-    hiqdev/hidev-config:        "*"
-    hiqdev/hidev-config-php:    "*"
+    hiqdev/hidev-php:    "*"
+    hiqdev/hidev-vendor: "*"

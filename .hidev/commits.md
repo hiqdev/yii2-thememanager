@@ -3,6 +3,12 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+    - c5ad453 2016-02-24 added parameters checks (sol@hiqdev.com)
+    - c85f4dd 2016-02-17 fixed PHP notice (sol@hiqdev.com)
+    - 3898f12 2016-01-27 Add renderAjax if request isAjax (andreyklochok@gmail.com)
+    - 219c4e1 2015-12-09 Fixed Settings::load() signature (d.naumenko.a@gmail.com)
+    - 108f84d 2015-11-23 Changed namespace to yii2-collection (d.naumenko.a@gmail.com)
+    - 479f995 2015-11-05 Chaching placeholders removed (d.naumenko.a@gmail.com)
 - Fixed getting current theme
     - 3b8e173 2015-08-25 fixed getting current theme (sol@hiqdev.com)
 - Changed: moved to src and php-cs-fixed
