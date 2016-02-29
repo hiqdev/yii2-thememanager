@@ -32,15 +32,8 @@ use yii\web\AssetBundle;
  * ~~~
  * That's it, nothing more.
  */
-class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapInterface
+class ThemeManager extends \hiqdev\yii2\collection\Manager
 {
-    /**
-     * @var int|boolean the duration of caching in seconds
-     * When false - caching is disabled.
-     * Defaults to 3600.
-     */
-    public $cacheDuration = 3600;
-
     /**
      * {@inheritdoc}
      */
@@ -165,7 +158,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements BootstrapI
     /**
      * {@inheritdoc}
      */
-    public function bootstrap($app)
+    public function no_bootstrap($app)
     {
         if ($this->_isBootstrapped) {
             return;
