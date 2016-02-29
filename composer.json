@@ -46,5 +46,8 @@
         "psr-4": {
             "hiqdev\\thememanager\\": "src"
         }
+    },
+    "extra": {
+        "yii2-extraconfig": "src/yii2-extraconfig.php"
     }
 }
