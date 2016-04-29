@@ -14,7 +14,6 @@ namespace hiqdev\thememanager;
 use hiqdev\thememanager\models\Settings;
 use Yii;
 use yii\base\Application;
-use yii\base\BootstrapInterface;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 
