@@ -3,6 +3,7 @@ hiqdev/yii2-thememanager changelog
 
 ## Under development
 
+- Changed: redone to `hidev` style
 - Fixed minor issues
 - Fixed getting current theme
 - Changed: moved to src

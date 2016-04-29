@@ -3,6 +3,14 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
+- Changed: redone to `hidev` style
+    - 5a428dc 2016-04-29 csfixed (sol@hiqdev.com)
+    - c440e44 2016-04-29 rehideved (sol@hiqdev.com)
+    - 9c06c71 2016-04-29 redone `yii2-extraconfig.php` to `hisite-config.php` (sol@hiqdev.com)
+    - 91f43e8 2016-02-29 + require yii2-collection (sol@hiqdev.com)
+    - 94faceb 2016-02-29 removing bootstrapping (sol@hiqdev.com)
+    - a0e282c 2016-02-29 + yii-extraconfig (sol@hiqdev.com)
+    - cbb82cb 2016-02-24 - require plugin manager (sol@hiqdev.com)
 - Fixed minor issues
     - 7f5d47f 2016-02-24 phpcsfixed (sol@hiqdev.com)
     - 650863d 2016-02-24 rehideved (sol@hiqdev.com)
