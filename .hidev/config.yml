@@ -6,7 +6,3 @@ package:
     keywords:       yii2, theme, manager
     namespace:      hiqdev\thememanager
     description:    Theme Manager with auto loading, choose and setup widgets
-
-require:
-    hiqdev/hidev-php:    "*"
-    hiqdev/hidev-vendor: "*"

@@ -6,8 +6,8 @@ Yii2 Theme Manager
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-thememanager/v/stable)](https://packagist.org/packages/hiqdev/yii2-thememanager)
 [![Total Downloads](https://poser.pugx.org/hiqdev/yii2-thememanager/downloads)](https://packagist.org/packages/hiqdev/yii2-thememanager)
 [![Build Status](https://img.shields.io/travis/hiqdev/yii2-thememanager.svg)](https://travis-ci.org/hiqdev/yii2-thememanager)
-[![Code Coverage](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/?branch=master)
+[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/yii2-thememanager.svg)](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/yii2-thememanager.svg)](https://scrutinizer-ci.com/g/hiqdev/yii2-thememanager/)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:yii2-thememanager/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:yii2-thememanager/dev-master)
 
 Theme Manager with auto loading, choose and setup widgets
