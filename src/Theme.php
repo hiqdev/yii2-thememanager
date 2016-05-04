@@ -15,7 +15,7 @@ use ReflectionClass;
 use Yii;
 
 /**
- * Menu is a manageable collection of child [[Menu]]s.
+ * Theme class.
  */
 class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithNameInterface
 {
@@ -99,10 +99,23 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         if (!$this->pathMap) {
             $dirs          = $this->calcPathDirs();
             $this->pathMap = [
-                '@app/views'   => $this->buildPathes($dirs, 'views'),
-                '@app/widgets' => $this->buildPathes($dirs, 'widgets'),
+                $this->getViewPath()   => $this->buildPathes($dirs, 'views'),
+                $this->getWidgetPath() => $this->buildPathes($dirs, 'widgets'),
             ];
         }
+    }
+
+    protected $_viewPath;
+    protected $_widgetPath;
+
+    public function getViewPath()
+    {
+        return $this->_viewPath ?: Yii::$app->viewPath;
+    }
+
+    public function getWidgetPath()
+    {
+        return $this->_widgetPath ?: preg_replace('/(.*)views/', '$1widgets', $this->getViewPath());
     }
 
     public function calcPathDirs()
