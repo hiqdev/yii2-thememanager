@@ -21,17 +21,16 @@ use yii\web\AssetBundle;
  * Theme Manager.
  *
  * Usage, in config:
- * ~~~
+ * ```
  * 'components' => [
  *     'themeManager' => [
  *         'class' => 'hiqdev\thememanager\ThemeManager',
  *         'cacheDuration' => false // disable caching
  *     ],
  * ]
- * ~~~
- * That's it, nothing more.
+ * ```
  */
-class ThemeManager extends \hiqdev\yii2\collection\Manager
+class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
 {
     /**
      * {@inheritdoc}
@@ -114,15 +113,19 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager
         if (!$name) {
             throw new InvalidConfigException('no theme to set');
         }
-        if (!$this->has($name)) {
-            throw new InvalidConfigException('unknown theme: ' . $name);
-        }
-        $this->_theme      = $this->getItem($name);
-        $this->view->theme = $this->_theme;
+        $this->_theme = $name;
     }
 
     public function getTheme()
     {
+        if (is_string($this->_theme)) {
+            if (!$this->has($this->_theme)) {
+                throw new InvalidConfigException('unknown theme: ' . $this->_theme);
+            }
+            $this->_theme      = $this->getItem($this->_theme);
+            $this->view->theme = $this->_theme;
+        }
+
         return $this->_theme;
     }
 
@@ -157,7 +160,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager
     /**
      * {@inheritdoc}
      */
-    public function no_bootstrap($app)
+    public function bootstrap($app)
     {
         if ($this->_isBootstrapped) {
             return;
@@ -165,8 +168,6 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager
         $this->_isBootstrapped = true;
 
         Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
-        $app->pluginManager->bootstrap($app);
-
         $assetManager = Yii::$app->getComponents(true)['assetManager'];
         if ($assetManager['class'] === Yii::$app->coreComponents()['assetManager']['class']) {
             $assetManager['class'] = 'hiqdev\thememanager\AssetManager';
@@ -174,13 +175,16 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager
         }
         Yii::trace('Loading themes from plugins', get_called_class() . '::bootstrap');
 
-        if ($app->pluginManager->themes) {
-            $this->putItems($app->pluginManager->themes);
-        }
         $model = new Settings();
         $model->load();
         $theme = $this->hasItem($model->theme) ? $model->theme : null;
         $theme = $theme ?: $this->getDefaultTheme();
         $this->setTheme($theme);
+    }
+
+    public function init()
+    {
+        parent::init();
+        $this->getTheme();
     }
 }
