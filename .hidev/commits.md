@@ -4,6 +4,9 @@ hiqdev/yii2-thememanager commits history
 ## Under development
 
 - Changed: redone to `hidev` style
+    - 0b8316a 2016-05-04 inited tests (sol@hiqdev.com)
+    - 95a5da1 2016-05-04 changed ThemeManager to be more lazy in setting theme (sol@hiqdev.com)
+    - 2b63cdc 2016-05-04 added views and widgets path parametrizing (sol@hiqdev.com)
     - 5a428dc 2016-04-29 csfixed (sol@hiqdev.com)
     - c440e44 2016-04-29 rehideved (sol@hiqdev.com)
     - 9c06c71 2016-04-29 redone `yii2-extraconfig.php` to `hisite-config.php` (sol@hiqdev.com)
