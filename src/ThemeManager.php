@@ -25,7 +25,6 @@ use yii\web\AssetBundle;
  * 'components' => [
  *     'themeManager' => [
  *         'class' => 'hiqdev\thememanager\ThemeManager',
- *         'cacheDuration' => false // disable caching
  *     ],
  * ]
  * ```
