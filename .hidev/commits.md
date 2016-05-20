@@ -3,7 +3,9 @@ hiqdev/yii2-thememanager commits history
 
 ## Under development
 
-- Changed: redone to `hidev` style
+- Changed: redone to composer-config-plugin
+    - 46bc352 2016-05-20 fixed module adding, removed Plugin.php (sol@hiqdev.com)
+    - 14ed956 2016-05-19 redone to composer-config-plugin (sol@hiqdev.com)
     - 0b8316a 2016-05-04 inited tests (sol@hiqdev.com)
     - 95a5da1 2016-05-04 changed ThemeManager to be more lazy in setting theme (sol@hiqdev.com)
     - 2b63cdc 2016-05-04 added views and widgets path parametrizing (sol@hiqdev.com)

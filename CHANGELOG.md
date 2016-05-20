@@ -3,7 +3,7 @@ hiqdev/yii2-thememanager changelog
 
 ## Under development
 
-- Changed: redone to `hidev` style
+- Changed: redone to composer-config-plugin
 - Fixed minor issues
 - Fixed getting current theme
 - Changed: moved to src
