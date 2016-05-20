@@ -18,4 +18,9 @@ return [
             'class' => 'hiqdev\thememanager\AssetManager',
         ],
     ],
+    'modules' => [
+        'thememanager' => [
+            'class' => 'hiqdev\thememanager\Module',
+        ],
+    ],
 ];
