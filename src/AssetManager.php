@@ -29,10 +29,10 @@ class AssetManager extends \yii\web\AssetManager
     public function getConverter()
     {
         if ($this->_ac === null) {
-            $this->_ac = Yii::createObject(AssetConverter::className());
+            $this->_ac = Yii::createObject(AssetConverter::class);
         } elseif (is_array($this->_ac) || is_string($this->_ac)) {
             if (is_array($this->_ac) && !isset($this->_ac['class'])) {
-                $this->_ac['class'] = AssetConverter::className();
+                $this->_ac['class'] = AssetConverter::class;
             }
             $this->_ac = Yii::createObject($this->_ac);
         }
