@@ -24,7 +24,7 @@ use yii\web\AssetBundle;
  * ```
  * 'components' => [
  *     'themeManager' => [
- *         'class' => 'hiqdev\thememanager\ThemeManager',
+ *         'class' => \hiqdev\thememanager\ThemeManager::class,
  *     ],
  * ]
  * ```
@@ -34,7 +34,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * {@inheritdoc}
      */
-    protected $_itemClass = 'hiqdev\thememanager\Theme';
+    protected $_itemClass = Theme::class;
 
     /**
      * @var string default theme name
@@ -178,11 +178,11 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         $theme = $this->hasItem($model->theme) ? $model->theme : null;
         $theme = $theme ?: $this->getDefaultTheme();
         $this->setTheme($theme);
-    }
-
-    public function init()
-    {
-        parent::init();
         $this->getTheme();
     }
+
+    /* public function init()
+    {
+        parent::init();
+    } */
 }
