@@ -22,8 +22,6 @@ class Module extends \yii\base\Module
      */
     public static function isHomePage()
     {
-        $controller = Yii::$app->controller;
-        $default_controller = Yii::$app->defaultRoute;
-        return (($controller->id === $default_controller) && ($controller->action->id === $controller->defaultAction));
+        return $this->getManager()->isHomePage();
     }
 }
