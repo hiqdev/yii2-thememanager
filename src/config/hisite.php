@@ -13,15 +13,15 @@ return [
     'bootstrap' => ['themeManager'],
     'components' => [
         'themeManager' => [
-            'class' => 'hiqdev\thememanager\ThemeManager',
+            'class' => \hiqdev\thememanager\ThemeManager::class,
         ],
         'assetManager' => [
-            'class' => 'hiqdev\thememanager\AssetManager',
+            'class' => \hiqdev\thememanager\AssetManager::class,
         ],
     ],
     'modules' => [
         'thememanager' => [
-            'class' => 'hiqdev\thememanager\Module',
+            'class' => \hiqdev\thememanager\Module::class,
         ],
     ],
 ];
