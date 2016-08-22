@@ -129,6 +129,13 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             }
         }
 
+        foreach ($this->manager->pathDirs as $dir) {
+            $dir = Yii::getAlias($dir);
+            if (!in_array($dir, $dirs, true)) {
+                array_unshift($dirs, $dir);
+            }
+        }
+
         return $dirs;
     }
 
