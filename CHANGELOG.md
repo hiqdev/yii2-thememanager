@@ -1,15 +1,14 @@
-hiqdev/yii2-thememanager changelog
-----------------------------------
+hiqdev/yii2-thememanager
+------------------------
 
-## Under development
+## [0.0.1] - 2016-08-19
 
-- Changed: redone to composer-config-plugin
+- Changed bootstrapping
+- Changed: redone to `composer-config-plugin`
 - Fixed minor issues
 - Fixed getting current theme
 - Changed: moved to src
-- Fixed: improved registerAssets()
 - Added AssetManager and AssetConverter
-- Inited
+- Added basics
 
-## Development started April 18, 2015
-
+## [Development started] - 2015-04-18
