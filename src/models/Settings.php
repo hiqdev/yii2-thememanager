@@ -67,10 +67,8 @@ class Settings extends \yii\base\Model
 
     /**
      * Default css provider - returns plain value, fits for attributes like skin and layout.
-     *
      * @param $name  string         attribute name
      * @param $value boolean|string attribute value
-     *
      * @return string css class
      */
     public static function cssClassProvider($name, $value)
