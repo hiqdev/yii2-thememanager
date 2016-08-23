@@ -99,8 +99,8 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         if (!$this->pathMap) {
             $dirs          = $this->calcPathDirs();
             $this->pathMap = [
-                $this->getViewPath()   => $this->buildPathes($dirs, 'views'),
-                $this->getWidgetPath() => $this->buildPathes($dirs, 'widgets'),
+                $this->getViewPath()   => $this->buildPaths($dirs, 'views'),
+                $this->getWidgetPath() => $this->buildPaths($dirs, 'widgets'),
             ];
         }
     }
@@ -139,7 +139,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         return $dirs;
     }
 
-    public function buildPathes($dirs, $name)
+    public function buildPaths($dirs, $name)
     {
         foreach ($dirs as $dir) {
             $res[] = $dir . DIRECTORY_SEPARATOR . $name;
