@@ -15,9 +15,6 @@ return [
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
         ],
-        'assetManager' => [
-            'class' => \hiqdev\thememanager\AssetManager::class,
-        ],
     ],
     'modules' => [
         'thememanager' => [
