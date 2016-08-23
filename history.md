@@ -1,7 +1,12 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [0.0.1] - 2016-08-19
+## [Under development]
+
+    - [4730098] 2016-08-23 Grammar fix [andreyklochok@gmail.com]
+    - [10092cc] 2016-08-22 + pathDirs parameter [sol@hiqdev.com]
+
+## [0.0.1] - 2016-08-22
 
 - Changed bootstrapping
     - [ef164cf] 2016-08-19 + isHomePage to ThemeManager component [sol@hiqdev.com]
@@ -111,3 +116,5 @@ hiqdev/yii2-thememanager
 [0393701]: https://github.com/hiqdev/yii2-thememanager/commit/0393701
 [87a496c]: https://github.com/hiqdev/yii2-thememanager/commit/87a496c
 [b2dd956]: https://github.com/hiqdev/yii2-thememanager/commit/b2dd956
+[4730098]: https://github.com/hiqdev/yii2-thememanager/commit/4730098
+[10092cc]: https://github.com/hiqdev/yii2-thememanager/commit/10092cc

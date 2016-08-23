@@ -1,7 +1,9 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [0.0.1] - 2016-08-19
+## [Under development]
+
+## [0.0.1] - 2016-08-22
 
 - Changed bootstrapping
 - Changed: redone to `composer-config-plugin`
