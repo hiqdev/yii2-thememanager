@@ -182,11 +182,6 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         $this->_isBootstrapped = true;
 
         Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
-        $assetManager = Yii::$app->getComponents(true)['assetManager'];
-        if (is_array($assetManager) && $assetManager['class'] === Yii::$app->coreComponents()['assetManager']['class']) {
-            $assetManager['class'] = 'hiqdev\thememanager\AssetManager';
-            Yii::$app->set('assetManager', $assetManager);
-        }
 
         $model = new Settings();
         $model->load();
