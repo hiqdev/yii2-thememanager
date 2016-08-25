@@ -19,6 +19,7 @@ return [
     'modules' => [
         'thememanager' => [
             'class' => \hiqdev\thememanager\Module::class,
+            'defaultRoute' => 'settings',
         ],
     ],
 ];

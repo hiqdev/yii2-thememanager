@@ -15,6 +15,7 @@ use hiqdev\thememanager\models\Settings;
 use Yii;
 use yii\base\Application;
 use yii\base\InvalidConfigException;
+use yii\base\Widget;
 use yii\web\AssetBundle;
 
 /**
@@ -107,9 +108,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
     /**
      * Changes theme.
-     *
      * @param string theme name
-     *
      * @throws InvalidConfigException
      */
     public function setTheme($name)
@@ -195,4 +194,35 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     {
         parent::init();
     } */
+
+    /**
+     * Draws widget.
+     * @param mixed $config
+     * @throws InvalidConfigException
+     * @return void
+     */
+    public function widget($config)
+    {
+        if (!is_array($config)) {
+            $config = ['class' => $config];
+        }
+        if (!isset($config['class'])) {
+            throw new InvalidConfigException('no class given');
+        }
+
+        ob_start();
+        ob_implicit_flush(false);
+        try {
+            /* @var $widget Widget */
+            $widget = Yii::createObject($config);
+            $out = $widget->run();
+        } catch (\Exception $e) {
+            // close the output buffer opened above if it has not been closed already
+            if (ob_get_level() > 0) {
+                ob_end_clean();
+            }
+            throw $e;
+        }
+        return ob_get_clean() . $out;
+    }
 }
