@@ -19,6 +19,7 @@ return [
                 'Menu' => \yii\widgets\Menu::class,
                 'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
                 'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
+                'SocialLink' => \hiqdev\thememanager\widgets\SocialLinks::class,
             ],
         ],
     ],
