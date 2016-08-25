@@ -14,6 +14,12 @@ return [
     'components' => [
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
+            'widgets' => [
+                'Alert' => \yii\bootstrap\Alert::class,
+                'Menu' => \yii\widgets\Menu::class,
+                'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
+                'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
+            ],
         ],
     ],
     'modules' => [

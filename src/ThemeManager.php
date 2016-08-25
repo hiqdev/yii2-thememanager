@@ -195,6 +195,8 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         parent::init();
     } */
 
+    public $widgets = [];
+
     /**
      * Draws widget.
      * @param mixed $config
@@ -208,6 +210,9 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         }
         if (!isset($config['class'])) {
             throw new InvalidConfigException('no class given');
+        }
+        if (isset($this->widgets[$config['class']])) {
+            $config['class'] = $this->widgets[$config['class']];
         }
 
         ob_start();
