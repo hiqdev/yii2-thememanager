@@ -51,6 +51,7 @@ class SettingsController extends \yii\web\Controller
             $model        = $this->getModel();
             $model->theme = $theme;
             $model->save();
+            Yii::$app->session->setFlash('success', 'Theme changed');
         }
 
         return $this->redirect(['index']);
