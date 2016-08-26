@@ -17,6 +17,7 @@ return [
             'widgets' => [
                 'Alert' => \yii\bootstrap\Alert::class,
                 'Menu' => \yii\widgets\Menu::class,
+                'Breadcrumbs' => \yii\widgets\Breadcrumbs::class,
                 'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
                 'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
                 'SocialLinks' => \hiqdev\thememanager\widgets\SocialLinks::class,
