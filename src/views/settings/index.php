@@ -3,8 +3,9 @@
 use Yii;
 use yii\helpers\Html;
 
-$this->title                   = Yii::t('hisite', 'Layout Settings');
+$this->title = Yii::t('hisite', 'Theme Settings');
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="row">
     <div class="col-md-6">
