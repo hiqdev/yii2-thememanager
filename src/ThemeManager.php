@@ -230,4 +230,14 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         }
         return ob_get_clean() . $out;
     }
+
+    /**
+     * Checks if widget with given name is defined.
+     * @param mixed $name name or class
+     * @return boolean
+     */
+    public function hasWidget($name)
+    {
+        return (isset($this->widgets[$name]) && $this->widgets[$name]) || class_exists($name);
+    }
 }
