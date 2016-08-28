@@ -188,6 +188,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         $theme = $theme ?: $this->getDefaultTheme();
         $this->setTheme($theme);
         $this->getTheme();
+        // var_dump($this->getTheme()); die();
     }
 
     /* public function init()
