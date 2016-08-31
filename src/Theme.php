@@ -13,12 +13,15 @@ namespace hiqdev\thememanager;
 
 use ReflectionClass;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * Theme class.
  */
 class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithNameInterface
 {
+    use GetManagerTrait;
+
     /**
      * @var string theme name
      */
@@ -33,33 +36,6 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
      * @var array assets to be registered for this theme
      */
     public $assets = [];
-
-    private $_manager;
-
-    /**
-     * Returns the manager object that can be used to render views or view files.
-     * If not set, it will default to the "themeManager" application component.
-     *
-     * @return Manager the manager object
-     */
-    public function getManager()
-    {
-        if ($this->_manager === null) {
-            $this->_manager = Yii::$app->get('themeManager');
-        }
-
-        return $this->_manager;
-    }
-
-    /**
-     * Sets the manager object to be used by this theme.
-     *
-     * @param Manager $manager the manager object.
-     */
-    public function setManager($manager)
-    {
-        $this->_manager = $manager;
-    }
 
     private $_view;
 
@@ -96,13 +72,13 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     public function init()
     {
         parent::init();
-        if (!$this->pathMap) {
-            $dirs          = $this->calcPathDirs();
-            $this->pathMap = [
-                $this->getViewPath()   => $this->buildPaths($dirs, 'views'),
-                $this->getWidgetPath() => $this->buildPaths($dirs, 'widgets'),
-            ];
+        if (!is_array($this->pathMap)) {
+            $this->pathMap = [];
         }
+        $this->pathMap = ArrayHelper::merge([
+            $this->getViewPath() => $this->buildViewPaths(),
+        ], $this->pathMap);
+        $this->pathMap[$this->getViewPath()] = array_reverse(array_unique(array_values($this->pathMap[$this->getViewPath()])));
     }
 
     protected $_viewPath;
@@ -118,7 +94,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         return $this->_widgetPath ?: preg_replace('/(.*)views/', '$1widgets', $this->getViewPath());
     }
 
-    public function calcPathDirs()
+    public function calcParentPaths()
     {
         $ref = $this->getReflection();
         for ($depth = 0;$depth < 10;++$depth) {
@@ -129,18 +105,16 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             }
         }
 
-        foreach ($this->manager->pathDirs as $dir) {
-            $dir = Yii::getAlias($dir);
-            array_unshift($dirs, $dir);
-        }
-
         return $dirs;
     }
 
-    public function buildPaths($dirs, $name)
+    public function buildViewPaths()
     {
-        foreach ($dirs as $dir) {
-            $res[] = $dir . DIRECTORY_SEPARATOR . $name;
+        foreach ($this->calcParentPaths() as $dir) {
+            $res[] = $dir . DIRECTORY_SEPARATOR . 'views';
+        }
+        foreach ($this->getManager()->viewPaths as $dir) {
+            $res[] = $dir;
         }
 
         return $res;

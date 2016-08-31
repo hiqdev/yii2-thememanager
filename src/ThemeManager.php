@@ -40,7 +40,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * @var array additional dirs to look for views.
      */
-    public $pathDirs = [];
+    public $viewPaths = [];
 
     /**
      * @var string default theme name
