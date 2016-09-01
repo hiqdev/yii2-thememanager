@@ -23,4 +23,3 @@ class OrganizationLink extends Widget
         return isset($out) ? $out : 'Organization';
     }
 }
-
