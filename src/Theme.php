@@ -75,10 +75,15 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         if (!is_array($this->pathMap)) {
             $this->pathMap = [];
         }
+
         $this->pathMap = ArrayHelper::merge([
-            $this->getViewPath() => $this->buildViewPaths(),
+            $this->getViewPath()    => $this->buildViewPaths(),
+            $this->getWidgetPath()  => $this->buildWidgetPaths(),
         ], $this->pathMap);
-        $this->pathMap[$this->getViewPath()] = array_reverse(array_unique(array_values($this->pathMap[$this->getViewPath()])));
+
+        foreach ($this->pathMap as $key => &$paths) {
+            $paths = array_reverse(array_unique(array_values($paths)));
+        }
     }
 
     protected $_viewPath;
@@ -91,7 +96,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
     public function getWidgetPath()
     {
-        return $this->_widgetPath ?: preg_replace('/(.*)views/', '$1widgets', $this->getViewPath());
+        return $this->_widgetPath ?: __DIR__ . '/widgets/views';
     }
 
     public function calcParentPaths()
@@ -110,11 +115,22 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
     public function buildViewPaths()
     {
+        $res = [];
         foreach ($this->calcParentPaths() as $dir) {
             $res[] = $dir . DIRECTORY_SEPARATOR . 'views';
         }
         foreach ($this->getManager()->viewPaths as $dir) {
             $res[] = $dir;
+        }
+
+        return $res;
+    }
+
+    public function buildWidgetPaths()
+    {
+        $res = [];
+        foreach ($this->buildViewPaths() as $dir) {
+            $res[] = $dir . DIRECTORY_SEPARATOR . 'widgets';
         }
 
         return $res;
