@@ -20,6 +20,7 @@ return [
                 'Breadcrumbs' => \yii\widgets\Breadcrumbs::class,
                 'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
                 'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
+                'PoweredBy' => \hiqdev\thememanager\widgets\PoweredBy::class,
                 'SocialLinks' => \hiqdev\thememanager\widgets\SocialLinks::class,
             ],
         ],
