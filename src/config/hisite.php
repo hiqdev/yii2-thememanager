@@ -15,13 +15,14 @@ return [
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
             'widgets' => [
-                'Alert' => \yii\bootstrap\Alert::class,
                 'Menu' => \yii\widgets\Menu::class,
                 'Breadcrumbs' => \yii\widgets\Breadcrumbs::class,
+                'Alert' => \yii\bootstrap\Alert::class,
+                'PoweredBy' => \hiqdev\thememanager\widgets\PoweredBy::class,
+                'LoginForm' => \hiqdev\thememanager\widgets\LoginForm::class,
+                'SocialLinks' => \hiqdev\thememanager\widgets\SocialLinks::class,
                 'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
                 'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
-                'PoweredBy' => \hiqdev\thememanager\widgets\PoweredBy::class,
-                'SocialLinks' => \hiqdev\thememanager\widgets\SocialLinks::class,
             ],
         ],
     ],

@@ -5,14 +5,17 @@ namespace hiqdev\thememanager\widgets;
 use Yii;
 use yii\base\Widget;
 
-class PoweredBy extends Widget
+class LoginForm extends Widget
 {
+    public $model;
+
     public $options = [];
 
     public function run()
     {
-        return $this->render('PoweredBy', array_merge(Yii::$app->params, [
+        return $this->render('LoginForm', [
+            'model'   => $this->model,
             'options' => $this->options,
-        ]));
+        ]);
     }
 }
