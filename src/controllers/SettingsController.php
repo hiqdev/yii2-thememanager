@@ -48,7 +48,7 @@ class SettingsController extends \yii\web\Controller
     public function actionChangeTheme($theme)
     {
         if ($this->module->getManager()->has($theme)) {
-            $model        = $this->getModel();
+            $model = $this->getModel();
             $model->theme = $theme;
             $model->save();
             Yii::$app->session->setFlash('success', 'Theme changed');
@@ -60,7 +60,7 @@ class SettingsController extends \yii\web\Controller
     public function actionCollapsedSidebar()
     {
         if (Yii::$app->request->isAjax) {
-            $model                    = $this->getModel();
+            $model = $this->getModel();
             $model->collapsed_sidebar = Yii::$app->request->post('collapsed_sidebar');
             $model->save();
         }

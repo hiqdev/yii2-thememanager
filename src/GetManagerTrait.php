@@ -20,7 +20,7 @@ trait GetManagerTrait
     /**
      * Setter for manager.
      *
-     * @var string|Manager component name of the theme manager object.
+     * @var string|Manager component name of the theme manager object
      */
     public function setManager($manager)
     {

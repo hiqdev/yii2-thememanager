@@ -38,7 +38,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     protected $_itemClass = Theme::class;
 
     /**
-     * @var array additional dirs to look for views.
+     * @var array additional dirs to look for views
      */
     public $viewPaths = [];
 
@@ -50,7 +50,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * Sets the default theme name.
      *
-     * @param string $theme default theme name.
+     * @param string $theme default theme name
      */
     public function setDefaultTheme($theme)
     {
@@ -60,7 +60,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * Returns the default theme. Returns the first of available themes by default.
      *
-     * @return string default theme name.
+     * @return string default theme name
      */
     public function getDefaultTheme()
     {
@@ -80,7 +80,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
      * this view object to implement the actual view rendering.
      * If not set, it will default to the "view" application component.
      *
-     * @return \yii\web\View the view object that can be used to render views or view files.
+     * @return \yii\web\View the view object that can be used to render views or view files
      */
     public function getView()
     {
@@ -94,7 +94,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * Sets the view object to be used.
      *
-     * @param View $view the view object that can be used to render views or view files.
+     * @param View $view the view object that can be used to render views or view files
      */
     public function setView($view)
     {
@@ -125,7 +125,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
             if (!$this->has($this->_theme)) {
                 throw new InvalidConfigException('unknown theme: ' . $this->_theme);
             }
-            $this->_theme      = $this->getItem($this->_theme);
+            $this->_theme = $this->getItem($this->_theme);
             $this->view->theme = $this->_theme;
         }
 
@@ -144,7 +144,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     {
         $controller = Yii::$app->controller;
         $default_controller = Yii::$app->defaultRoute;
-        return (($controller->id === $default_controller) && ($controller->action->id === $controller->defaultAction));
+        return ($controller->id === $default_controller) && ($controller->action->id === $controller->defaultAction);
     }
 
     /**
@@ -166,7 +166,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * @var bool is already bootstrapped.
+     * @var bool is already bootstrapped
      */
     protected $_isBootstrapped = false;
 

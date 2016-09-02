@@ -11,8 +11,6 @@
 
 namespace hiqdev\thememanager;
 
-use Yii;
-
 class Module extends \yii\base\Module
 {
     use GetManagerTrait;

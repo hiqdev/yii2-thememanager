@@ -45,7 +45,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
      * this view object to implement the actual view rendering.
      * If not set, it will default to the "view" application component.
      *
-     * @return \yii\web\View the view object that can be used to render views or view files.
+     * @return \yii\web\View the view object that can be used to render views or view files
      */
     public function getView()
     {
@@ -59,7 +59,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     /**
      * Sets the view object to be used.
      *
-     * @param View $view the view object that can be used to render views or view files.
+     * @param View $view the view object that can be used to render views or view files
      */
     public function setView($view)
     {
@@ -77,8 +77,8 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         }
 
         $this->pathMap = ArrayHelper::merge([
-            $this->getViewPath()    => $this->buildViewPaths(),
-            $this->getWidgetPath()  => $this->buildWidgetPaths(),
+            $this->getViewPath() => $this->buildViewPaths(),
+            $this->getWidgetPath() => $this->buildWidgetPaths(),
         ], $this->pathMap);
 
         foreach ($this->pathMap as $key => &$paths) {
@@ -102,9 +102,9 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     public function calcParentPaths()
     {
         $ref = $this->getReflection();
-        for ($depth = 0;$depth < 10;++$depth) {
+        for ($depth = 0; $depth < 10; ++$depth) {
             $dirs[] = dirname($ref->getFilename());
-            $ref    = $ref->getParentClass();
+            $ref = $ref->getParentClass();
             if (__CLASS__ === $ref->name) {
                 break;
             }
@@ -140,7 +140,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
     /**
      * @return string the base URL (without ending slash) for this theme.
-     *                All resources of this theme are considered to be under this base URL.
+     *                All resources of this theme are considered to be under this base URL
      */
     public function getBaseUrl()
     {

@@ -57,9 +57,9 @@ class View extends \yii\web\View
     /**
      * Magic is set checker.
      *
-     * @param string $name the property or param name to check.
+     * @param string $name the property or param name to check
      *
-     * @return bool whether the value is set.
+     * @return bool whether the value is set
      */
     public function __isset($name)
     {
@@ -69,7 +69,7 @@ class View extends \yii\web\View
     /**
      * Magic unsetter.
      *
-     * @param string $name the property or param name to unset.
+     * @param string $name the property or param name to unset
      */
     public function __unset($name)
     {
