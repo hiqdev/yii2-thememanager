@@ -3,6 +3,10 @@ hiqdev/yii2-thememanager
 
 ## [Under development]
 
+- Added widgets
+- Added viewPaths parameter
+- Removed View, AssetConverter and AssetManager
+
 ## [0.0.1] - 2016-08-22
 
 - Changed bootstrapping

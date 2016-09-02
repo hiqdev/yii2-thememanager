@@ -3,8 +3,29 @@ hiqdev/yii2-thememanager
 
 ## [Under development]
 
+- Added widgets
+    - [d675571] 2016-09-02 added LoginForm widget [sol@hiqdev.com]
+    - [40907ee] 2016-09-01 + PoweredBy widget [sol@hiqdev.com]
+    - [a3dbaec] 2016-09-01 + widget path to pathMap [sol@hiqdev.com]
+    - [f497ed7] 2016-08-26 added Breadcrumbs widget [sol@hiqdev.com]
+    - [4ca3a60] 2016-08-26 + hasWidget() [sol@hiqdev.com]
+    - [e2a5674] 2016-08-26 added Flash for Theme changed [sol@hiqdev.com]
+    - [4eeb955] 2016-08-25 Fixed OrganizationLink from trim(variable) to trim(variable) !== "" [andreyklochok@gmail.com]
+    - [ce60121] 2016-08-25 fixed OrganizationLink widget to use organizationName/Url [sol@hiqdev.com]
+    - [97b9234] 2016-08-25 fixed typo [sol@hiqdev.com]
+    - [f834412] 2016-08-25 Added SocialLinks widget, complemented OrganizationLink widget [andreyklochok@gmail.com]
+    - [7d19283] 2016-08-25 added widgets [sol@hiqdev.com]
+    - [a26edd8] 2016-08-25 + ThemeManager::widget() [sol@hiqdev.com]
     - [4730098] 2016-08-23 Grammar fix [andreyklochok@gmail.com]
+- Added viewPaths parameter
+    - [e8a26cf] 2016-09-02 csfixed [sol@hiqdev.com]
+    - [6190dc6] 2016-08-31 redone pathDirs -> viewPaths [sol@hiqdev.com]
+    - [f2713bf] 2016-08-28 forced adding pathDirs in Theme [sol@hiqdev.com]
     - [10092cc] 2016-08-22 + pathDirs parameter [sol@hiqdev.com]
+- Removed View, AssetConverter and AssetManager
+    - [1f9a236] 2016-08-23 removed View, AssetConverter and AssetManager [sol@hiqdev.com]
+    - [87125e7] 2016-08-23 removed AssetManager from bootstrap [sol@hiqdev.com]
+    - [ea0c7a7] 2016-08-23 removed AssetManager from config [sol@hiqdev.com]
 
 ## [0.0.1] - 2016-08-22
 
@@ -118,3 +139,21 @@ hiqdev/yii2-thememanager
 [b2dd956]: https://github.com/hiqdev/yii2-thememanager/commit/b2dd956
 [4730098]: https://github.com/hiqdev/yii2-thememanager/commit/4730098
 [10092cc]: https://github.com/hiqdev/yii2-thememanager/commit/10092cc
+[e8a26cf]: https://github.com/hiqdev/yii2-thememanager/commit/e8a26cf
+[d675571]: https://github.com/hiqdev/yii2-thememanager/commit/d675571
+[40907ee]: https://github.com/hiqdev/yii2-thememanager/commit/40907ee
+[a3dbaec]: https://github.com/hiqdev/yii2-thememanager/commit/a3dbaec
+[6190dc6]: https://github.com/hiqdev/yii2-thememanager/commit/6190dc6
+[f2713bf]: https://github.com/hiqdev/yii2-thememanager/commit/f2713bf
+[f497ed7]: https://github.com/hiqdev/yii2-thememanager/commit/f497ed7
+[e2a5674]: https://github.com/hiqdev/yii2-thememanager/commit/e2a5674
+[4ca3a60]: https://github.com/hiqdev/yii2-thememanager/commit/4ca3a60
+[4eeb955]: https://github.com/hiqdev/yii2-thememanager/commit/4eeb955
+[ce60121]: https://github.com/hiqdev/yii2-thememanager/commit/ce60121
+[97b9234]: https://github.com/hiqdev/yii2-thememanager/commit/97b9234
+[f834412]: https://github.com/hiqdev/yii2-thememanager/commit/f834412
+[7d19283]: https://github.com/hiqdev/yii2-thememanager/commit/7d19283
+[a26edd8]: https://github.com/hiqdev/yii2-thememanager/commit/a26edd8
+[87125e7]: https://github.com/hiqdev/yii2-thememanager/commit/87125e7
+[ea0c7a7]: https://github.com/hiqdev/yii2-thememanager/commit/ea0c7a7
+[1f9a236]: https://github.com/hiqdev/yii2-thememanager/commit/1f9a236
