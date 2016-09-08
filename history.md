@@ -1,9 +1,9 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [Under development]
+## [0.0.2] - 2016-09-02
 
-- Added widgets
+- Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
     - [d675571] 2016-09-02 added LoginForm widget [sol@hiqdev.com]
     - [40907ee] 2016-09-01 + PoweredBy widget [sol@hiqdev.com]
     - [a3dbaec] 2016-09-01 + widget path to pathMap [sol@hiqdev.com]

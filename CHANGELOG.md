@@ -1,9 +1,9 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [Under development]
+## [0.0.2] - 2016-09-02
 
-- Added widgets
+- Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
 - Added viewPaths parameter
 - Removed View, AssetConverter and AssetManager
 
