@@ -1,11 +1,15 @@
+<?php
+use yii\helpers\Html;
+
+?>
 <?php if (isset($poweredByName) && $poweredByName) : ?>
     <?php if (isset($poweredByUrl) && $poweredByUrl) : ?>
-        Powered by <a href="<?= $poweredByUrl ?>"><?= $poweredByName ?></a>
+        <?= Yii::t('thememanager', 'Powered by') ?> <?= Html::a($poweredByName, $poweredByUrl) ?>
     <?php else : ?>
-        Powered by <b><?= $poweredByName ?></a>
+        <?= Yii::t('thememanager', 'Powered by') ?> <?= Html::tag('b', $poweredByName) ?>
     <?php endif ?>
     <?php if (isset($poweredByVersion) && $poweredByVersion) : ?>
-        version <?= $poweredByVersion ?>
+        <?= Yii::t('thememanager', 'version') ?> <?= $poweredByVersion ?>
     <?php endif ?>
 <?php else : ?>
     <?= Yii::powered() ?>

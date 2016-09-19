@@ -25,6 +25,17 @@ return [
                 'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
             ],
         ],
+        'i18n' => [
+            'translations' => [
+                'thememanager' => [
+                    'class' => \yii\i18n\PhpMessageSource::class,
+                    'basePath' => '@hisite/messages',
+                    'fileMap' => [
+                        'thememanager' => 'thememanager.php',
+                    ],
+                ],
+            ],
+        ],
     ],
     'modules' => [
         'thememanager' => [
