@@ -15,14 +15,47 @@ return [
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
             'widgets' => [
-                'Menu' => \yii\widgets\Menu::class,
-                'Breadcrumbs' => \yii\widgets\Breadcrumbs::class,
-                'Alert' => \yii\bootstrap\Alert::class,
-                'PoweredBy' => \hiqdev\thememanager\widgets\PoweredBy::class,
-                'LoginForm' => \hiqdev\thememanager\widgets\LoginForm::class,
-                'SocialLinks' => \hiqdev\thememanager\widgets\SocialLinks::class,
-                'CopyrightYears' => \hiqdev\thememanager\widgets\CopyrightYears::class,
-                'OrganizationLink' => \hiqdev\thememanager\widgets\OrganizationLink::class,
+                'Menu' => [
+                    'class' => \yii\widgets\Menu::class,
+                ],
+                'Breadcrumbs' => [
+                    'class' => \yii\widgets\Breadcrumbs::class,
+                ],
+                'Alert' => [
+                    'class' => \yii\bootstrap\Alert::class,
+                ],
+                'PoweredBy' => [
+                    'class'   => \hiqdev\thememanager\widgets\PoweredBy::class,
+                    'url'     => !empty($params['poweredByUrl']) ? $params['poweredByUrl'] : null,
+                    'name'    => !empty($params['poweredByName']) ? $params['poweredByName'] : null,
+                    'version' => !empty($params['poweredByVersion']) ? $params['poweredByVersion'] : null,
+                    'options' => !empty($params['poweredByOptions']) ? $params['poweredByOptions'] : [],
+                ],
+                'LoginForm' => [
+                    'class' => \hiqdev\thememanager\widgets\LoginForm::class,
+                ],
+                'SocialLinks' => [
+                    'class' => \hiqdev\thememanager\widgets\SocialLinks::class,
+                ],
+                'CopyrightYears' => [
+                    'class' => \hiqdev\thememanager\widgets\CopyrightYears::class,
+                    'years' => !empty($params['copyrightYears']) ? $params['copyrightYears'] : null,
+                    'year'  => !empty($params['copyrightYear']) ? $params['copyrightYear'] : null,
+                ],
+                'OrganizationLink' => [
+                    'class' => \hiqdev\thememanager\widgets\OrganizationLink::class,
+                    'url'     => !empty($params['organizationUrl']) ? $params['organizationUrl'] : null,
+                    'name'    => !empty($params['organizationName']) ? $params['organizationName'] : null,
+                    'options' => !empty($params['organizationOptions']) ? $params['organizationOptions'] : [],
+                ],
+                'LogoLink' => [
+                    'class' => \hiqdev\thememanager\widgets\LogoLink::class,
+                    'image' => !empty($params['logoImage']) ? $params['logoImage'] : null,
+                    'name'  => !empty($params['logoName']) ? $params['logoName'] :
+                              (!empty($params['organizationName']) ? $params['organizationName'] : 'Logo'),
+                    'url'   => !empty($params['logoUrl']) ? $params['logoUrl'] : '/',
+                    'options' => !empty($params['logoOptions']) ? $params['logoOptions'] : [],
+                ],
             ],
         ],
         'i18n' => [

@@ -17,18 +17,27 @@ use yii\helpers\Html;
 
 class OrganizationLink extends Widget
 {
+    /**
+     * @var string|array url to organization.
+     */
+    public $url;
+
+    /**
+     * @var string name to display.
+     */
+    public $name;
+
+    /**
+     * @var array html options.
+     */
     public $options = [];
 
     public function run()
     {
-        if (isset(Yii::$app->params['organizationName']) && trim(Yii::$app->params['organizationName']) !== '') {
-            if (isset(Yii::$app->params['organizationUrl']) && trim(Yii::$app->params['organizationUrl']) !== '') {
-                $out = Html::a(Yii::$app->params['organizationName'], Yii::$app->params['organizationUrl'], $this->options);
-            } else {
-                $out = Yii::$app->params['organizationName'];
-            }
-        }
-
-        return isset($out) ? $out : 'Organization';
+        return $this->render('OrganizationLink', [
+            'url'     => $this->url,
+            'name'    => $this->name ?: 'Organization',
+            'options' => $this->options,
+        ]);
     }
 }
