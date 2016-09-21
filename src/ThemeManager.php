@@ -213,23 +213,16 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
             throw new InvalidConfigException('no class given');
         }
         if (isset($this->widgets[$config['class']])) {
-            $config['class'] = $this->widgets[$config['class']];
+            $default = $this->widgets[$config['class']];
+            if (is_array($default)) {
+                $config = array_merge($default, $config);
+                $config['class'] = $default['class'];
+            } else {
+                $config['class'] = $default;
+            }
         }
 
-        ob_start();
-        ob_implicit_flush(false);
-        try {
-            /* @var $widget Widget */
-            $widget = Yii::createObject($config);
-            $out = $widget->run();
-        } catch (\Exception $e) {
-            // close the output buffer opened above if it has not been closed already
-            if (ob_get_level() > 0) {
-                ob_end_clean();
-            }
-            throw $e;
-        }
-        return ob_get_clean() . $out;
+        return $config['class']::widget($config);
     }
 
     /**
