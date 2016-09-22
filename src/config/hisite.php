@@ -10,7 +10,9 @@
  */
 
 return [
-    'bootstrap' => ['themeManager'],
+    'bootstrap' => [
+        'themeManager' => 'themeManager',
+    ],
     'components' => [
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
