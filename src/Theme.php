@@ -76,30 +76,58 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             $this->pathMap = [];
         }
 
-        $this->pathMap = ArrayHelper::merge([
-            $this->getViewPath() => $this->buildViewPaths(),
-            $this->getWidgetPath() => $this->buildWidgetPaths(),
-        ], $this->pathMap);
+        /// XXX merging $this->pathMap twice to control order
+        $this->pathMap = ArrayHelper::merge($this->pathMap, $this->getViewMaps(), $this->getWidgetMaps(), $this->pathMap);
 
+        /*
         foreach ($this->pathMap as $key => &$paths) {
             $paths = array_reverse(array_unique(array_values($paths)));
         }
+        */
     }
 
-    protected $_viewPath;
-    protected $_widgetPath;
-
-    public function getViewPath()
+    public function getViewMaps()
     {
-        return $this->_viewPath ?: Yii::$app->viewPath;
+        $res = [];
+        foreach ($this->getViewPaths() as $path) {
+            $res[$path] = $this->getThemedViewPaths();
+        }
+        return $res;
     }
 
-    public function getWidgetPath()
+    public function getWidgetMaps()
     {
-        return $this->_widgetPath ?: __DIR__ . '/widgets/views';
+        $res = [];
+        foreach ($this->getWidgetPaths() as $path) {
+            $res[$path] = $this->getThemedWidgetPaths();
+        }
+        return $res;
     }
 
-    public function calcParentPaths()
+    protected $_viewPaths = [];
+    protected $_widgetPaths = [];
+
+    public function setViewPaths(array $value)
+    {
+        $this->_viewPaths = $value;
+    }
+
+    public function setWidgetPaths(array $value)
+    {
+        $this->_widgetPaths = $value;
+    }
+
+    public function getViewPaths()
+    {
+        return array_unique(array_merge([Yii::$app->viewPath], $this->getManager()->viewPaths, $this->_viewPaths));
+    }
+
+    public function getWidgetPaths()
+    {
+        return array_unique(array_merge([__DIR__ . '/widgets/views'], $this->getManager()->widgetPaths, $this->_widgetPaths));
+    }
+
+    public function findParentPaths()
     {
         $ref = $this->getReflection();
         for ($depth = 0; $depth < 10; ++$depth) {
@@ -113,23 +141,23 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         return $dirs;
     }
 
-    public function buildViewPaths()
+    public function getThemedViewPaths()
     {
         $res = [];
-        foreach ($this->calcParentPaths() as $dir) {
+        foreach ($this->findParentPaths() as $dir) {
             $res[] = $dir . DIRECTORY_SEPARATOR . 'views';
         }
-        foreach ($this->getManager()->viewPaths as $dir) {
+        foreach ($this->getManager()->themedPaths as $dir) {
             $res[] = $dir;
         }
 
-        return $res;
+        return array_reverse(array_unique(array_values($res)));
     }
 
-    public function buildWidgetPaths()
+    public function getThemedWidgetPaths()
     {
         $res = [];
-        foreach ($this->buildViewPaths() as $dir) {
+        foreach ($this->getThemedViewPaths() as $dir) {
             $res[] = $dir . DIRECTORY_SEPARATOR . 'widgets';
         }
 

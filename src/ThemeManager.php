@@ -38,9 +38,19 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     protected $_itemClass = Theme::class;
 
     /**
-     * @var array additional dirs to look for views
+     * @var array list of origninal view paths to be themed.
      */
     public $viewPaths = [];
+
+    /**
+     * @var array list of origninal widget paths to be themed.
+     */
+    public $widgetPaths = [];
+
+    /**
+     * @var array list of themed paths to look for views.
+     */
+    public $themedPaths = [];
 
     /**
      * @var string default theme name
