@@ -143,7 +143,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * @var array assets of the application
+     * @var AssetBundle[] assets to be registered at bootstrap.
      */
     public $assets = [];
 
@@ -153,9 +153,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     public function registerAssets()
     {
         foreach (array_merge($this->assets, $this->getTheme()->assets) as $asset) {
-            /**
-             * @var AssetBundle
-             */
+            /** @var AssetBundle */
             $asset::register($this->getView());
         }
     }
