@@ -33,24 +33,14 @@ use yii\web\AssetBundle;
 class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
 {
     /**
+     * @var array basic pathMap for all themes, will be merged with theme own pathMap.
+     */
+    public $pathMap = [];
+
+    /**
      * {@inheritdoc}
      */
     protected $_itemClass = Theme::class;
-
-    /**
-     * @var array list of origninal view paths to be themed.
-     */
-    public $viewPaths = [];
-
-    /**
-     * @var array list of origninal widget paths to be themed.
-     */
-    public $widgetPaths = [];
-
-    /**
-     * @var array list of themed paths to look for views.
-     */
-    public $themedPaths = [];
 
     /**
      * @var string default theme name
@@ -85,12 +75,8 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     protected $_view;
 
     /**
-     * Returns the view object that can be used to render views or view files.
-     * The [[render()]] and [[renderFile()]] methods will use
-     * this view object to implement the actual view rendering.
-     * If not set, it will default to the "view" application component.
-     *
-     * @return \yii\web\View the view object that can be used to render views or view files
+     * @return \yii\web\View
+     * @see setView
      */
     public function getView()
     {
@@ -102,9 +88,8 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * Sets the view object to be used.
-     *
-     * @param View $view the view object that can be used to render views or view files
+     * You can change the View for theme manager.
+     * @param \yii\web\View $view the view object that will be used to render views or view files.
      */
     public function setView($view)
     {
