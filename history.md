@@ -1,7 +1,17 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [0.0.2] - 2016-09-02
+## [0.1.0] - 2016-09-28
+
+- Changed: redone building theme pathMap with vars substituting
+    - [cc5e84c] 2016-09-28 redone building theme pathMap with compilePathMap and substituteVars [sol@hiqdev.com]
+    - [429f3ec] 2016-09-28 redone building pathMap with viewPath, widgetPaths and themedPaths [sol@hiqdev.com]
+- Changed: redone widgets to pass params through config
+    - [ef55143] 2016-09-21 redone widgets to pass params through config not code [sol@hiqdev.com]
+    - [adb42d2] 2016-09-21 used original `widget()` function [sol@hiqdev.com]
+    - [4fbc1bc] 2016-09-19 Change poweredBy view, add thememanager translate messages [andreyklochok@gmail.com]
+
+## [0.0.2] - 2016-09-08
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
     - [d675571] 2016-09-02 added LoginForm widget [sol@hiqdev.com]
@@ -157,3 +167,8 @@ hiqdev/yii2-thememanager
 [87125e7]: https://github.com/hiqdev/yii2-thememanager/commit/87125e7
 [ea0c7a7]: https://github.com/hiqdev/yii2-thememanager/commit/ea0c7a7
 [1f9a236]: https://github.com/hiqdev/yii2-thememanager/commit/1f9a236
+[cc5e84c]: https://github.com/hiqdev/yii2-thememanager/commit/cc5e84c
+[429f3ec]: https://github.com/hiqdev/yii2-thememanager/commit/429f3ec
+[ef55143]: https://github.com/hiqdev/yii2-thememanager/commit/ef55143
+[adb42d2]: https://github.com/hiqdev/yii2-thememanager/commit/adb42d2
+[4fbc1bc]: https://github.com/hiqdev/yii2-thememanager/commit/4fbc1bc

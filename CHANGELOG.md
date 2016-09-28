@@ -1,7 +1,12 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [0.0.2] - 2016-09-02
+## [0.1.0] - 2016-09-28
+
+- Changed: redone building theme pathMap with vars substituting
+- Changed: redone widgets to pass params through config
+
+## [0.0.2] - 2016-09-08
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
 - Added viewPaths parameter
