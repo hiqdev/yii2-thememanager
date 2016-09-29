@@ -184,11 +184,6 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         // var_dump($this->getTheme()); die();
     }
 
-    /* public function init()
-    {
-        parent::init();
-    } */
-
     public $widgets = [];
 
     /**
