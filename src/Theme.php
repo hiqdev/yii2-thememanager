@@ -81,25 +81,26 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             $this->pathMap = [];
         }
 
-        $this->pathMap = $this->compilePathMap(ArrayHelper::merge(
-            ['$themedViewPaths' => $this->buildThemedViewPaths()],
-            $this->getManager()->pathMap, $this->pathMap
-        ));
-
+        $this->pathMap = $this->compilePathMap(ArrayHelper::merge([
+            '$themedViewPaths' => $this->buildThemedViewPaths(),
+            Yii::$app->viewPath => '$themedViewPaths',
+        ], $this->getManager()->pathMap, $this->pathMap));
     }
 
     public function compilePathMap($map)
     {
         $map = $this->substituteVars($map);
 
+        $res = [];
         foreach ($map as $from => &$tos) {
             $tos = array_reverse(array_unique(array_values($tos)));
             foreach ($tos as &$to) {
                 $to = Yii::getAlias($to);
             }
+            $res[Yii::getAlias($from)] = $tos;
         }
 
-        return $map;
+        return $res;
     }
 
     public function substituteVars($vars)
