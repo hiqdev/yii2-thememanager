@@ -66,10 +66,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         $this->_view = $view;
     }
 
-    public $pathMap = [
-        __DIR__ . '/widgets/views' => '$themedWidgetPaths',
-        '$themedWidgetPaths' => '$themedViewPaths/widgets',
-    ];
+    public $pathMap = [];
 
     /**
      * Getter for pathMap.
@@ -83,7 +80,9 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
         $this->pathMap = $this->compilePathMap(ArrayHelper::merge([
             '$themedViewPaths' => $this->buildThemedViewPaths(),
+            '$themedWidgetPaths' => '$themedViewPaths/widgets',
             Yii::$app->viewPath => '$themedViewPaths',
+            __DIR__ . '/widgets/views' => '$themedWidgetPaths',
         ], $this->getManager()->pathMap, $this->pathMap));
     }
 
