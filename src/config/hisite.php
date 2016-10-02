@@ -77,5 +77,12 @@ return [
             'class' => \hiqdev\thememanager\Module::class,
             'defaultRoute' => 'settings',
         ],
+        'debug' => [
+            'panels' => [
+                'themes' => [
+                    'class' => \hiqdev\thememanager\debug\Panel::class,
+                ],
+            ],
+        ],
     ],
 ];
