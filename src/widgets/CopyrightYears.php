@@ -11,7 +11,6 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use Yii;
 use yii\base\Widget;
 
 class CopyrightYears extends Widget
