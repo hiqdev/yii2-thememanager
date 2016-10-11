@@ -27,6 +27,10 @@ class CopyrightYears extends Widget
 
     public function run()
     {
-        return $this->years ?: $this->year ?: date('Y');
+        if ($this->years) {
+            return $this->years;
+        }
+        $curr = date('Y');
+        return $this->year ? "{$this->year}-$curr" : $curr;
     }
 }
