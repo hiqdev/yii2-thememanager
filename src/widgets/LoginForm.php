@@ -11,48 +11,82 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use yii\base\Widget;
+use Yii;
 
-class LoginForm extends Widget
+class LoginForm extends \yii\base\Widget
 {
     public $model;
-
+    public $message;
     public $options = [];
 
-    public $_signupPage = '/site/signup';
-    public $_restorePasswordPage = '/site/restore-password';
+    protected $_shows = [];
+    protected $_pages = [];
+    protected $_texts = [];
+    protected $_disables = [];
+
+    protected $_defaultTexts = [
+        'restore-password' => 'I forgot my password',
+        'signup' => 'Register a new membership',
+        'login' => 'I already have a membership',
+    ];
+
+    protected $_scenario;
+    protected $_signupPage = '/site/signup';
+    protected $_restorePasswordPage = '/site/restore-password';
 
     public function run()
     {
         return $this->render('LoginForm', [
             'model' => $this->model,
-            'options' => $this->options,
-            'signupPage' => $this->signupPage,
-            'restorePasswordPage' => $this->restorePasswordPage,
+            'widget' => $this,
         ]);
     }
 
-    public function setSignupPage($value)
+    public function setPages(array $values)
     {
-        $this->_signupPage = $value;
+        return $this->setValues('_pages', $values);
     }
 
-    public function setRestorePasswordPage($value)
+    public function setShows(array $values)
     {
-        $this->_restorePasswordPage = $value;
+        return $this->setValues('_shows', $values);
     }
 
-    public function getSignupPage()
+    public function setTexts(array $values)
     {
-        return $this->buildPage($this->_signupPage);
+        return $this->setValues('_texts', $values);
     }
 
-    public function getRestorePasswordPage()
+    public function setDisables(array $values)
     {
-        return $this->buildPage($this->_restorePasswordPage);
+        return $this->setValues('_disables', $values);
     }
 
-    public function buildPage($page)
+    public function setValues($name, array $values)
+    {
+        foreach ($values as $action => $value) {
+            if (isset($value)) {
+                $this->{$name}[$action] = $value;
+            }
+        }
+    }
+
+    public function isShown($action)
+    {
+        return empty($this->_disables[$action]) && !empty($this->_shows[$action]);
+    }
+
+    public function getPage($action)
+    {
+        return $this->isShown($action) ? $this->buildPage($this->getPageBase($action)) : null;
+    }
+
+    public function getPageBase($action)
+    {
+        return isset($this->_pages[$action]) ? $this->_pages[$action] : $action;
+    }
+
+    protected function buildPage($page)
     {
         if (!$page) {
             return null;
@@ -60,10 +94,22 @@ class LoginForm extends Widget
         if (!is_array($page)) {
             $page = [$page];
         }
-        if (!isset($page['username'])) {
+        if (!isset($page['username']) && isset($this->model->username)) {
             $page['username'] = $this->model->username;
         }
 
         return $page;
+    }
+
+    public function getText($action)
+    {
+        return isset($this->_texts[$action]) ? $this->_texts[$action] : $this->getDefaultText($action);
+    }
+
+    public function getDefaultText($action)
+    {
+        return Yii::t('thememanager',
+            empty($this->_defaultTexts[$action]) ? $action : $this->_defaultTexts[$action]
+        );
     }
 }
