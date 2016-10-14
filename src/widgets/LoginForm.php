@@ -16,7 +16,6 @@ use Yii;
 class LoginForm extends \yii\base\Widget
 {
     public $model;
-    public $message;
     public $options = [];
 
     protected $_shows = [];
@@ -30,9 +29,18 @@ class LoginForm extends \yii\base\Widget
         'login' => 'I already have a membership',
     ];
 
-    protected $_scenario;
-    protected $_signupPage = '/site/signup';
-    protected $_restorePasswordPage = '/site/restore-password';
+    protected $_textAttributes;
+    protected $_boolAttributes;
+
+    public function init()
+    {
+        parent::init();
+        $defaults = ['id' => 'login-form'];
+        if (!empty($this->options['validationUrl'])) {
+            $defaults['enableAjaxValidation'] = true;
+        }
+        $this->options = array_merge($defaults, $this->options);
+    }
 
     public function run()
     {
@@ -108,8 +116,60 @@ class LoginForm extends \yii\base\Widget
 
     public function getDefaultText($action)
     {
-        return Yii::t('thememanager',
-            empty($this->_defaultTexts[$action]) ? $action : $this->_defaultTexts[$action]
-        );
+        if ($action == 'header' || $action == 'button') {
+            return Yii::$app->view->title;
+        }
+        return empty($this->_defaultTexts[$action]) ? null : Yii::t('thememanager',$this->_defaultTexts[$action]);
+    }
+
+    public function detectIcon($name)
+    {
+        $marks = [
+            'old_password'      => 'lock',
+            'password'          => 'lock',
+            'password_retype'   => 'sign-in',
+            'username'          => 'envelope',
+            'email'             => 'envelope',
+            'first_name'        => 'user',
+            'last_name'         => 'user',
+        ];
+        return isset($marks[$name]) ? $marks[$name] : '';
+    }
+
+    public function getTextAttributes()
+    {
+        if ($this->_textAttributes === null) {
+            $this->_textAttributes = [];
+            $bools = $this->getBoolAttributes();
+            foreach ($this->model->activeAttributes() as $attribute) {
+                if (empty($bools[$attribute])) {
+                    $this->_textAttributes[$attribute] = $attribute;
+                }
+            }
+        }
+
+        return $this->_textAttributes;
+    }
+
+    public function getBoolAttributes()
+    {
+        if ($this->_boolAttributes === null) {
+            $this->_boolAttributes = [];
+            foreach ($this->model->rules() as $rule) {
+                if ($rule[1] === 'boolean') {
+                    $attributes = (array)$rule[0];
+                    foreach ($attributes as $attribute) {
+                        $this->_boolAttributes[$attribute] = $attribute;
+                    }
+                }
+            }
+        }
+
+        return $this->_boolAttributes;
+    }
+
+    public function getBoolAttribute()
+    {
+        return reset($this->getBoolAttributes());
     }
 }
