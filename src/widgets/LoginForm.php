@@ -18,10 +18,10 @@ class LoginForm extends \yii\base\Widget
     public $model;
     public $options = [];
 
-    protected $_shows = [];
-    protected $_pages = [];
-    protected $_texts = [];
-    protected $_disables = [];
+    public $shows = [];
+    public $pages = [];
+    public $texts = [];
+    public $disables = [];
 
     protected $_defaultTexts = [
         'restore-password' => 'I forgot my password',
@@ -50,38 +50,9 @@ class LoginForm extends \yii\base\Widget
         ]);
     }
 
-    public function setPages(array $values)
-    {
-        return $this->setValues('_pages', $values);
-    }
-
-    public function setShows(array $values)
-    {
-        return $this->setValues('_shows', $values);
-    }
-
-    public function setTexts(array $values)
-    {
-        return $this->setValues('_texts', $values);
-    }
-
-    public function setDisables(array $values)
-    {
-        return $this->setValues('_disables', $values);
-    }
-
-    public function setValues($name, array $values)
-    {
-        foreach ($values as $action => $value) {
-            if (isset($value)) {
-                $this->{$name}[$action] = $value;
-            }
-        }
-    }
-
     public function isShown($action)
     {
-        return empty($this->_disables[$action]) && !empty($this->_shows[$action]);
+        return empty($this->disables[$action]) && !empty($this->shows[$action]);
     }
 
     public function getPage($action)
@@ -91,7 +62,7 @@ class LoginForm extends \yii\base\Widget
 
     public function getPageBase($action)
     {
-        return isset($this->_pages[$action]) ? $this->_pages[$action] : $action;
+        return isset($this->pages[$action]) ? $this->pages[$action] : $action;
     }
 
     protected function buildPage($page)
@@ -111,7 +82,7 @@ class LoginForm extends \yii\base\Widget
 
     public function getText($action)
     {
-        return isset($this->_texts[$action]) ? $this->_texts[$action] : $this->getDefaultText($action);
+        return isset($this->texts[$action]) ? $this->texts[$action] : $this->getDefaultText($action);
     }
 
     public function getDefaultText($action)
