@@ -93,7 +93,7 @@ class LoginForm extends \yii\base\Widget
         return empty($this->_defaultTexts[$action]) ? null : Yii::t('thememanager',$this->_defaultTexts[$action]);
     }
 
-    public function detectIcon($name)
+    public function detectInputIcon($name)
     {
         $marks = [
             'old_password'      => 'lock',
@@ -105,6 +105,11 @@ class LoginForm extends \yii\base\Widget
             'last_name'         => 'user',
         ];
         return isset($marks[$name]) ? $marks[$name] : '';
+    }
+
+    public function detectInputType($name)
+    {
+        return strpos($name, 'password') === false ? 'text' : 'password';
     }
 
     public function getTextAttributes()
