@@ -150,9 +150,10 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
     public function findParentPaths()
     {
+        $dirs = [];
         $ref = $this->getReflection();
         for ($depth = 0; $depth < 10; ++$depth) {
-            $dirs[] = dirname($ref->getFilename());
+            $dirs[] = dirname($ref->getFileName());
             $ref = $ref->getParentClass();
             if (__CLASS__ === $ref->name) {
                 break;
@@ -189,8 +190,9 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             if (!$this->_settings) {
                 $this->_settings = static::findSettingsClass(get_called_class());
             }
+            $data = $this->getManager()->getThemeSettings();
             $this->_settings = Yii::createObject($this->_settings);
-            $this->_settings->load();
+            $this->_settings->load($data);
         }
 
         return $this->_settings;

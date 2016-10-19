@@ -12,17 +12,38 @@
 namespace hiqdev\thememanager\controllers;
 
 use hiqdev\thememanager\models\Settings;
+use hiqdev\thememanager\Module;
+use hiqdev\thememanager\storage\SettingsStorageInterface;
+use hiqdev\thememanager\ThemeManager;
 use Yii;
+use yii\base\DynamicModel;
+use yii\web\Response;
 
 class SettingsController extends \yii\web\Controller
 {
+    /**
+     * @var Module
+     */
+    public $module;
+
+    /**
+     * @return Settings
+     */
     public function getModel()
     {
         return $this->module->getManager()->getSettings();
     }
 
     /**
-     * Settings form.
+     * @return SettingsStorageInterface
+     */
+    public function getSettingsStorage()
+    {
+        return Yii::$app->get('themeSettingsStorage');
+    }
+
+    /**
+     * Settings form
      *
      * @return Response
      */
@@ -30,27 +51,33 @@ class SettingsController extends \yii\web\Controller
     {
         $model = $this->getModel();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->save()) {
-                Yii::$app->session->setFlash('success', 'Layout settings saved.');
-            } else {
-                Yii::$app->session->setFlash('error', 'Layout settings not saved.');
-            }
-        } else {
-            $model->load();
+        $data = Yii::$app->request->post($model->formName());
+        if (empty($data)) {
+            $data = $this->getSettingsStorage()->get();
         }
+
+        if (Yii::$app->request->getIsPost() && $model->load($data) && $model->validate()) {
+            $this->getSettingsStorage()->set($model);
+            Yii::$app->session->setFlash('success', 'Layout settings saved.');
+        }
+
         if (Yii::$app->request->isAjax) {
             return $this->renderAjax('//settings/_form', compact('model'));
         }
+
         return $this->render('index', compact('model'));
     }
 
+    /**
+     * @param $theme
+     * @return Response
+     */
     public function actionChangeTheme($theme)
     {
         if ($this->module->getManager()->has($theme)) {
             $model = $this->getModel();
             $model->theme = $theme;
-            $model->save();
+            $this->getSettingsStorage()->set($model);
             Yii::$app->session->setFlash('success', 'Theme changed');
         }
 
@@ -62,7 +89,7 @@ class SettingsController extends \yii\web\Controller
         if (Yii::$app->request->isAjax) {
             $model = $this->getModel();
             $model->collapsed_sidebar = Yii::$app->request->post('collapsed_sidebar');
-            $model->save();
+            $this->getSettingsStorage()->set($model);
         }
     }
 }

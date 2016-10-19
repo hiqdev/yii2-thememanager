@@ -12,6 +12,7 @@
 namespace hiqdev\thememanager;
 
 use hiqdev\thememanager\models\Settings;
+use hiqdev\thememanager\storage\SettingsStorageInterface;
 use Yii;
 use yii\base\Application;
 use yii\base\InvalidConfigException;
@@ -22,7 +23,8 @@ use yii\web\AssetBundle;
  * Theme Manager.
  *
  * Usage, in config:
- * ```
+ *
+ * ```php
  * 'components' => [
  *     'themeManager' => [
  *         'class' => \hiqdev\thememanager\ThemeManager::class,
@@ -121,7 +123,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
                 throw new InvalidConfigException('unknown theme: ' . $this->_theme);
             }
             $this->_theme = $this->getItem($this->_theme);
-            $this->view->theme = $this->_theme;
+            $this->getView()->theme = $this->_theme;
         }
 
         return $this->_theme;
@@ -153,7 +155,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     public function registerAssets()
     {
         foreach (array_merge($this->assets, $this->getTheme()->assets) as $asset) {
-            /** @var AssetBundle */
+            /** @var AssetBundle $asset */
             $asset::register($this->getView());
         }
     }
@@ -175,8 +177,9 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
         Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
 
+        $data = $this->getSettingsStorage()->get();
         $model = new Settings();
-        $model->load();
+        $model->load($data);
         $theme = $this->hasItem($model->theme) ? $model->theme : null;
         $theme = $theme ?: $this->getDefaultTheme();
         $this->setTheme($theme);
@@ -220,5 +223,21 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     public function hasWidget($name)
     {
         return (isset($this->widgets[$name]) && $this->widgets[$name]) || class_exists($name);
+    }
+
+    /**
+     * @return SettingsStorageInterface
+     */
+    public function getSettingsStorage()
+    {
+        return Yii::$app->get('themeSettingsStorage');
+    }
+
+    /**
+     * @return array
+     */
+    public function getThemeSettings()
+    {
+        return $this->getSettingsStorage()->get();
     }
 }

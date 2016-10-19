@@ -11,6 +11,7 @@
 
 namespace hiqdev\thememanager;
 
+use hiqdev\yii2\collection\Manager;
 use Yii;
 
 trait GetManagerTrait
@@ -29,6 +30,8 @@ trait GetManagerTrait
 
     /**
      * Getter for manager.
+     *
+     * @return ThemeManager
      */
     public function getManager()
     {

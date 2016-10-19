@@ -11,15 +11,8 @@
 
 namespace hiqdev\thememanager\models;
 
-use Yii;
-
 class Settings extends \yii\base\Model
 {
-    /**
-     * @var string name of variable to save theme settings
-     */
-    public $varName = 'theme_settings';
-
     /**
      * @var string theme name
      */
@@ -37,25 +30,12 @@ class Settings extends \yii\base\Model
      */
     protected $_defaults = [];
 
-    /**
-     * @return bool
-     */
-    public function save()
+    public function load($data = null)
     {
-        Yii::$app->session->set($this->varName, $this->getAttributes());
-
-        return true;
-    }
-
-    public function load($data = null, $formName = null)
-    {
-        if (is_null($data)) {
-            $data = [$this->formName() => Yii::$app->session->get($this->varName)];
-        }
         if (!$data) {
             return false;
         }
-        parent::load($data);
+        parent::load($data, '');
         foreach ($this->_defaults as $k => $v) {
             if (is_null($this->$k)) {
                 $this->$k = $v;
@@ -83,6 +63,8 @@ class Settings extends \yii\base\Model
 
     public function getCssClasses(array $names)
     {
+        $classes = [];
+
         foreach ($names as $n) {
             $classes[$n] = $this->getCssClass($n);
         }

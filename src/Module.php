@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     /**
      * @return bool
      */
-    public static function isHomePage()
+    public function isHomePage()
     {
         return $this->getManager()->isHomePage();
     }
