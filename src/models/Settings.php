@@ -30,12 +30,12 @@ class Settings extends \yii\base\Model
      */
     protected $_defaults = [];
 
-    public function load($data = null)
+    public function load($data = null, $formName = '')
     {
         if (!$data) {
             return false;
         }
-        parent::load($data, '');
+        parent::load($data, $formName);
         foreach ($this->_defaults as $k => $v) {
             if (is_null($this->$k)) {
                 $this->$k = $v;
