@@ -14,6 +14,9 @@ return [
         'themeManager' => 'themeManager',
     ],
     'components' => [
+        'themeSettingsStorage' => [
+            'class' => \hiqdev\thememanager\storage\SessionSettingsStorage::class,
+        ],
         'themeManager' => [
             'class' => \hiqdev\thememanager\ThemeManager::class,
             'widgets' => [
