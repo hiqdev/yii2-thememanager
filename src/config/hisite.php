@@ -67,7 +67,7 @@ return [
             'translations' => [
                 'thememanager' => [
                     'class' => \yii\i18n\PhpMessageSource::class,
-                    'basePath' => '@hisite/messages',
+                    'basePath' => '@hiqdev/thememanager/messages',
                     'fileMap' => [
                         'thememanager' => 'thememanager.php',
                     ],
