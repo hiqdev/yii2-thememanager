@@ -42,12 +42,8 @@ class LogoLink extends Widget
 
     public function run()
     {
-        if (!empty($this->image)) {
-            throw new NotSupportedException('logo image is not implemented yet');
-        }
-
         return $this->render('LogoLink', [
-            'image'   => $this->image,
+            'image'   => Yii::$app->assetManager->publish($this->image)[1],
             'name'    => $this->name,
             'url'     => $this->url,
             'options' => $this->options,
