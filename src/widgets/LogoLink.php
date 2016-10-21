@@ -42,11 +42,15 @@ class LogoLink extends Widget
 
     public function run()
     {
-        return $this->render('LogoLink', [
-            'image'   => Yii::$app->assetManager->publish($this->image)[1],
+        $data = [
             'name'    => $this->name,
             'url'     => $this->url,
             'options' => $this->options,
-        ]);
+        ];
+        if ($this->image) {
+            $data['image'] = Yii::$app->assetManager->publish($this->image)[1];
+        }
+
+        return $this->render('LogoLink', $data);
     }
 }
