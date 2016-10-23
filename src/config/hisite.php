@@ -41,6 +41,7 @@ return [
                 ],
                 'SocialLinks' => [
                     'class' => \hiqdev\thememanager\widgets\SocialLinks::class,
+                    'links' => !empty($params['socialLinks']) ? $params['socialLinks'] : [],
                 ],
                 'CopyrightYears' => [
                     'class' => \hiqdev\thememanager\widgets\CopyrightYears::class,
