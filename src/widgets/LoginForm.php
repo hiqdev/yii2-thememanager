@@ -23,14 +23,9 @@ class LoginForm extends \yii\base\Widget
     public $texts = [];
     public $disables = [];
 
-    protected $_defaultTexts = [
-        'restore-password' => 'I forgot my password',
-        'signup' => 'Register a new membership',
-        'login' => 'I already have a membership',
-    ];
-
     protected $_textAttributes;
     protected $_boolAttributes;
+    protected $_defaultTexts;
 
     public function init()
     {
@@ -90,7 +85,20 @@ class LoginForm extends \yii\base\Widget
         if ($action == 'header' || $action == 'button') {
             return Yii::$app->view->title;
         }
-        return empty($this->_defaultTexts[$action]) ? null : Yii::t('thememanager',$this->_defaultTexts[$action]);
+        if (empty($this->_defaultTexts)) {
+            $this->_defaultTexts = $this->defaultTexts();
+        }
+
+        return isset($this->_defaultTexts[$action]) ? $this->_defaultTexts[$action] : null;
+    }
+
+    public function defaultTexts()
+    {
+        return [
+            'restore-password' => Yii::t('thememanager', 'I forgot my password'),
+            'signup' => Yii::t('thememanager', 'Register a new membership'),
+            'login' => Yii::t('thememanager', 'I already have a membership'),
+        ];
     }
 
     public function detectInputIcon($name)

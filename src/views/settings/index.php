@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-$this->title = Yii::t('hisite', 'Theme Settings');
+$this->title = Yii::t('thememanager', 'Theme Settings');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
