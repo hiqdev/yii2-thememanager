@@ -82,7 +82,7 @@ class LoginForm extends \yii\base\Widget
 
     public function getDefaultText($action)
     {
-        if ($action == 'header' || $action == 'button') {
+        if ($action === 'header' || $action === 'button') {
             return Yii::$app->view->title;
         }
         if (empty($this->_defaultTexts)) {
@@ -141,7 +141,7 @@ class LoginForm extends \yii\base\Widget
             $this->_boolAttributes = [];
             foreach ($this->model->rules() as $rule) {
                 if ($rule[1] === 'boolean') {
-                    $attributes = (array)$rule[0];
+                    $attributes = (array) $rule[0];
                     foreach ($attributes as $attribute) {
                         $this->_boolAttributes[$attribute] = $attribute;
                     }

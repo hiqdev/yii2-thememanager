@@ -11,28 +11,27 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use Yii;
 use yii\base\Widget;
 
 class PoweredBy extends Widget
 {
     /**
-     * @var string|array url to empowerer.
+     * @var string|array url to empowerer
      */
     public $url;
 
     /**
-     * @var string name to display.
+     * @var string name to display
      */
     public $name;
 
     /**
-     * @var string version to display if given.
+     * @var string version to display if given
      */
     public $version;
 
     /**
-     * @var array html options.
+     * @var array html options
      */
     public $options = [];
 

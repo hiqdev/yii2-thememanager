@@ -1,18 +1,25 @@
 <?php
 
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
+ */
+
 namespace hiqdev\thememanager\storage;
 
 use yii\base\Model;
 
 /**
- * Interface SettingsStorageInterface
- *
- * @package hiqdev\thememanager\storage
+ * Interface SettingsStorageInterface.
  */
 interface SettingsStorageInterface
 {
     /**
-     * Sets $model attributes to the user's storage as array
+     * Sets $model attributes to the user's storage as array.
      *
      * @param Model $model
      * @return mixed

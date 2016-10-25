@@ -11,7 +11,6 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use Yii;
 use yii\helpers\Html;
 
 class SocialLinks extends \yii\base\Widget

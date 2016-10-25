@@ -14,7 +14,6 @@ namespace hiqdev\thememanager;
 use hiqdev\thememanager\models\Settings;
 use hiqdev\thememanager\storage\SettingsStorageInterface;
 use Yii;
-use yii\base\Application;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\web\AssetBundle;
@@ -35,7 +34,7 @@ use yii\web\AssetBundle;
 class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
 {
     /**
-     * @var array basic pathMap for all themes, will be merged with theme own pathMap.
+     * @var array basic pathMap for all themes, will be merged with theme own pathMap
      */
     public $pathMap = [];
 
@@ -91,7 +90,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
     /**
      * You can change the View for theme manager.
-     * @param \yii\web\View $view the view object that will be used to render views or view files.
+     * @param \yii\web\View $view the view object that will be used to render views or view files
      */
     public function setView($view)
     {
@@ -145,7 +144,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * @var AssetBundle[] assets to be registered at bootstrap.
+     * @var AssetBundle[] assets to be registered at bootstrap
      */
     public $assets = [];
 

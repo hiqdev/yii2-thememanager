@@ -135,17 +135,21 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     public function calcExp($exp, $vars)
     {
         $pos = strpos($exp, '/');
-        if ($pos === FALSE) {
+        if ($pos === false) {
             return $vars[$exp];
         }
         list($name, $suffix) = explode('/', $exp, 2);
 
-        return array_map(function ($a) use ($suffix) { return "$a/$suffix"; }, $vars[$name]);
+        return array_map(function ($a) use ($suffix) {
+            return "$a/$suffix";
+        }, $vars[$name]);
     }
 
     public function buildThemedViewPaths()
     {
-        return array_map(function ($a) { return "$a/views"; }, $this->findParentPaths());
+        return array_map(function ($a) {
+            return "$a/views";
+        }, $this->findParentPaths());
     }
 
     public function findParentPaths()
@@ -177,7 +181,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     private $_settings;
 
     /**
-     * @param string $settings theme settings model class name or config.
+     * @param string $settings theme settings model class name or config
      */
     public function setSettings($settings)
     {

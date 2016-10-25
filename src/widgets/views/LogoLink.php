@@ -3,7 +3,6 @@
 /** @var array $options */
 /** @var string $image */
 /** @var string $url */
-
 use yii\helpers\Html;
 
 ?>

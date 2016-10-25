@@ -11,24 +11,23 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 
 class OrganizationLink extends Widget
 {
     /**
-     * @var string|array url to organization.
+     * @var string|array url to organization
      */
     public $url;
 
     /**
-     * @var string name to display.
+     * @var string name to display
      */
     public $name;
 
     /**
-     * @var array html options.
+     * @var array html options
      */
     public $options = [];
 

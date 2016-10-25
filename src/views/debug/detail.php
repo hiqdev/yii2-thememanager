@@ -2,8 +2,8 @@
 
 /* @var $panel yii\debug\panels\AssetPanel */
 
-use yii\helpers\Html;
 use yii\helpers\Inflector;
+
 ?>
 <h1>Themes</h1>
 

@@ -16,7 +16,6 @@ use hiqdev\thememanager\Module;
 use hiqdev\thememanager\storage\SettingsStorageInterface;
 use hiqdev\thememanager\ThemeManager;
 use Yii;
-use yii\base\DynamicModel;
 use yii\web\Response;
 
 class SettingsController extends \yii\web\Controller
@@ -43,7 +42,7 @@ class SettingsController extends \yii\web\Controller
     }
 
     /**
-     * Settings form
+     * Settings form.
      *
      * @return Response
      */

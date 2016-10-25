@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Theme Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
+ */
+
 namespace hiqdev\thememanager\debug;
 
 use Yii;
@@ -26,7 +35,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getName()
     {
@@ -34,7 +43,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getSummary()
     {
@@ -42,7 +51,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getDetail()
     {
@@ -70,7 +79,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function save()
     {
@@ -79,7 +88,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
         foreach ($raw as $name => $theme) {
             $themes[$name]['class'] = get_class($theme);
         }
-        
+
         return [
             'themes' => $themes,
             'current' => $this->getManager()->getTheme()->name,

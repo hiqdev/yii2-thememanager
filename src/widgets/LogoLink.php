@@ -13,7 +13,6 @@ namespace hiqdev\thememanager\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\base\NotSupportedException;
 
 /**
  * LogoLink widget.
@@ -21,22 +20,22 @@ use yii\base\NotSupportedException;
 class LogoLink extends Widget
 {
     /**
-     * @var array html options.
+     * @var array html options
      */
     public $options = [];
 
     /**
-     * @var string url to image.
+     * @var string url to image
      */
     public $image;
 
     /**
-     * @var string text to display.
+     * @var string text to display
      */
     public $name;
 
     /**
-     * @var array|string text to display.
+     * @var array|string text to display
      */
     public $url;
 

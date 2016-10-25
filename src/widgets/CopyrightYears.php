@@ -16,12 +16,12 @@ use yii\base\Widget;
 class CopyrightYears extends Widget
 {
     /**
-     * @var string copyright years.
+     * @var string copyright years
      */
     public $years;
 
     /**
-     * @var string copyright year.
+     * @var string copyright year
      */
     public $year;
 
