@@ -103,7 +103,7 @@ class LoginForm extends \yii\base\Widget
 
     public function detectInputIcon($name)
     {
-        $marks = [
+        static $marks = [
             'old_password'      => 'lock',
             'password'          => 'lock',
             'password_retype'   => 'sign-in',
