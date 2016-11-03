@@ -76,17 +76,17 @@ return [
             ],
         ],
     ],
-    'modules' => [
+    'modules' => array_filter([
         'thememanager' => [
             'class' => \hiqdev\thememanager\Module::class,
             'defaultRoute' => 'settings',
         ],
-        'debug' => [
+        'debug' => defined('YII_DEBUG') && YII_DEBUG ? [
             'panels' => [
                 'themes' => [
                     'class' => \hiqdev\thememanager\debug\Panel::class,
                 ],
             ],
-        ],
-    ],
+        ] : null,
+    ]),
 ];
