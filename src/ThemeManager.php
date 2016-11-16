@@ -185,33 +185,47 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         $this->getTheme();
     }
 
-    public $widgets = [];
 
     /**
      * Draws widget.
      * @param mixed $config
-     * @throws InvalidConfigException
-     * @return void
+     * @return string the rendering result of the widget.
      */
     public function widget($config)
     {
-        if (!is_array($config)) {
+        return static::callStatic('widget', $config);
+    }
+
+    /**
+     * Calls static method of class from config.
+     * Uses Yii container to get class definition.
+     * @param string $method
+     * @param mixed $config
+     * @throws InvalidConfigException
+     * @return mixed
+     */
+    public static function callStatic($method, $config)
+    {
+        if (is_string($config)) {
             $config = ['class' => $config];
         }
-        if (!isset($config['class'])) {
+        if (empty($config['class'])) {
             throw new InvalidConfigException('no class given');
         }
-        if (isset($this->widgets[$config['class']])) {
-            $default = $this->widgets[$config['class']];
-            if (is_array($default)) {
-                $config = array_merge($default, $config);
-                $config['class'] = $default['class'];
+        $class = $config['class'];
+        $container = Yii::$container;
+        if ($container->has($class)) {
+            $definition = $container->getDefinitions()[$class];
+            if (is_array($definition)) {
+                $config = array_merge($definition, $config);
+                $class = $definition['class'];
             } else {
-                $config['class'] = $default;
+                $class = $definition;
             }
         }
+        unset($config['class']);
 
-        return $config['class']::widget($config);
+        return call_user_func([$class, $method], $config);
     }
 
     /**
@@ -221,7 +235,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
      */
     public function hasWidget($name)
     {
-        return (isset($this->widgets[$name]) && $this->widgets[$name]) || class_exists($name);
+        return Yii::$container->has($name) || class_exists($name);
     }
 
     /**
