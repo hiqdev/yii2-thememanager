@@ -45,7 +45,7 @@ return [
             ],
         ] : null,
     ]),
-    'dependencies' => [
+    'definitions' => [
         'Menu' => [
             'class' => \yii\widgets\Menu::class,
         ],
