@@ -28,7 +28,7 @@
  */
 return [
     'I already have a membership' => 'Я уже зарегистрирован',
-    'I forgot my password' => 'Я забыл мой пароль',
+    'I forgot my password' => 'Я забыл пароль',
     'Powered by' => 'Powered by',
     'Register a new membership' => 'Зарегистрироваться',
     'Theme Settings' => 'Настройки темы',
