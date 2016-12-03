@@ -185,11 +185,10 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         $this->getTheme();
     }
 
-
     /**
      * Draws widget.
      * @param mixed $config
-     * @return string the rendering result of the widget.
+     * @return string the rendering result of the widget
      */
     public function widget($config)
     {

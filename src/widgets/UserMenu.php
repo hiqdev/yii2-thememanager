@@ -1,10 +1,10 @@
 <?php
 
 /*
- * AdminLte Theme for hiqdev/yii2-thememanager
+ * Theme Manager for Yii2
  *
- * @link      https://github.com/hiqdev/yii2-theme-adminlte
- * @package   yii2-theme-adminlte
+ * @link      https://github.com/hiqdev/yii2-thememanager
+ * @package   yii2-thememanager
  * @license   BSD-3-Clause
  * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
  */
@@ -17,7 +17,8 @@ class UserMenu extends \yii\base\Widget
 
     public $items;
 
-    public function run() {
+    public function run()
+    {
         return $this->render('UserMenu', [
             'header' => $this->items['header']['label'],
             'body' => $this->items['body']['label'],
