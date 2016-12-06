@@ -1,6 +1,14 @@
 hiqdev/yii2-thememanager
 ------------------------
 
+## [0.2.0] - 2016-12-03
+
+- Added UserMenu, FancyPanel
+- Fixed many widgets
+- Added SessionSettingsStorage
+- Added Themes debug panel
+- Changed building pathMap
+
 ## [0.1.0] - 2016-09-28
 
 - Changed: redone building theme pathMap with vars substituting

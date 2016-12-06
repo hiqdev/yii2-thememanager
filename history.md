@@ -1,6 +1,44 @@
 hiqdev/yii2-thememanager
 ------------------------
 
+## [0.2.0] - 2016-12-03
+
+- Added UserMenu, FancyPanel
+    - [f7761a3] 2016-12-03 csfixed: changed header comment to phpdoc [sol@hiqdev.com]
+    - [86eeff5] 2016-12-03 csfixed [sol@hiqdev.com]
+    - [6a56a9e] 2016-12-03 used hidev-hiqdev instead of hidev-vendor [sol@hiqdev.com]
+    - [143104e] 2016-12-02 used proper container definitions setting [sol@hiqdev.com]
+    - [28c0c5e] 2016-11-29 translation [andreyklochok@gmail.com]
+    - [ac24ec6] 2016-11-16 redone dependencies to definitions [sol@hiqdev.com]
+    - [db5f0d8] 2016-11-16 added UserMenu widget [sol@hiqdev.com]
+    - [c793f5f] 2016-11-16 redone widgets to yii dependency injection [sol@hiqdev.com]
+    - [add8772] 2016-11-03 improved debug config [sol@hiqdev.com]
+    - [6e0afba] 2016-10-25 csfixed [sol@hiqdev.com]
+    - [f8c6d00] 2016-10-25 translations [sol@hiqdev.com]
+    - [1f54379] 2016-10-20 Added php doc, added options to Html::img [andreyklochok@gmail.com]
+    - [fdf724a] 2016-10-20 Removed NotSupported exception, publish logo [andreyklochok@gmail.com]
+    - [34f2fe3] 2016-10-20 Fixed wrong message source [d.naumenko.a@gmail.com]
+    - [46259ef] 2016-10-19 Fixed Settings::load() to work with defaults [d.naumenko.a@gmail.com]
+    - [d09a08b] 2016-10-19 fixed for PHP 7.0 compatibility [sol@hiqdev.com]
+    - [8dfae0a] 2016-10-06 Added FancyPanel widget [andreyklochok@gmail.com]
+- Fixed many widgets
+    - [8c23df8] 2016-10-23 redone SocialLinks widget [sol@hiqdev.com]
+    - [65d6081] 2016-10-21 fixed LogoLink widget when no image given [sol@hiqdev.com]
+    - [5d526c9] 2016-10-14 simplified LoginForm pages, shows, texts, disables [sol@hiqdev.com]
+    - [f489bcd] 2016-10-14 + get text/bool attributes, init options and detectIcons [sol@hiqdev.com]
+    - [6b68562] 2016-10-13 greatly improved LoginForm to be suitable for any login-like pages: signup, restore-password, reset-password [sol@hiqdev.com]
+    - [f5b4445] 2016-10-12 * LoginForm: + signup & restore password page options [sol@hiqdev.com]
+    - [9d8d39c] 2016-10-11 fixed CopyrightYears widget [sol@hiqdev.com]
+- Added SessionSettingsStorage
+    - [5b1b174] 2016-10-19 Implemented SettingsStorage usage [d.naumenko.a@gmail.com]
+    - [1e32601] 2016-10-19 Added SessionSettingsStorage [d.naumenko.a@gmail.com]
+    - [bed82dc] 2016-10-17 added detectInputType in LoginForm widget [sol@hiqdev.com]
+- Added Themes debug panel
+    - [0ebb43c] 2016-10-02 added themes debug panel [sol@hiqdev.com]
+- Changed building pathMap
+    - [b99abb3] 2016-10-01 improved building pathMap again with themes own pathMap [sol@hiqdev.com]
+    - [022202a] 2016-09-29 improved building pathMap: adding app viewPath mapping by default and resolving aliases in pathMap [sol@hiqdev.com]
+
 ## [0.1.0] - 2016-09-28
 
 - Changed: redone building theme pathMap with vars substituting
@@ -172,3 +210,33 @@ hiqdev/yii2-thememanager
 [ef55143]: https://github.com/hiqdev/yii2-thememanager/commit/ef55143
 [adb42d2]: https://github.com/hiqdev/yii2-thememanager/commit/adb42d2
 [4fbc1bc]: https://github.com/hiqdev/yii2-thememanager/commit/4fbc1bc
+[f7761a3]: https://github.com/hiqdev/yii2-thememanager/commit/f7761a3
+[86eeff5]: https://github.com/hiqdev/yii2-thememanager/commit/86eeff5
+[6a56a9e]: https://github.com/hiqdev/yii2-thememanager/commit/6a56a9e
+[143104e]: https://github.com/hiqdev/yii2-thememanager/commit/143104e
+[28c0c5e]: https://github.com/hiqdev/yii2-thememanager/commit/28c0c5e
+[ac24ec6]: https://github.com/hiqdev/yii2-thememanager/commit/ac24ec6
+[db5f0d8]: https://github.com/hiqdev/yii2-thememanager/commit/db5f0d8
+[c793f5f]: https://github.com/hiqdev/yii2-thememanager/commit/c793f5f
+[add8772]: https://github.com/hiqdev/yii2-thememanager/commit/add8772
+[6e0afba]: https://github.com/hiqdev/yii2-thememanager/commit/6e0afba
+[f8c6d00]: https://github.com/hiqdev/yii2-thememanager/commit/f8c6d00
+[8c23df8]: https://github.com/hiqdev/yii2-thememanager/commit/8c23df8
+[65d6081]: https://github.com/hiqdev/yii2-thememanager/commit/65d6081
+[1f54379]: https://github.com/hiqdev/yii2-thememanager/commit/1f54379
+[fdf724a]: https://github.com/hiqdev/yii2-thememanager/commit/fdf724a
+[34f2fe3]: https://github.com/hiqdev/yii2-thememanager/commit/34f2fe3
+[46259ef]: https://github.com/hiqdev/yii2-thememanager/commit/46259ef
+[d09a08b]: https://github.com/hiqdev/yii2-thememanager/commit/d09a08b
+[5b1b174]: https://github.com/hiqdev/yii2-thememanager/commit/5b1b174
+[1e32601]: https://github.com/hiqdev/yii2-thememanager/commit/1e32601
+[bed82dc]: https://github.com/hiqdev/yii2-thememanager/commit/bed82dc
+[5d526c9]: https://github.com/hiqdev/yii2-thememanager/commit/5d526c9
+[f489bcd]: https://github.com/hiqdev/yii2-thememanager/commit/f489bcd
+[6b68562]: https://github.com/hiqdev/yii2-thememanager/commit/6b68562
+[f5b4445]: https://github.com/hiqdev/yii2-thememanager/commit/f5b4445
+[9d8d39c]: https://github.com/hiqdev/yii2-thememanager/commit/9d8d39c
+[8dfae0a]: https://github.com/hiqdev/yii2-thememanager/commit/8dfae0a
+[0ebb43c]: https://github.com/hiqdev/yii2-thememanager/commit/0ebb43c
+[b99abb3]: https://github.com/hiqdev/yii2-thememanager/commit/b99abb3
+[022202a]: https://github.com/hiqdev/yii2-thememanager/commit/022202a
