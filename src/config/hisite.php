@@ -21,12 +21,9 @@ return [
         ],
         'i18n' => [
             'translations' => [
-                'thememanager' => [
+                'hiqdev:thememanager' => [
                     'class' => \yii\i18n\PhpMessageSource::class,
                     'basePath' => '@hiqdev/thememanager/messages',
-                    'fileMap' => [
-                        'thememanager' => 'thememanager.php',
-                    ],
                 ],
             ],
         ],
