@@ -16,4 +16,3 @@ interface MenuInterface
      */
     public function render($options = []);
 }
-
