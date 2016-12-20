@@ -10,9 +10,7 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use yii\base\Widget;
-
-class CopyrightYears extends Widget
+class CopyrightYears extends \yii\base\Widget
 {
     /**
      * @var string copyright years

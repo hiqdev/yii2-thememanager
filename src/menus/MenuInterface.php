@@ -2,10 +2,15 @@
 
 namespace hiqdev\thememanager\menus;
 
+/**
+ * Menu interface.
+ *
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 interface MenuInterface
 {
     /**
-     * Creates menu object.
+     * Creates menu object with given config.
      * @param mixed $config
      * @return MenuInterface
      */
@@ -13,6 +18,8 @@ interface MenuInterface
 
     /**
      * Renders menu with given options.
+     * @param mixed $config
+     * @return string rendered menu
      */
     public function render($options = []);
 }
