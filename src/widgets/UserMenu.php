@@ -10,17 +10,22 @@
 
 namespace hiqdev\thememanager\widgets;
 
+use yii\helpers\ArrayHelper;
+
 class UserMenu extends \yii\base\Widget
 {
-    public $options;
+    public $options = [];
 
-    public $items;
+    public $items = [];
 
     public function run()
     {
         return $this->render('UserMenu', [
-            'header' => $this->items['header']['label'],
-            'body' => $this->items['body']['label'],
+            'header'    => ArrayHelper::remove($this->items, 'header'),
+            'logout'    => ArrayHelper::remove($this->items, 'logout'),
+            'profile'   => ArrayHelper::remove($this->items, 'profile'),
+            'items'     => $this->items,
+            'options'   => $this->options,
         ]);
     }
 }
