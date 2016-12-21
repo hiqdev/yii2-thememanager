@@ -185,58 +185,6 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * Draws widget.
-     * @param mixed $config
-     * @return string the rendering result of the widget
-     */
-    public function widget($config)
-    {
-        return static::callStatic('widget', $config);
-    }
-
-    /**
-     * Calls static method of class from config.
-     * Uses Yii container to get class definition.
-     * @param string $method
-     * @param mixed $config
-     * @throws InvalidConfigException
-     * @return mixed
-     */
-    public static function callStatic($method, $config)
-    {
-        if (is_string($config)) {
-            $config = ['class' => $config];
-        }
-        if (empty($config['class'])) {
-            throw new InvalidConfigException('no class given');
-        }
-        $class = $config['class'];
-        $container = Yii::$container;
-        if ($container->has($class)) {
-            $definition = $container->getDefinitions()[$class];
-            if (is_array($definition)) {
-                $config = array_merge($definition, $config);
-                $class = $definition['class'];
-            } else {
-                $class = $definition;
-            }
-        }
-        unset($config['class']);
-
-        return call_user_func([$class, $method], $config);
-    }
-
-    /**
-     * Checks if widget with given name is defined.
-     * @param mixed $name name or class
-     * @return boolean
-     */
-    public function hasWidget($name)
-    {
-        return Yii::$container->has($name) || class_exists($name);
-    }
-
-    /**
      * @return SettingsStorageInterface
      */
     public function getSettingsStorage()
