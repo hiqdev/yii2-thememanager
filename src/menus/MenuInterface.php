@@ -17,9 +17,9 @@ interface MenuInterface
     public static function create($config = []);
 
     /**
-     * Renders menu with given options.
+     * Renders menu with given widget config.
      * @param mixed $config
      * @return string rendered menu
      */
-    public function render($options = []);
+    public function widget($config = []);
 }

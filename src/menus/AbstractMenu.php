@@ -26,5 +26,5 @@ abstract class AbstractMenu implements MenuInterface
     /**
      * @inheritdoc
      */
-    abstract public function render($options = []);
+    abstract public function widget($config = []);
 }
