@@ -17,9 +17,17 @@ interface MenuInterface
     public static function create($config = []);
 
     /**
-     * Renders menu with given widget config.
-     * @param mixed $config
+     * Creates menu and renders with given configs.
+     * @param mixed $menuConfig
+     * @param mixed $widgetConfig
      * @return string rendered menu
      */
-    public function widget($config = []);
+    public static function widget($menuConfig = [], $widgetConfig = []);
+
+    /**
+     * Renders menu with given widget config.
+     * @param mixed $config widget config
+     * @return string rendered menu
+     */
+    public function run($config = []);
 }

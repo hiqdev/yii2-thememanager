@@ -14,11 +14,17 @@ abstract class AbstractMenu implements MenuInterface
     /**
      * @inheritdoc
      */
+    public static function widget($menuConfig = [], $widgetConfig = [])
+    {
+        return static::create($menuConfig)->run($widgetConfig);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public static function create($config = [])
     {
-        if (is_array($config) && empty($config['class'])) {
-            $config['class'] = get_called_class();
-        }
+        $config['class'] = get_called_class();
 
         return Yii::createObject($config);
     }
@@ -26,5 +32,5 @@ abstract class AbstractMenu implements MenuInterface
     /**
      * @inheritdoc
      */
-    abstract public function widget($config = []);
+    abstract public function run($config = []);
 }
