@@ -18,7 +18,10 @@ use yii\base\Widget;
 use yii\web\AssetBundle;
 
 /**
- * Theme Manager.
+ * Theme Manager. Provides:
+ *
+ * - theme initialization
+ * - pathMap building
  *
  * Usage, in config:
  *
@@ -29,6 +32,8 @@ use yii\web\AssetBundle;
  *     ],
  * ]
  * ```
+ *
+ * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
 {
