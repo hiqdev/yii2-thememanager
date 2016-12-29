@@ -33,7 +33,7 @@ return [
             'class' => \hiqdev\thememanager\Module::class,
             'defaultRoute' => 'settings',
         ],
-        'debug' => defined('YII_DEBUG') && YII_DEBUG ? [
+        'debug' => defined('YII_DEBUG_MODULE') && YII_DEBUG_MODULE ? [
             'panels' => [
                 'themes' => [
                     'class' => \hiqdev\thememanager\debug\Panel::class,
