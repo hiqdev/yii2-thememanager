@@ -40,6 +40,11 @@ class LogoLink extends Widget
 
     public function run()
     {
+        return $this->render('LogoLink', $this->collectData());
+    }
+
+    protected function collectData()
+    {
         $data = [
             'name'    => $this->name,
             'url'     => $this->url,
@@ -49,6 +54,6 @@ class LogoLink extends Widget
             $data['image'] = Yii::$app->assetManager->publish($this->image)[1];
         }
 
-        return $this->render('LogoLink', $data);
+        return $data;
     }
 }
