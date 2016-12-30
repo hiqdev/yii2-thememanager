@@ -32,4 +32,6 @@ return [
     'Register a new membership' => 'Зарегистрироваться',
     'Theme Settings' => 'Настройки темы',
     'version' => 'версия',
+    'Layout settings saved' => 'Настройки верстки сохранены',
+    'Theme changed' => 'Тема изменена',
 ];

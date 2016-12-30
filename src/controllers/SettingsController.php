@@ -43,7 +43,7 @@ class SettingsController extends \yii\web\Controller
     /**
      * Settings form.
      *
-     * @return Response
+     * @return string|Response
      */
     public function actionIndex()
     {
@@ -56,7 +56,7 @@ class SettingsController extends \yii\web\Controller
 
         if (Yii::$app->request->getIsPost() && $model->load($data) && $model->validate()) {
             $this->getSettingsStorage()->set($model);
-            Yii::$app->session->setFlash('success', 'Layout settings saved.');
+            Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Layout settings saved.'));
         }
 
         if (Yii::$app->request->isAjax) {
@@ -76,7 +76,7 @@ class SettingsController extends \yii\web\Controller
             $model = $this->getModel();
             $model->theme = $theme;
             $this->getSettingsStorage()->set($model);
-            Yii::$app->session->setFlash('success', 'Theme changed');
+            Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Theme changed'));
         }
 
         return $this->redirect(['index']);
