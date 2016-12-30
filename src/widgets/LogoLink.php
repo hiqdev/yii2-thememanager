@@ -51,9 +51,14 @@ class LogoLink extends Widget
             'options' => $this->options,
         ];
         if ($this->image) {
-            $data['image'] = Yii::$app->assetManager->publish($this->image)[1];
+            $data['image'] = $this->getAssetImage($this->image);
         }
 
         return $data;
+    }
+
+    protected function getAssetImage($image)
+    {
+        return Yii::$app->assetManager->publish($image)[1];
     }
 }
