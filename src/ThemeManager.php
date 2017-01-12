@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/yii2-thememanager
  * @package   yii2-thememanager
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2015-2017, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\thememanager;
@@ -14,11 +14,10 @@ use hiqdev\thememanager\models\Settings;
 use hiqdev\thememanager\storage\SettingsStorageInterface;
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\base\Widget;
 use yii\web\AssetBundle;
 
 /**
- * Theme Manager. Provides:
+ * Theme Manager. Provides:.
  *
  * - theme initialization
  * - pathMap building
