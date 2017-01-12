@@ -1,141 +1,177 @@
 hiqdev/yii2-thememanager
 ------------------------
 
-## [0.2.0] - 2016-12-03
+## [0.3.0] - 2017-01-12
+
+- Fixed minor issues
+    - [645bac7] 2017-01-12 csfixed [@hiqsol]
+    - [ea1c1cd] 2016-12-30 Translations updated [@SilverFire]
+    - [f300ba3] 2016-12-30 Added a unified method for producing an image from a theme asset [@tafid]
+    - [43a4ccb] 2016-12-30 Improved collect data [@tafid]
+    - [77dac5b] 2016-12-29 Use `YII_DEBUG_MODULE` constant instead of `YII_DEBUG` to add thememanager panel [@SilverFire]
+    - [37941a7] 2016-12-23 doc [@hiqsol]
+    - [5b2a1a3] 2016-12-19 redone translation category to `hiqdev:thememanager` [@hiqsol]
+    - [466ba7d] 2016-12-19 redone translation category to `hiqdev:thememanager` [@hiqsol]
+- Added Faq and TextPage widgets
+    - [54a2c07] 2016-12-23 Added Faq widget [@tafid]
+    - [9c38c60] 2016-12-21 Added TextPage widget [@tafid]
+- Added abstract menus
+    - [c829c74] 2016-12-22 + AbstractFooterMenu [@hiqsol]
+    - [6425fcb] 2016-12-22 + SidebarMenu widget [@hiqsol]
+    - [c64be6c] 2016-12-21 fixed menu interface: widget -> run, render -> widget [@hiqsol]
+    - [bf8cd7d] 2016-12-21 Merge branch 'tofid' [@tafid]
+    - [865f3a1] 2016-12-20 + abstract menus [@hiqsol]
+- Removed widget, hasWidget and callStatic from ThemeManager, redone creating widgets to straight yii DI
+    - [b59dfe6] 2016-12-21 redone Menu::render -> widget [@hiqsol]
+    - [7356b05] 2016-12-21 removed widget, hasWidget and callStatic from ThemeManager [@hiqsol]
+    - [407d4b8] 2016-12-21 + abstract menus [@hiqsol]
+    - [f92ab1d] 2016-12-21 + Flashes widget (empty) [@hiqsol]
+    - [65ed824] 2016-12-21 improved UserMenu widget [@hiqsol]
+    - [c2fb625] 2016-12-20 redone config for straight DI [@hiqsol]
+
+## [0.2.0] - 2016-12-06
 
 - Added UserMenu, FancyPanel
-    - [f7761a3] 2016-12-03 csfixed: changed header comment to phpdoc [sol@hiqdev.com]
-    - [86eeff5] 2016-12-03 csfixed [sol@hiqdev.com]
-    - [6a56a9e] 2016-12-03 used hidev-hiqdev instead of hidev-vendor [sol@hiqdev.com]
-    - [143104e] 2016-12-02 used proper container definitions setting [sol@hiqdev.com]
-    - [28c0c5e] 2016-11-29 translation [andreyklochok@gmail.com]
-    - [ac24ec6] 2016-11-16 redone dependencies to definitions [sol@hiqdev.com]
-    - [db5f0d8] 2016-11-16 added UserMenu widget [sol@hiqdev.com]
-    - [c793f5f] 2016-11-16 redone widgets to yii dependency injection [sol@hiqdev.com]
-    - [add8772] 2016-11-03 improved debug config [sol@hiqdev.com]
-    - [6e0afba] 2016-10-25 csfixed [sol@hiqdev.com]
-    - [f8c6d00] 2016-10-25 translations [sol@hiqdev.com]
-    - [1f54379] 2016-10-20 Added php doc, added options to Html::img [andreyklochok@gmail.com]
-    - [fdf724a] 2016-10-20 Removed NotSupported exception, publish logo [andreyklochok@gmail.com]
-    - [34f2fe3] 2016-10-20 Fixed wrong message source [d.naumenko.a@gmail.com]
-    - [46259ef] 2016-10-19 Fixed Settings::load() to work with defaults [d.naumenko.a@gmail.com]
-    - [d09a08b] 2016-10-19 fixed for PHP 7.0 compatibility [sol@hiqdev.com]
-    - [8dfae0a] 2016-10-06 Added FancyPanel widget [andreyklochok@gmail.com]
+    - [f7761a3] 2016-12-03 csfixed: changed header comment to phpdoc [@hiqsol]
+    - [86eeff5] 2016-12-03 csfixed [@hiqsol]
+    - [6a56a9e] 2016-12-03 used hidev-hiqdev instead of hidev-vendor [@hiqsol]
+    - [143104e] 2016-12-02 used proper container definitions setting [@hiqsol]
+    - [28c0c5e] 2016-11-29 translation [@tafid]
+    - [ac24ec6] 2016-11-16 redone dependencies to definitions [@hiqsol]
+    - [db5f0d8] 2016-11-16 added UserMenu widget [@hiqsol]
+    - [c793f5f] 2016-11-16 redone widgets to yii dependency injection [@hiqsol]
+    - [add8772] 2016-11-03 improved debug config [@hiqsol]
+    - [6e0afba] 2016-10-25 csfixed [@hiqsol]
+    - [f8c6d00] 2016-10-25 translations [@hiqsol]
+    - [1f54379] 2016-10-20 Added php doc, added options to Html::img [@tafid]
+    - [fdf724a] 2016-10-20 Removed NotSupported exception, publish logo [@tafid]
+    - [34f2fe3] 2016-10-20 Fixed wrong message source [@SilverFire]
+    - [46259ef] 2016-10-19 Fixed Settings::load() to work with defaults [@SilverFire]
+    - [d09a08b] 2016-10-19 fixed for PHP 7.0 compatibility [@hiqsol]
+    - [8dfae0a] 2016-10-06 Added FancyPanel widget [@tafid]
 - Fixed many widgets
-    - [8c23df8] 2016-10-23 redone SocialLinks widget [sol@hiqdev.com]
-    - [65d6081] 2016-10-21 fixed LogoLink widget when no image given [sol@hiqdev.com]
-    - [5d526c9] 2016-10-14 simplified LoginForm pages, shows, texts, disables [sol@hiqdev.com]
-    - [f489bcd] 2016-10-14 + get text/bool attributes, init options and detectIcons [sol@hiqdev.com]
-    - [6b68562] 2016-10-13 greatly improved LoginForm to be suitable for any login-like pages: signup, restore-password, reset-password [sol@hiqdev.com]
-    - [f5b4445] 2016-10-12 * LoginForm: + signup & restore password page options [sol@hiqdev.com]
-    - [9d8d39c] 2016-10-11 fixed CopyrightYears widget [sol@hiqdev.com]
+    - [8c23df8] 2016-10-23 redone SocialLinks widget [@hiqsol]
+    - [65d6081] 2016-10-21 fixed LogoLink widget when no image given [@hiqsol]
+    - [5d526c9] 2016-10-14 simplified LoginForm pages, shows, texts, disables [@hiqsol]
+    - [f489bcd] 2016-10-14 + get text/bool attributes, init options and detectIcons [@hiqsol]
+    - [6b68562] 2016-10-13 greatly improved LoginForm to be suitable for any login-like pages: signup, restore-password, reset-password [@hiqsol]
+    - [f5b4445] 2016-10-12 * LoginForm: + signup & restore password page options [@hiqsol]
+    - [9d8d39c] 2016-10-11 fixed CopyrightYears widget [@hiqsol]
 - Added SessionSettingsStorage
-    - [5b1b174] 2016-10-19 Implemented SettingsStorage usage [d.naumenko.a@gmail.com]
-    - [1e32601] 2016-10-19 Added SessionSettingsStorage [d.naumenko.a@gmail.com]
-    - [bed82dc] 2016-10-17 added detectInputType in LoginForm widget [sol@hiqdev.com]
+    - [5b1b174] 2016-10-19 Implemented SettingsStorage usage [@SilverFire]
+    - [1e32601] 2016-10-19 Added SessionSettingsStorage [@SilverFire]
+    - [bed82dc] 2016-10-17 added detectInputType in LoginForm widget [@hiqsol]
 - Added Themes debug panel
-    - [0ebb43c] 2016-10-02 added themes debug panel [sol@hiqdev.com]
+    - [0ebb43c] 2016-10-02 added themes debug panel [@hiqsol]
 - Changed building pathMap
-    - [b99abb3] 2016-10-01 improved building pathMap again with themes own pathMap [sol@hiqdev.com]
-    - [022202a] 2016-09-29 improved building pathMap: adding app viewPath mapping by default and resolving aliases in pathMap [sol@hiqdev.com]
+    - [b99abb3] 2016-10-01 improved building pathMap again with themes own pathMap [@hiqsol]
+    - [022202a] 2016-09-29 improved building pathMap: adding app viewPath mapping by default and resolving aliases in pathMap [@hiqsol]
 
 ## [0.1.0] - 2016-09-28
 
 - Changed: redone building theme pathMap with vars substituting
-    - [cc5e84c] 2016-09-28 redone building theme pathMap with compilePathMap and substituteVars [sol@hiqdev.com]
-    - [429f3ec] 2016-09-28 redone building pathMap with viewPath, widgetPaths and themedPaths [sol@hiqdev.com]
+    - [cc5e84c] 2016-09-28 redone building theme pathMap with compilePathMap and substituteVars [@hiqsol]
+    - [429f3ec] 2016-09-28 redone building pathMap with viewPath, widgetPaths and themedPaths [@hiqsol]
 - Changed: redone widgets to pass params through config
-    - [ef55143] 2016-09-21 redone widgets to pass params through config not code [sol@hiqdev.com]
-    - [adb42d2] 2016-09-21 used original `widget()` function [sol@hiqdev.com]
-    - [4fbc1bc] 2016-09-19 Change poweredBy view, add thememanager translate messages [andreyklochok@gmail.com]
+    - [ef55143] 2016-09-21 redone widgets to pass params through config not code [@hiqsol]
+    - [adb42d2] 2016-09-21 used original `widget()` function [@hiqsol]
+    - [4fbc1bc] 2016-09-19 Change poweredBy view, add thememanager translate messages [@tafid]
 
 ## [0.0.2] - 2016-09-08
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
-    - [d675571] 2016-09-02 added LoginForm widget [sol@hiqdev.com]
-    - [40907ee] 2016-09-01 + PoweredBy widget [sol@hiqdev.com]
-    - [a3dbaec] 2016-09-01 + widget path to pathMap [sol@hiqdev.com]
-    - [f497ed7] 2016-08-26 added Breadcrumbs widget [sol@hiqdev.com]
-    - [4ca3a60] 2016-08-26 + hasWidget() [sol@hiqdev.com]
-    - [e2a5674] 2016-08-26 added Flash for Theme changed [sol@hiqdev.com]
-    - [4eeb955] 2016-08-25 Fixed OrganizationLink from trim(variable) to trim(variable) !== "" [andreyklochok@gmail.com]
-    - [ce60121] 2016-08-25 fixed OrganizationLink widget to use organizationName/Url [sol@hiqdev.com]
-    - [97b9234] 2016-08-25 fixed typo [sol@hiqdev.com]
-    - [f834412] 2016-08-25 Added SocialLinks widget, complemented OrganizationLink widget [andreyklochok@gmail.com]
-    - [7d19283] 2016-08-25 added widgets [sol@hiqdev.com]
-    - [a26edd8] 2016-08-25 + ThemeManager::widget() [sol@hiqdev.com]
-    - [4730098] 2016-08-23 Grammar fix [andreyklochok@gmail.com]
+    - [d675571] 2016-09-02 added LoginForm widget [@hiqsol]
+    - [40907ee] 2016-09-01 + PoweredBy widget [@hiqsol]
+    - [a3dbaec] 2016-09-01 + widget path to pathMap [@hiqsol]
+    - [f497ed7] 2016-08-26 added Breadcrumbs widget [@hiqsol]
+    - [4ca3a60] 2016-08-26 + hasWidget() [@hiqsol]
+    - [e2a5674] 2016-08-26 added Flash for Theme changed [@hiqsol]
+    - [4eeb955] 2016-08-25 Fixed OrganizationLink from trim(variable) to trim(variable) !== "" [@tafid]
+    - [ce60121] 2016-08-25 fixed OrganizationLink widget to use organizationName/Url [@hiqsol]
+    - [97b9234] 2016-08-25 fixed typo [@hiqsol]
+    - [f834412] 2016-08-25 Added SocialLinks widget, complemented OrganizationLink widget [@tafid]
+    - [7d19283] 2016-08-25 added widgets [@hiqsol]
+    - [a26edd8] 2016-08-25 + ThemeManager::widget() [@hiqsol]
+    - [4730098] 2016-08-23 Grammar fix [@tafid]
 - Added viewPaths parameter
-    - [e8a26cf] 2016-09-02 csfixed [sol@hiqdev.com]
-    - [6190dc6] 2016-08-31 redone pathDirs -> viewPaths [sol@hiqdev.com]
-    - [f2713bf] 2016-08-28 forced adding pathDirs in Theme [sol@hiqdev.com]
-    - [10092cc] 2016-08-22 + pathDirs parameter [sol@hiqdev.com]
+    - [e8a26cf] 2016-09-02 csfixed [@hiqsol]
+    - [6190dc6] 2016-08-31 redone pathDirs -> viewPaths [@hiqsol]
+    - [f2713bf] 2016-08-28 forced adding pathDirs in Theme [@hiqsol]
+    - [10092cc] 2016-08-22 + pathDirs parameter [@hiqsol]
 - Removed View, AssetConverter and AssetManager
-    - [1f9a236] 2016-08-23 removed View, AssetConverter and AssetManager [sol@hiqdev.com]
-    - [87125e7] 2016-08-23 removed AssetManager from bootstrap [sol@hiqdev.com]
-    - [ea0c7a7] 2016-08-23 removed AssetManager from config [sol@hiqdev.com]
+    - [1f9a236] 2016-08-23 removed View, AssetConverter and AssetManager [@hiqsol]
+    - [87125e7] 2016-08-23 removed AssetManager from bootstrap [@hiqsol]
+    - [ea0c7a7] 2016-08-23 removed AssetManager from config [@hiqsol]
 
 ## [0.0.1] - 2016-08-22
 
 - Changed bootstrapping
-    - [ef164cf] 2016-08-19 + isHomePage to ThemeManager component [sol@hiqdev.com]
-    - [d90ee48] 2016-08-19 csfixed [sol@hiqdev.com]
-    - [0d9f909] 2016-08-18 + isHomePage() [sol@hiqdev.com]
-    - [0393701] 2016-08-13 changed bootstrapping not finished [sol@hiqdev.com]
-    - [87a496c] 2016-08-13 + bootstrap themeManager [sol@hiqdev.com]
-    - [b2dd956] 2016-07-16 csfixed [sol@hiqdev.com]
+    - [ef164cf] 2016-08-19 + isHomePage to ThemeManager component [@hiqsol]
+    - [d90ee48] 2016-08-19 csfixed [@hiqsol]
+    - [0d9f909] 2016-08-18 + isHomePage() [@hiqsol]
+    - [0393701] 2016-08-13 changed bootstrapping not finished [@hiqsol]
+    - [87a496c] 2016-08-13 + bootstrap themeManager [@hiqsol]
+    - [b2dd956] 2016-07-16 csfixed [@hiqsol]
 - Changed: redone to `composer-config-plugin`
-    - [46bc352] 2016-05-20 fixed module adding, removed Plugin.php [sol@hiqdev.com]
-    - [14ed956] 2016-05-19 redone to composer-config-plugin [sol@hiqdev.com]
-    - [0b8316a] 2016-05-04 inited tests [sol@hiqdev.com]
-    - [95a5da1] 2016-05-04 changed ThemeManager to be more lazy in setting theme [sol@hiqdev.com]
-    - [2b63cdc] 2016-05-04 added views and widgets path parametrizing [sol@hiqdev.com]
-    - [5a428dc] 2016-04-29 csfixed [sol@hiqdev.com]
-    - [c440e44] 2016-04-29 rehideved [sol@hiqdev.com]
-    - [9c06c71] 2016-04-29 redone `yii2-extraconfig.php` to `hisite-config.php` [sol@hiqdev.com]
-    - [91f43e8] 2016-02-29 + require yii2-collection [sol@hiqdev.com]
-    - [94faceb] 2016-02-29 removing bootstrapping [sol@hiqdev.com]
-    - [a0e282c] 2016-02-29 + yii-extraconfig [sol@hiqdev.com]
-    - [cbb82cb] 2016-02-24 - require plugin manager [sol@hiqdev.com]
+    - [46bc352] 2016-05-20 fixed module adding, removed Plugin.php [@hiqsol]
+    - [14ed956] 2016-05-19 redone to composer-config-plugin [@hiqsol]
+    - [0b8316a] 2016-05-04 inited tests [@hiqsol]
+    - [95a5da1] 2016-05-04 changed ThemeManager to be more lazy in setting theme [@hiqsol]
+    - [2b63cdc] 2016-05-04 added views and widgets path parametrizing [@hiqsol]
+    - [5a428dc] 2016-04-29 csfixed [@hiqsol]
+    - [c440e44] 2016-04-29 rehideved [@hiqsol]
+    - [9c06c71] 2016-04-29 redone `yii2-extraconfig.php` to `hisite-config.php` [@hiqsol]
+    - [91f43e8] 2016-02-29 + require yii2-collection [@hiqsol]
+    - [94faceb] 2016-02-29 removing bootstrapping [@hiqsol]
+    - [a0e282c] 2016-02-29 + yii-extraconfig [@hiqsol]
+    - [cbb82cb] 2016-02-24 - require plugin manager [@hiqsol]
 - Fixed minor issues
-    - [7f5d47f] 2016-02-24 phpcsfixed [sol@hiqdev.com]
-    - [650863d] 2016-02-24 rehideved [sol@hiqdev.com]
-    - [c85f4dd] 2016-02-17 fixed PHP notice [sol@hiqdev.com]
-    - [3898f12] 2016-01-27 Add renderAjax if request isAjax [andreyklochok@gmail.com]
-    - [219c4e1] 2015-12-09 Fixed Settings::load() signature [d.naumenko.a@gmail.com]
-    - [108f84d] 2015-11-23 Changed namespace to yii2-collection [d.naumenko.a@gmail.com]
-    - [479f995] 2015-11-05 Chaching placeholders removed [d.naumenko.a@gmail.com]
+    - [7f5d47f] 2016-02-24 phpcsfixed [@hiqsol]
+    - [650863d] 2016-02-24 rehideved [@hiqsol]
+    - [c85f4dd] 2016-02-17 fixed PHP notice [@hiqsol]
+    - [3898f12] 2016-01-27 Add renderAjax if request isAjax [@tafid]
+    - [219c4e1] 2015-12-09 Fixed Settings::load() signature [@SilverFire]
+    - [108f84d] 2015-11-23 Changed namespace to yii2-collection [@SilverFire]
+    - [479f995] 2015-11-05 Chaching placeholders removed [@SilverFire]
 - Fixed getting current theme
-    - [c5ad453] 2016-02-24 added parameters checks [sol@hiqdev.com]
-    - [3b8e173] 2015-08-25 fixed getting current theme [sol@hiqdev.com]
-    - [d3afbe9] 2015-08-18 + better getting default theme [sol@hiqdev.com]
+    - [c5ad453] 2016-02-24 added parameters checks [@hiqsol]
+    - [3b8e173] 2015-08-25 fixed getting current theme [@hiqsol]
+    - [d3afbe9] 2015-08-18 + better getting default theme [@hiqsol]
 - Changed: moved to src
-    - [18e4255] 2015-08-18 php-cs-fixed [sol@hiqdev.com]
-    - [9fc695f] 2015-08-18 + `.php_cs` [sol@hiqdev.com]
-    - [f46612a] 2015-08-18 moved to src [sol@hiqdev.com]
-    - [10f3fa6] 2015-08-18 moved to src [sol@hiqdev.com]
-    - [b0aa3f5] 2015-08-18 moved to src [sol@hiqdev.com]
-    - [68e389d] 2015-08-18 rehideved with new features: better README and .gitignore [sol@hiqdev.com]
+    - [18e4255] 2015-08-18 php-cs-fixed [@hiqsol]
+    - [9fc695f] 2015-08-18 + `.php_cs` [@hiqsol]
+    - [f46612a] 2015-08-18 moved to src [@hiqsol]
+    - [10f3fa6] 2015-08-18 moved to src [@hiqsol]
+    - [b0aa3f5] 2015-08-18 moved to src [@hiqsol]
+    - [68e389d] 2015-08-18 rehideved with new features: better README and .gitignore [@hiqsol]
 - Added AssetManager and AssetConverter
-    - [87ca207] 2015-06-12 improved RegisterAssets - moved to ThemeManager [sol@hiqdev.com]
-    - [28c4cd5] 2015-06-11 + AssetConverter [sol@hiqdev.com]
-    - [a64ccb3] 2015-06-11 + AssetManager, renamed to ThemeManager [sol@hiqdev.com]
-    - [a703a1b] 2015-06-10 * Theme: + assets and get/registerAssets [sol@hiqdev.com]
+    - [87ca207] 2015-06-12 improved RegisterAssets - moved to ThemeManager [@hiqsol]
+    - [28c4cd5] 2015-06-11 + AssetConverter [@hiqsol]
+    - [a64ccb3] 2015-06-11 + AssetManager, renamed to ThemeManager [@hiqsol]
+    - [a703a1b] 2015-06-10 * Theme: + assets and get/registerAssets [@hiqsol]
 - Added basics
-    - [765ff2a] 2015-06-10 hideved [sol@hiqdev.com]
-    - [7c492ea] 2015-06-10 + proper finding settings class at Theme [sol@hiqdev.com]
-    - [a95617b] 2015-06-02 fixed theme saving [sol@hiqdev.com]
-    - [b0d0772] 2015-05-29 simplified access to current theme settings [sol@hiqdev.com]
-    - [874899d] 2015-05-28 Added missing use for InvalidConfigException [d.naumenko.a@gmail.com]
-    - [0ee7e85] 2015-05-27 + Settings [sol@hiqdev.com]
-    - [42d384c] 2015-05-26 hideved [sol@hiqdev.com]
-    - [73b4ea1] 2015-05-20 + real Manager and Theme [sol@hiqdev.com]
-    - [3d9e1b3] 2015-04-18 doc [sol@hiqdev.com]
-    - [40e739b] 2015-04-18 doc [sol@hiqdev.com]
-    - [67527f2] 2015-04-18 inited [sol@hiqdev.com]
+    - [765ff2a] 2015-06-10 hideved [@hiqsol]
+    - [7c492ea] 2015-06-10 + proper finding settings class at Theme [@hiqsol]
+    - [a95617b] 2015-06-02 fixed theme saving [@hiqsol]
+    - [b0d0772] 2015-05-29 simplified access to current theme settings [@hiqsol]
+    - [874899d] 2015-05-28 Added missing use for InvalidConfigException [@SilverFire]
+    - [0ee7e85] 2015-05-27 + Settings [@hiqsol]
+    - [42d384c] 2015-05-26 hideved [@hiqsol]
+    - [73b4ea1] 2015-05-20 + real Manager and Theme [@hiqsol]
+    - [3d9e1b3] 2015-04-18 doc [@hiqsol]
+    - [40e739b] 2015-04-18 doc [@hiqsol]
+    - [67527f2] 2015-04-18 inited [@hiqsol]
 
 ## [Development started] - 2015-04-18
 
+[@hiqsol]: https://github.com/hiqsol
+[sol@hiqdev.com]: https://github.com/hiqsol
+[@SilverFire]: https://github.com/SilverFire
+[d.naumenko.a@gmail.com]: https://github.com/SilverFire
+[@tafid]: https://github.com/tafid
+[andreyklochok@gmail.com]: https://github.com/tafid
+[@BladeRoot]: https://github.com/BladeRoot
+[bladeroot@gmail.com]: https://github.com/BladeRoot
 [46bc352]: https://github.com/hiqdev/yii2-thememanager/commit/46bc352
 [14ed956]: https://github.com/hiqdev/yii2-thememanager/commit/14ed956
 [0b8316a]: https://github.com/hiqdev/yii2-thememanager/commit/0b8316a
@@ -240,3 +276,30 @@ hiqdev/yii2-thememanager
 [0ebb43c]: https://github.com/hiqdev/yii2-thememanager/commit/0ebb43c
 [b99abb3]: https://github.com/hiqdev/yii2-thememanager/commit/b99abb3
 [022202a]: https://github.com/hiqdev/yii2-thememanager/commit/022202a
+[645bac7]: https://github.com/hiqdev/yii2-thememanager/commit/645bac7
+[ea1c1cd]: https://github.com/hiqdev/yii2-thememanager/commit/ea1c1cd
+[f300ba3]: https://github.com/hiqdev/yii2-thememanager/commit/f300ba3
+[43a4ccb]: https://github.com/hiqdev/yii2-thememanager/commit/43a4ccb
+[77dac5b]: https://github.com/hiqdev/yii2-thememanager/commit/77dac5b
+[37941a7]: https://github.com/hiqdev/yii2-thememanager/commit/37941a7
+[54a2c07]: https://github.com/hiqdev/yii2-thememanager/commit/54a2c07
+[c829c74]: https://github.com/hiqdev/yii2-thememanager/commit/c829c74
+[6425fcb]: https://github.com/hiqdev/yii2-thememanager/commit/6425fcb
+[c64be6c]: https://github.com/hiqdev/yii2-thememanager/commit/c64be6c
+[bf8cd7d]: https://github.com/hiqdev/yii2-thememanager/commit/bf8cd7d
+[9c38c60]: https://github.com/hiqdev/yii2-thememanager/commit/9c38c60
+[b59dfe6]: https://github.com/hiqdev/yii2-thememanager/commit/b59dfe6
+[7356b05]: https://github.com/hiqdev/yii2-thememanager/commit/7356b05
+[407d4b8]: https://github.com/hiqdev/yii2-thememanager/commit/407d4b8
+[f92ab1d]: https://github.com/hiqdev/yii2-thememanager/commit/f92ab1d
+[65ed824]: https://github.com/hiqdev/yii2-thememanager/commit/65ed824
+[c2fb625]: https://github.com/hiqdev/yii2-thememanager/commit/c2fb625
+[865f3a1]: https://github.com/hiqdev/yii2-thememanager/commit/865f3a1
+[5b2a1a3]: https://github.com/hiqdev/yii2-thememanager/commit/5b2a1a3
+[466ba7d]: https://github.com/hiqdev/yii2-thememanager/commit/466ba7d
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
+[0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
+[0.0.1]: https://github.com/hiqdev/yii2-thememanager/releases/tag/0.0.1
+[0.3.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...0.3.0
