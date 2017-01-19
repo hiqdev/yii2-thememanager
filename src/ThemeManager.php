@@ -148,11 +148,9 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
         if ($result === null) {
             /** @var Controller $controller */
-            list($controller, $actionId) = Yii::$app->createController(reset(Yii::$app->request->resolve()));
-            $actionId = !empty($actionId) ? $actionId : $controller->defaultAction;
-            $actualRoute = $controller->getUniqueId() . '/' . $actionId;
+            $actualRoute = Yii::$app->controller->getRoute();
 
-            list($controller, $actionId) = Yii::$app->createController(Yii::$app->defaultRoute);
+            list($controller, $actionId) = Yii::$app->createController('');
             $actionId = !empty($actionId) ? $actionId : $controller->defaultAction;
             $defaultRoute = $controller->getUniqueId() . '/' . $actionId;
 
