@@ -15,6 +15,8 @@ use hiqdev\thememanager\storage\SettingsStorageInterface;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
+use yii\web\Controller;
+use yii\web\Request;
 
 /**
  * Theme Manager. Provides:.
@@ -141,9 +143,23 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
      */
     public static function isHomePage()
     {
-        $controller = Yii::$app->controller;
-        $default_controller = Yii::$app->defaultRoute;
-        return ($controller->id === $default_controller) && ($controller->action->id === $controller->defaultAction);
+        // todo: if route is change during the request processing the result will be outdated
+        static $result = null;
+
+        if ($result === null) {
+            /** @var Controller $controller */
+            list($controller, $actionId) = Yii::$app->createController(reset(Yii::$app->request->resolve()));
+            $actionId = !empty($actionId) ? $actionId : $controller->defaultAction;
+            $actualRoute = $controller->getUniqueId() . '/' . $actionId;
+
+            list($controller, $actionId) = Yii::$app->createController(Yii::$app->defaultRoute);
+            $actionId = !empty($actionId) ? $actionId : $controller->defaultAction;
+            $defaultRoute = $controller->getUniqueId() . '/' . $actionId;
+
+            $result = $actualRoute === $defaultRoute;
+        }
+
+        return $result;
     }
 
     /**
