@@ -20,6 +20,8 @@ class SocialLinks extends \yii\base\Widget
 
     public $links = [];
 
+    public $linkOptions = [];
+
     public $icons = [
         'github' => 'github-alt',
         'email'  => 'envelope',
@@ -32,7 +34,7 @@ class SocialLinks extends \yii\base\Widget
             if ($value) {
                 $icon = isset($this->icons[$name]) ? $this->icons[$name] : $name;
                 $out .= Html::beginTag($this->tag, $this->tagOptions);
-                $out .= Html::a(Html::tag('span', '', ['class' => "fa fa-{$icon}"]), $value, ['title' => ucfirst($name)]);
+                $out .= Html::a(Html::tag('span', '', ['class' => "fa fa-{$icon}"]), $value, array_merge(['title' => ucfirst($name)], $this->linkOptions));
                 $out .= Html::endTag($this->tag);
             }
         }
