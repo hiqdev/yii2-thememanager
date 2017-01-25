@@ -212,4 +212,16 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
         return class_exists($res) ? $res : static::findSettingsClass(get_parent_class($class));
     }
+
+    public function getDetailedTheme()
+    {
+        $parts = explode('\\', get_called_class());
+        $lastPart = 'Detailed' . end($parts);
+        array_pop($parts);
+        array_push($parts, $lastPart);
+        $class = implode('\\', $parts);
+        $class = class_exists($class) ? $class : DetailedTheme::class;
+
+        return new $class($this);
+    }
 }
