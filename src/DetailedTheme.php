@@ -17,9 +17,9 @@ class DetailedTheme
     public $author = 'author.md';
 
     public $images = [
-        '1.jpg',
-        '2.jpg',
-        '3.jpg',
+        '1.png',
+        '2.png',
+        '3.png',
     ];
 
     public function __construct(Theme $theme)
