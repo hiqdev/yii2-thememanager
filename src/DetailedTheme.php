@@ -10,7 +10,9 @@ class DetailedTheme
 
     public $description = '/assets/description.md';
 
-    public $license = '/assets/license.md';
+    public $license = 'MIT License';
+
+    public $licenseText = '/assets/license.md';
 
     public $readme = '/assets/readme.md';
 
