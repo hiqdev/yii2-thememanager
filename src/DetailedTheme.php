@@ -8,18 +8,18 @@ class DetailedTheme
 {
     protected $theme;
 
-    public $description = 'description.md';
+    public $description = '/assets/description.md';
 
-    public $license = 'license.md';
+    public $license = '/assets/license.md';
 
-    public $readme = 'readme.md';
+    public $readme = '/assets/readme.md';
 
-    public $author = 'author.md';
+    public $author = '/assets/author.md';
 
     public $images = [
-        '1.png',
-        '2.png',
-        '3.png',
+        '/assets/screenshots/1.png',
+        '/assets/screenshots/2.png',
+        '/assets/screenshots/3.png',
     ];
 
     public function __construct(Theme $theme)
