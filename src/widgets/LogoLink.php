@@ -38,6 +38,12 @@ class LogoLink extends Widget
      */
     public $url;
 
+    public $smallImage;
+
+    public $imageOptions = [];
+
+    public $smallImageOptions = [];
+
     public function run()
     {
         return $this->render('LogoLink', $this->collectData());
@@ -46,12 +52,17 @@ class LogoLink extends Widget
     protected function collectData()
     {
         $data = [
-            'name'    => $this->name,
-            'url'     => $this->url,
+            'name' => $this->name,
+            'url' => $this->url,
             'options' => $this->options,
         ];
+        if ($this->smallImage) {
+            $data['smallImage'] = $this->getAssetImage($this->smallImage);
+            $data['smallImageOptions'] = $this->smallImageOptions;
+        }
         if ($this->image) {
             $data['image'] = $this->getAssetImage($this->image);
+            $data['imageOptions'] = $this->imageOptions;
         }
 
         return $data;
@@ -59,6 +70,8 @@ class LogoLink extends Widget
 
     protected function getAssetImage($image)
     {
-        return Yii::$app->assetManager->publish($image)[1];
+        $out = Yii::$app->assetManager->publish($image)[1];
+
+        return $out;
     }
 }
