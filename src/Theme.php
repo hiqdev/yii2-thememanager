@@ -89,16 +89,25 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     {
         $map = $this->substituteVars($map);
 
+        $themeSubpath = '/src/themes/' . $this->name;
+
         $res = [];
         foreach ($map as $from => &$tos) {
             $tos = array_reverse(array_unique(array_values($tos)));
-            foreach ($tos as &$to) {
+            $new = [];
+            foreach ($tos as $to) {
                 $to = Yii::getAlias($to);
+                $alt = preg_replace('#(.*)/src/views(.*)$#', '${1}'.$themeSubpath.'${2}', $to);
+                if ($alt) {
+                    $new[] = $alt;
+                }
+                $new[] = $to;
             }
-            $res[Yii::getAlias($from)] = $tos;
+            #$res[Yii::getAlias($from)] = $new;
+            $res[Yii::getAlias($from)] = array_values(array_filter($new, 'file_exists'));
         }
 
-        return $res;
+        return array_filter($res);
     }
 
     public function substituteVars($vars)
