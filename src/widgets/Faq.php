@@ -10,6 +10,18 @@
 
 namespace hiqdev\thememanager\widgets;
 
+use hiqdev\thememanager\FaqAsset;
+
 class Faq extends \yii\base\Widget
 {
+    public $items = [];
+
+    public function run()
+    {
+        FaqAsset::register($this->view);
+
+        return $this->render('faq/root', [
+            'items' => $this->items,
+        ]);
+    }
 }
