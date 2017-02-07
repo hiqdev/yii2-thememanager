@@ -10,8 +10,8 @@
 
 namespace hiqdev\thememanager\widgets;
 
+use hiqdev\php\collection\ArrayHelper;
 use yii\base\Widget;
-use yii\helpers\Html;
 
 class FancyPanel extends Widget
 {
@@ -26,24 +26,18 @@ class FancyPanel extends Widget
 
     public $title;
 
+    public $content;
+
     public function init()
     {
-        echo Html::beginTag('div', ['class' => $this->panelClass . ' ' . $this->color]);
-        echo Html::tag('h5', $this->title);
+        ob_start();
+        ob_implicit_flush(false);
     }
 
     public function run()
     {
-        echo Html::endTag('div');
-    }
+        $this->content = ob_get_clean();
 
-    public function beginBody()
-    {
-        echo Html::beginTag('p') . "\n";
-    }
-
-    public function endBody()
-    {
-        echo "\n" . Html::endTag('p');
+        return $this->render('FancyPanel', ArrayHelper::toArray($this));
     }
 }
