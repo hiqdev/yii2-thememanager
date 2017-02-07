@@ -1,0 +1,108 @@
+/* FAQ categories and accordions */
+.faq-tabs {
+    padding: 40px 0;
+    background: #E9E9E9;
+    overflow: hidden;
+}
+
+.faq-categories {
+    overflow: hidden;
+}
+
+.faq-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-categories ul li a {
+    border: 3px solid #C6C6C8;
+    color: #999;
+    font-weight: 400;
+    display: block;
+    float: left;
+    font-size: 15px;
+    margin: 0 6px 6px 0;
+    padding: 7px 10px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.faq-categories ul li a span.badge {
+    margin-left: 5px;
+    font-size: 11px;
+    background: #b2b2b4;
+    padding: 4px 7px 5px;
+}
+
+.faq-categories ul li a:hover, .faq-categories ul li.active a {
+    border-color: #9E9996;
+    color: #fff;
+    background: #9E9996;
+}
+
+.faq-categories ul li a:hover span.badge, .faq-categories ul li.active span.badge {
+    background: #fff;
+    color: #999;
+}
+
+.faq-tabs-white {
+    padding: 55px 0;
+    overflow: hidden;
+}
+
+.faq-tabs-white .tab-content {
+    font-size: 16px;
+}
+
+.faq-tabs-white .panel {
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.faq-tabs-white .panel, .faq-tabs-white .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: none;
+    box-shadow: 0;
+}
+
+.faq-tabs-white .panel-body {
+    border-top: 0 !important;
+}
+
+.faq-tabs-white .panel-heading {
+    border: 0;
+    border-bottom: 1px solid #E9E9E9;
+    background: transparent;
+    border-radius: 0;
+    padding: 12px 0;
+}
+
+.faq-tabs-white .panel-heading h4.panel-title a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #212121;
+}
+
+.faq-tabs-white .panel-heading h4.panel-title a:hover {
+    color: #DA3867;
+}
+
+.faq-tabs-white .panel-heading h4.panel-title i {
+    margin: 2px 7px 0 0;
+    vertical-align: middle;
+    font-size: 19px;
+    color: #DA3867;
+}
+
+.faq-tabs-white .panel-body {
+    padding: 15px 0;
+    margin: 0;
+}
+
+.faq-tabs-white .panel-body p {
+    text-align: left;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
