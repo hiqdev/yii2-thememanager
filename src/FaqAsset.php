@@ -10,10 +10,6 @@ class FaqAsset extends AssetBundle
 {
     public $sourcePath = '@hiqdev/thememanager/assets/faq';
 
-    public $css = [
-        'css/faq.css',
-    ];
-
     public $js = [
         YII_ENV_PROD ? 'js/faq.min.js' : 'js/faq.js',
     ];
