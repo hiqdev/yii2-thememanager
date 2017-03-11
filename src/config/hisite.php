@@ -67,6 +67,7 @@ return [
                             (!empty($params['organizationName']) ? $params['organizationName'] : 'Logo'),
                 'url'     => !empty($params['logoUrl']) ? $params['logoUrl'] : '/',
                 'options' => !empty($params['logoOptions']) ? $params['logoOptions'] : [],
+                'imageOptions' => !empty($params['logoImageOptions']) ? $params['logoImageOptions'] : [],
             ],
         ],
     ],

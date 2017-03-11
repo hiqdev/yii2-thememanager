@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 ?>
 <?php if (!empty($image)) : ?>
-    <?= Html::a(Html::img($image, $options), $url) ?>
+    <?= Html::a(Html::img($image, $imageOptions), $url) ?>
 <?php else : ?>
     <?= Html::a($name, $url, $options) ?>
 <?php endif ?>
