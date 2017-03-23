@@ -10,7 +10,7 @@
 
 namespace hiqdev\thememanager\models;
 
-class Settings extends \yii\base\Model
+class Settings extends \yii\base\Model implements OrientationInterface
 {
     /**
      * @var string theme name
