@@ -57,21 +57,19 @@ class LogoLink extends Widget
             'options' => $this->options,
         ];
         if ($this->smallImage) {
-            $data['smallImage'] = $this->getAssetImage($this->smallImage);
+            $data['smallImage'] = $this->getImage($this->smallImage);
             $data['smallImageOptions'] = $this->smallImageOptions;
         }
         if ($this->image) {
-            $data['image'] = $this->getAssetImage($this->image);
+            $data['image'] = $this->getImage($this->image);
             $data['imageOptions'] = $this->imageOptions;
         }
 
         return $data;
     }
 
-    protected function getAssetImage($image)
+    protected function getImage($path)
     {
-        $out = Yii::$app->assetManager->publish($image)[1];
-
-        return $out;
+        return mb_substr($path, 0, 1, 'utf-8') === '@' ? Yii::$app->assetManager->publish($path)[1] : $path;
     }
 }
