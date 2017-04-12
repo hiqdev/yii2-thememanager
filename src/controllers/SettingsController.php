@@ -10,10 +10,10 @@
 
 namespace hiqdev\thememanager\controllers;
 
+use hipanel\models\IndexPageUiOptions;
 use hiqdev\thememanager\models\Settings;
 use hiqdev\thememanager\Module;
 use hiqdev\thememanager\storage\SettingsStorageInterface;
-use hiqdev\thememanager\ThemeManager;
 use Yii;
 use yii\web\Response;
 
@@ -35,9 +35,14 @@ class SettingsController extends \yii\web\Controller
     /**
      * @return SettingsStorageInterface
      */
-    public function getSettingsStorage()
+    public function getThemeSettingsStorage()
     {
         return Yii::$app->get('themeSettingsStorage');
+    }
+
+    public function getUiOptionsStorage()
+    {
+        return Yii::$app->get('uiOptionsStorage');
     }
 
     /**
@@ -51,11 +56,12 @@ class SettingsController extends \yii\web\Controller
 
         $data = Yii::$app->request->post($model->formName());
         if (empty($data)) {
-            $data = $this->getSettingsStorage()->get();
+            $data = $this->getThemeSettingsStorage()->get();
         }
 
         if (Yii::$app->request->getIsPost() && $model->load($data) && $model->validate()) {
-            $this->getSettingsStorage()->set($model);
+            $this->getThemeSettingsStorage()->set($model);
+            $this->setGlobalOrientation($model->filterOrientation);
             Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Layout settings saved.'));
         }
 
@@ -67,6 +73,25 @@ class SettingsController extends \yii\web\Controller
     }
 
     /**
+     * @param null $orientation
+     */
+    public function setGlobalOrientation($orientation = null)
+    {
+        if ($orientation !== null) {
+            $settings = $this->getUiOptionsStorage()->getAllUiOptions();
+            foreach ($settings as $route => $data) {
+                $model = new IndexPageUiOptions($data);
+                $model->orientation = $orientation;
+                if ($model->validate()) {
+                    $this->getUiOptionsStorage()->set($route, $model->toArray());
+                } else {
+                    Yii::warning('SettingsController - IndexPageUiModel validation errors: ' . json_encode($model->getErrors()));
+                }
+            }
+        }
+    }
+
+    /**
      * @param $theme
      * @return Response
      */
@@ -75,7 +100,7 @@ class SettingsController extends \yii\web\Controller
         if ($this->module->getManager()->has($theme)) {
             $model = $this->getModel();
             $model->theme = $theme;
-            $this->getSettingsStorage()->set($model);
+            $this->getThemeSettingsStorage()->set($model);
             Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Theme changed'));
         }
 
@@ -87,7 +112,7 @@ class SettingsController extends \yii\web\Controller
         if (Yii::$app->request->isAjax) {
             $model = $this->getModel();
             $model->collapsed_sidebar = Yii::$app->request->post('collapsed_sidebar');
-            $this->getSettingsStorage()->set($model);
+            $this->getThemeSettingsStorage()->set($model);
         }
     }
 }
