@@ -44,12 +44,12 @@ return [
     ]),
     'container' => [
         'definitions' => [
-            \hiqdev\thememanager\widgets\PoweredBy::class => [
-                'url'     => !empty($params['poweredByUrl']) ? $params['poweredByUrl'] : null,
-                'name'    => !empty($params['poweredByName']) ? $params['poweredByName'] : null,
-                'version' => !empty($params['poweredByVersion']) ? $params['poweredByVersion'] : null,
-                'options' => !empty($params['poweredByOptions']) ? $params['poweredByOptions'] : [],
-            ],
+            \hiqdev\thememanager\widgets\PoweredBy::class => array_filter([
+                'url'     => $params['poweredBy.url'],
+                'name'    => $params['poweredBy.name'],
+                'version' => $params['poweredBy.version'],
+                'options' => $params['poweredBy.options'],
+            ]),
             \hiqdev\thememanager\widgets\SocialLinks::class => [
                 'links'   => !empty($params['socialLinks']) ? $params['socialLinks'] : [],
             ],
