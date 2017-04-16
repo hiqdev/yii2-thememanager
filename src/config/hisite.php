@@ -16,9 +16,10 @@ return [
         'themeSettingsStorage' => [
             'class' => \hiqdev\thememanager\storage\SessionSettingsStorage::class,
         ],
-        'themeManager' => [
+        'themeManager' => array_filter([
             'class' => \hiqdev\thememanager\ThemeManager::class,
-        ],
+            'defaultTheme' => $params['themeManager.defaultTheme'],
+        ]),
         'i18n' => [
             'translations' => [
                 'hiqdev:thememanager' => [
