@@ -50,9 +50,9 @@ return [
                 'version' => $params['poweredBy.version'],
                 'options' => $params['poweredBy.options'],
             ]),
-            \hiqdev\thememanager\widgets\SocialLinks::class => [
-                'links'   => !empty($params['socialLinks']) ? $params['socialLinks'] : [],
-            ],
+            \hiqdev\thememanager\widgets\SocialLinks::class => array_filter([
+                'links'   => $params['socialLinks.links'],
+            ]),
             \hiqdev\thememanager\widgets\CopyrightYears::class => [
                 'years'   => !empty($params['copyrightYears']) ? $params['copyrightYears'] : null,
                 'year'    => !empty($params['copyrightYear']) ? $params['copyrightYear'] : null,

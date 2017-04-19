@@ -15,4 +15,6 @@ return [
     'poweredBy.name'    => null,
     'poweredBy.version' => null,
     'poweredBy.options' => null,
+
+    'socialLinks.links' => [],
 ];
