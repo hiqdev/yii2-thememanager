@@ -53,24 +53,24 @@ return [
             \hiqdev\thememanager\widgets\SocialLinks::class => array_filter([
                 'links'   => $params['socialLinks.links'],
             ]),
-            \hiqdev\thememanager\widgets\CopyrightYears::class => [
-                'years'   => !empty($params['copyrightYears']) ? $params['copyrightYears'] : null,
-                'year'    => !empty($params['copyrightYear']) ? $params['copyrightYear'] : null,
-            ],
-            \hiqdev\thememanager\widgets\OrganizationLink::class => [
-                'url'     => !empty($params['organizationUrl']) ? $params['organizationUrl'] : null,
-                'name'    => !empty($params['organizationName']) ? $params['organizationName'] : null,
-                'options' => !empty($params['organizationOptions']) ? $params['organizationOptions'] : [],
-            ],
-            \hiqdev\thememanager\widgets\LogoLink::class => [
-                'image'             => !empty($params['logo.image']) ? $params['logo.image'] : null,
-                'imageOptions'      => !empty($params['logo.imageOptions']) ? $params['logo.imageOptions'] : [],
-                'smallImage'        => !empty($params['logo.smallImage']) ? $params['logo.smallImage'] : null,
-                'smallImageOptions' => !empty($params['logo.smallImageOptions']) ? $params['logo.smallImageOptions'] : [],
-                'name'              => !empty($params['logo.name']) ? $params['logo.name'] : (!empty($params['organizationName']) ? $params['organizationName'] : 'Logo'),
-                'url'               => !empty($params['logo.url']) ? $params['logo.url'] : '/',
-                'options'           => !empty($params['logo.options']) ? $params['logo.options'] : [],
-            ],
+            \hiqdev\thememanager\widgets\CopyrightYears::class => array_filter([
+                'year'    => $params['copyright.year'],
+                'years'   => $params['copyright.years'],
+            ]),
+            \hiqdev\thememanager\widgets\OrganizationLink::class => array_filter([
+                'url'     => $params['organization.url'],
+                'name'    => $params['organization.name'],
+                'options' => $params['organization.options'],
+            ]),
+            \hiqdev\thememanager\widgets\LogoLink::class => array_filter([
+                'url'               => $params['logo.url'] ?: '/',
+                'name'              => $params['logo.name'] ?: $params['organization.name'] ?: 'Logo',
+                'options'           => $params['logo.options'],
+                'image'             => $params['logo.image'],
+                'imageOptions'      => $params['logo.imageOptions'],
+                'smallImage'        => $params['logo.smallImage'],
+                'smallImageOptions' => $params['logo.smallImageOptions'],
+            ]),
         ],
     ],
 ];

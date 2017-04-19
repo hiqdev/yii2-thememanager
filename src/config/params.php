@@ -11,10 +11,25 @@
 return [
     'themeManager.defaultTheme' => null,
 
-    'poweredBy.url'     => null,
-    'poweredBy.name'    => null,
-    'poweredBy.version' => null,
-    'poweredBy.options' => null,
+    'poweredBy.url'             => null,
+    'poweredBy.name'            => null,
+    'poweredBy.version'         => null,
+    'poweredBy.options'         => null,
 
-    'socialLinks.links' => [],
+    'socialLinks.links'         => [],
+
+    'copyright.year'            => null,
+    'copyright.years'           => null,
+
+    'organization.url'          => null,
+    'organization.name'         => null,
+    'organization.options'      => null,
+
+    'logo.url'                  => null,
+    'logo.name'                 => null,
+    'logo.options'              => null,
+    'logo.image'                => null,
+    'logo.imageOptions'         => null,
+    'logo.smallImage'           => null,
+    'logo.smallImageOptions'    => null,
 ];
