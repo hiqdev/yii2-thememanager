@@ -5,7 +5,6 @@ use yii\helpers\Html;
 /** @var array $items */
 /** @var \yii\web\View $this */
 /** @var \hipanel\site\widgets\Faq $this ->context */
-
 $this->registerJs("
 // Switch signs plus and minus on collapse
 $('.collapse').on('show.bs.collapse', function(event){

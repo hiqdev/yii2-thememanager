@@ -1,5 +1,4 @@
-Yii2 Theme Manager
-==================
+# Yii2 Theme Manager
 
 **Theme Manager for Yii2**
 

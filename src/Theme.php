@@ -97,13 +97,13 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
             $new = [];
             foreach ($tos as $to) {
                 $to = Yii::getAlias($to);
-                $alt = preg_replace('#(.*)/src/views(.*)$#', '${1}'.$themeSubpath.'${2}', $to);
+                $alt = preg_replace('#(.*)/src/views(.*)$#', '${1}' . $themeSubpath . '${2}', $to);
                 if ($alt) {
                     $new[] = $alt;
                 }
                 $new[] = $to;
             }
-            #$res[Yii::getAlias($from)] = $new;
+            //$res[Yii::getAlias($from)] = $new;
             $res[Yii::getAlias($from)] = array_values(array_filter($new, 'file_exists'));
         }
 
