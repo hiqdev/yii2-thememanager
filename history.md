@@ -1,5 +1,39 @@
-hiqdev/yii2-thememanager
-------------------------
+# hiqdev/yii2-thememanager
+
+## [0.3.1] - 2017-04-19
+
+- Renamed poweredBy params to dot style
+    - [3680fe3] 2017-04-19 csfixed [@hiqsol]
+    - [833abe5] 2017-04-16 renamed poweredBy params to dot style [@hiqsol]
+- Added `OrientationInterface`
+    - [f8a2287] 2017-04-12 Added setGlobalOrientation() method, rename getSettingsStorage method to getThemeSettingsStorage [@tafid]
+    - [76f5f2c] 2017-03-23 Added OrientationInterface [@tafid]
+    - [ae0e0b2] 2017-03-23 Added implements to OrientationInterface [@tafid]
+- Added `themeManager.defaultTheme` parameter
+    - [31d2dae] 2017-04-16 added themeManager.defaultTheme parameter [@hiqsol]
+- Added Faq, FancyPanel widgets
+    - [1d55f1f] 2017-02-10 Deleted faq.css, remove it from FaqAsset [@tafid]
+    - [ee3630e] 2017-02-07 Added Faq assets [@tafid]
+    - [f5472ea] 2017-02-07 Added Faq widget [@tafid]
+    - [b4d7c94] 2017-02-07 Added view file for FancyPanel widget [@tafid]
+- Added in-site theming
+    - [19cc7fa] 2017-02-06 improved building pathMap: added in-site theming [@hiqsol]
+- Added LogoLink widget
+    - [2c072a4] 2017-03-29 Changed logo param names [@tafid]
+    - [34a0321] 2017-03-29 Improved LogoLink::getImage() method, now it can works with urls [@tafid]
+    - [12fb0c3] 2017-03-29 Changed marckup in LogoLink widget view file [@tafid]
+    - [d7f1dd5] 2017-03-11 added imageOptions param [@hiqsol]
+    - [a591721] 2017-02-02 Moved obaju LogoLink to thememanager LogoLink [@tafid]
+    - [a812c8a] 2017-02-02 fixed enabling debug with `debug.enabled` param <- `YII_DEBUG_MODULE` constant [@hiqsol]
+- Added `DetailedTheme` class
+    - [051f14d] 2017-01-30 Added new attribute DetailedTheme::licenseText [@tafid]
+    - [660e3eb] 2017-01-30 Specified the path to the DetailedTheme files [@tafid]
+    - [dc48a87] 2017-01-26 Shortened getDetailedTheme method [@tafid]
+    - [ae44253] 2017-01-25 Added base DetailedTheme class [@tafid]
+    - [4dc0217] 2017-01-25 Added getDetailedTheme method [@tafid]
+    - [47b0aba] 2017-01-24 Added linkOptions attribute [@tafid]
+    - [489beb1] 2017-01-19 Improved isHomePage, used getRoute() [@tafid]
+    - [8040d38] 2017-01-19 Fixed isHomePage method [@tafid]
 
 ## [0.3.0] - 2017-01-12
 
@@ -297,9 +331,35 @@ hiqdev/yii2-thememanager
 [865f3a1]: https://github.com/hiqdev/yii2-thememanager/commit/865f3a1
 [5b2a1a3]: https://github.com/hiqdev/yii2-thememanager/commit/5b2a1a3
 [466ba7d]: https://github.com/hiqdev/yii2-thememanager/commit/466ba7d
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/hiqdev/yii2-thememanager/releases/tag/0.0.1
 [0.3.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...0.3.0
+[3680fe3]: https://github.com/hiqdev/yii2-thememanager/commit/3680fe3
+[833abe5]: https://github.com/hiqdev/yii2-thememanager/commit/833abe5
+[31d2dae]: https://github.com/hiqdev/yii2-thememanager/commit/31d2dae
+[f8a2287]: https://github.com/hiqdev/yii2-thememanager/commit/f8a2287
+[12fb0c3]: https://github.com/hiqdev/yii2-thememanager/commit/12fb0c3
+[2c072a4]: https://github.com/hiqdev/yii2-thememanager/commit/2c072a4
+[34a0321]: https://github.com/hiqdev/yii2-thememanager/commit/34a0321
+[76f5f2c]: https://github.com/hiqdev/yii2-thememanager/commit/76f5f2c
+[ae0e0b2]: https://github.com/hiqdev/yii2-thememanager/commit/ae0e0b2
+[d7f1dd5]: https://github.com/hiqdev/yii2-thememanager/commit/d7f1dd5
+[1d55f1f]: https://github.com/hiqdev/yii2-thememanager/commit/1d55f1f
+[ee3630e]: https://github.com/hiqdev/yii2-thememanager/commit/ee3630e
+[f5472ea]: https://github.com/hiqdev/yii2-thememanager/commit/f5472ea
+[b4d7c94]: https://github.com/hiqdev/yii2-thememanager/commit/b4d7c94
+[19cc7fa]: https://github.com/hiqdev/yii2-thememanager/commit/19cc7fa
+[a591721]: https://github.com/hiqdev/yii2-thememanager/commit/a591721
+[a812c8a]: https://github.com/hiqdev/yii2-thememanager/commit/a812c8a
+[051f14d]: https://github.com/hiqdev/yii2-thememanager/commit/051f14d
+[660e3eb]: https://github.com/hiqdev/yii2-thememanager/commit/660e3eb
+[dc48a87]: https://github.com/hiqdev/yii2-thememanager/commit/dc48a87
+[ae44253]: https://github.com/hiqdev/yii2-thememanager/commit/ae44253
+[4dc0217]: https://github.com/hiqdev/yii2-thememanager/commit/4dc0217
+[47b0aba]: https://github.com/hiqdev/yii2-thememanager/commit/47b0aba
+[489beb1]: https://github.com/hiqdev/yii2-thememanager/commit/489beb1
+[8040d38]: https://github.com/hiqdev/yii2-thememanager/commit/8040d38
+[0.3.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...0.3.1

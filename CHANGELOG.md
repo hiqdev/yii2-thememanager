@@ -1,5 +1,14 @@
-hiqdev/yii2-thememanager
-------------------------
+# hiqdev/yii2-thememanager
+
+## [0.3.1] - 2017-04-19
+
+- Renamed poweredBy params to dot style ([@hiqsol])
+- Added `OrientationInterface` ([@tafid])
+- Added `themeManager.defaultTheme` parameter ([@hiqsol])
+- Added Faq, FancyPanel widgets ([@tafid])
+- Added in-site theming ([@hiqsol])
+- Added LogoLink widget ([@tafid], [@hiqsol])
+- Added `DetailedTheme` class ([@tafid])
 
 ## [0.3.0] - 2017-01-12
 
@@ -47,9 +56,10 @@ hiqdev/yii2-thememanager
 [andreyklochok@gmail.com]: https://github.com/tafid
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/hiqdev/yii2-thememanager/releases/tag/0.0.1
 [0.3.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...0.3.0
+[0.3.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...0.3.1
