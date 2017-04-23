@@ -1,8 +1,34 @@
 package:
     type:           yii2-extension
     name:           yii2-thememanager
-    title:          Theme Manager for Yii2
+    title:          Pluggable themes for Yii2
     headline:       Yii2 Theme Manager
     keywords:       yii2, theme, manager
-    namespace:      hiqdev\thememanager
-    description:    Theme Manager with auto loading, choose and setup widgets
+    description:    |
+        This [Yii2] plugin provides easy theming for Yii2 projects.
+        And allows to create and use themes as composer packages.
+        So changing a theme on a site becomes as simple as changing
+        a single require line in `composer.json`.
+
+        At the moment there are several themes available:
+
+        - AdminLte          - [yii2-theme-adminlte]
+        - Agency            - [yii2-theme-agency]
+        - DataServ          - [yii2-theme-dataserv]
+        - Flat              - [yii2-theme-flat]
+        - Hyde              - [yii2-theme-hyde]
+        - Obaju             - [yii2-theme-obaju]
+        - Yii2 original     - [yii2-theme-original]
+        - Sailor            - [yii2-theme-sailor]
+        - Twenty Fifteen    - [yii2-theme-twentyfifteen]
+
+        [yii2]:                     http://www.yiiframework.com/
+        [yii2-theme-adminlte]:      https://github.com/hiqdev/yii2-theme-adminlte
+        [yii2-theme-agency]:        https://github.com/hiqdev/yii2-theme-agency
+        [yii2-theme-dataserv]:      https://github.com/hiqdev/yii2-theme-dataserv
+        [yii2-theme-flat]:          https://github.com/hiqdev/yii2-theme-flat
+        [yii2-theme-hyde]:          https://github.com/hiqdev/yii2-theme-hyde
+        [yii2-theme-obaju]:         https://github.com/hiqdev/yii2-theme-obaju
+        [yii2-theme-original]:      https://github.com/hiqdev/yii2-theme-original
+        [yii2-theme-sailor]:        https://github.com/hiqdev/yii2-theme-sailor
+        [yii2-theme-twentyfifteen]: https://github.com/hiqdev/yii2-theme-twentyfifteen

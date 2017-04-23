@@ -1,0 +1,14 @@
+The main goal of this theming library is to allow creation and use of easy
+pluggable themes: to change a theme on a site it is enough just to require
+other theme package in project's `composer.json`.
+
+To achieve this goal several technologies were used:
+
+- [composer-config-plugin] to create themes as plugins i.e. code combined and distributed
+  together with configuration
+- [Yii2 dependency injection] for widgets
+- [Yii2 theming] with `pathMap` auto assembling
+
+[composer-config-plugin]:    https://github.com/hiqdev/composer-config-plugin
+[yii2 dependency injection]: http://www.yiiframework.com/doc-2.0/guide-concept-di-container.html
+[yii2 theming]:              http://www.yiiframework.com/doc-2.0/guide-output-theming.html

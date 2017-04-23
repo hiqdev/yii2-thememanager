@@ -1,7 +1,7 @@
 {
     "name": "hiqdev/yii2-thememanager",
     "type": "yii2-extension",
-    "description": "Theme Manager for Yii2",
+    "description": "Pluggable themes for Yii2",
     "keywords": [
         "yii2",
         "theme",
