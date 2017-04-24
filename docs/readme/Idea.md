@@ -6,7 +6,7 @@ To achieve this goal several technologies were used:
 
 - [composer-config-plugin] to create themes as plugins i.e. code combined and distributed
   together with configuration
-- [Yii2 dependency injection] for widgets
+- [Yii2 dependency injection] for widgets and menus
 - [Yii2 theming] with `pathMap` auto assembling
 
 [composer-config-plugin]:    https://github.com/hiqdev/composer-config-plugin

@@ -10,8 +10,8 @@
 
 namespace hiqdev\thememanager\widgets;
 
-use hiqdev\php\collection\ArrayHelper;
 use yii\base\Widget;
+use yii2\helpers\ArrayHelper;
 
 class FancyPanel extends Widget
 {
