@@ -1,7 +1,7 @@
 <?php
 
 $header = <<<EOF
-Theme Manager for Yii2
+Pluggable themes for Yii2
 
 @link      https://github.com/hiqdev/yii2-thememanager
 @package   yii2-thememanager
@@ -26,6 +26,7 @@ return PhpCsFixer\Config::create()
         ],
         'concat_space'                               =>  ['spacing' => 'one'],
         'array_syntax'                               =>  ['syntax' => 'short'],
+        'phpdoc_no_alias_tag'                        =>  ['replacements' => ['type' => 'var']],
         'blank_line_before_return'                   =>  false,
         'phpdoc_align'                               =>  false,
         'phpdoc_scalar'                              =>  false,
