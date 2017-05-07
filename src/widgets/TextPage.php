@@ -10,6 +10,10 @@
 
 namespace hiqdev\thememanager\widgets;
 
+/**
+ * TextPage widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class TextPage extends \yii\base\Widget
 {
     protected $header;

@@ -12,6 +12,10 @@ namespace hiqdev\thememanager\widgets;
 
 use hiqdev\thememanager\FaqAsset;
 
+/**
+ * FAQ widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class Faq extends \yii\base\Widget
 {
     public $items = [];

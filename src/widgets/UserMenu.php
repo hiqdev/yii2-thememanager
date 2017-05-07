@@ -12,6 +12,10 @@ namespace hiqdev\thememanager\widgets;
 
 use yii\helpers\ArrayHelper;
 
+/**
+ * UserMenu widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class UserMenu extends \yii\base\Widget
 {
     public $options = [];

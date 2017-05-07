@@ -12,8 +12,8 @@ namespace hiqdev\thememanager\widgets;
 
 /**
  * Flashes widget. Displays flashes.
- *
  * @see `hiqdev/yii2-pnotify` for example of implementation.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class Flashes extends \yii\base\Widget
 {

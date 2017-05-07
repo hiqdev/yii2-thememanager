@@ -12,6 +12,10 @@ namespace hiqdev\thememanager\widgets;
 
 use yii\helpers\Html;
 
+/**
+ * SocialLinks widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class SocialLinks extends \yii\base\Widget
 {
     public $tag = 'li';

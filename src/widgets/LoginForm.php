@@ -12,6 +12,10 @@ namespace hiqdev\thememanager\widgets;
 
 use Yii;
 
+/**
+ * LoginForm widget - renders login complex login form.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class LoginForm extends \yii\base\Widget
 {
     public $model;

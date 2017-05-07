@@ -13,6 +13,7 @@ namespace hiqdev\thememanager\widgets;
 /**
  * Sidebar Menu.
  * Redefine and substitute with DI.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class SidebarMenu extends \yii\widgets\Menu
 {

@@ -15,6 +15,7 @@ use yii\base\Widget;
 
 /**
  * LogoLink widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class LogoLink extends Widget
 {

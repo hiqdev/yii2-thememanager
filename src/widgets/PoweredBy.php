@@ -12,6 +12,10 @@ namespace hiqdev\thememanager\widgets;
 
 use yii\base\Widget;
 
+/**
+ * PoweredBy widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class PoweredBy extends Widget
 {
     /**

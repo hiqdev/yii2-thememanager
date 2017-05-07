@@ -13,6 +13,10 @@ namespace hiqdev\thememanager\widgets;
 use yii\base\Widget;
 use yii2\helpers\ArrayHelper;
 
+/**
+ * FancyPanel widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class FancyPanel extends Widget
 {
     public $panelClass = 'contactmethod';

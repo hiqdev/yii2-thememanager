@@ -10,6 +10,10 @@
 
 namespace hiqdev\thememanager\widgets;
 
+/**
+ * CopyrightYears widget - renders copyright years like "2016-2017".
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class CopyrightYears extends \yii\base\Widget
 {
     /**
@@ -28,6 +32,7 @@ class CopyrightYears extends \yii\base\Widget
             return $this->years;
         }
         $curr = date('Y');
+
         return $this->year ? "{$this->year}-$curr" : $curr;
     }
 }

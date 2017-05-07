@@ -13,6 +13,10 @@ namespace hiqdev\thememanager\widgets;
 use yii\base\Widget;
 use yii\helpers\Html;
 
+/**
+ * OrganizationLink widget.
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class OrganizationLink extends Widget
 {
     /**
