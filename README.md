@@ -81,24 +81,24 @@ See [src/config/web.php] for configuration example.
 
 Available configuration parameters:
 
-- `themeManager.defaultTheme`
-- `poweredBy.url`
-- `poweredBy.name`
-- `poweredBy.version`
-- `poweredBy.options`
-- `socialLinks.links`
-- `copyright.year`
+- `themeManager.defaultTheme` - default theme
+- `copyright.year` - **CopyrightYears** widget
 - `copyright.years`
-- `organization.url`
-- `organization.name`
-- `organization.options`
-- `logo.url`
+- `logo.url` - **LogoLink** widget
 - `logo.name`
 - `logo.options`
 - `logo.image`
 - `logo.imageOptions`
 - `logo.smallImage`
 - `logo.smallImageOptions`
+- `organization.url` - **OrganizationLink** widget
+- `organization.name`
+- `organization.options`
+- `poweredBy.url` - **PoweredBy** widget
+- `poweredBy.name`
+- `poweredBy.version`
+- `poweredBy.options`
+- `socialLinks.links` - **SocialLinks** widget
 
 For more details please see [src/config/params.php].
 
