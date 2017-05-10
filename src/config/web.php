@@ -43,6 +43,11 @@ return [
         ],
     ]),
     'container' => [
+        'singletons' => [
+            \hiqdev\thememanager\menus\AbstractNavbarMenu::class => [
+                'class' => \hiqdev\thememanager\menus\NavbarMenu::class,
+            ],
+        ],
         'definitions' => [
             \hiqdev\thememanager\widgets\PoweredBy::class => array_filter([
                 'url'     => $params['poweredBy.url'],
