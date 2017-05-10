@@ -89,7 +89,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     {
         $map = $this->substituteVars($map);
 
-        $themeSubpath = '/src/themes/' . $this->name;
+        $themeSubpath = '/src/views/themes/' . $this->name;
 
         $res = [];
         foreach ($map as $from => &$tos) {
