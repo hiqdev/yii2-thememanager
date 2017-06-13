@@ -11,7 +11,7 @@
 namespace hiqdev\thememanager\widgets;
 
 use yii\base\Widget;
-use yii2\helpers\ArrayHelper;
+use yii\helpers\ArrayHelper;
 
 /**
  * FancyPanel widget.
