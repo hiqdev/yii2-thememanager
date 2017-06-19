@@ -98,9 +98,9 @@ class LoginForm extends \yii\base\Widget
     public function defaultTexts()
     {
         return [
-            'restore-password' => Yii::t('hiqdev:thememanager', 'I forgot my password'),
-            'signup' => Yii::t('hiqdev:thememanager', 'Register a new membership'),
-            'login' => Yii::t('hiqdev:thememanager', 'I already have a membership'),
+            'restore-password' => Yii::t('hiqdev.thememanager', 'I forgot my password'),
+            'signup' => Yii::t('hiqdev.thememanager', 'Register a new membership'),
+            'login' => Yii::t('hiqdev.thememanager', 'I already have a membership'),
         ];
     }
 

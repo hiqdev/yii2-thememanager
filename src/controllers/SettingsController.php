@@ -62,7 +62,7 @@ class SettingsController extends \yii\web\Controller
         if (Yii::$app->request->getIsPost() && $model->load($data) && $model->validate()) {
             $this->getThemeSettingsStorage()->set($model);
             $this->setGlobalOrientation($model->filterOrientation);
-            Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Layout settings saved.'));
+            Yii::$app->session->setFlash('success', Yii::t('hiqdev.thememanager', 'Layout settings saved.'));
         }
 
         if (Yii::$app->request->isAjax) {
@@ -101,7 +101,7 @@ class SettingsController extends \yii\web\Controller
             $model = $this->getModel();
             $model->theme = $theme;
             $this->getThemeSettingsStorage()->set($model);
-            Yii::$app->session->setFlash('success', Yii::t('hiqdev:thememanager', 'Theme changed'));
+            Yii::$app->session->setFlash('success', Yii::t('hiqdev.thememanager', 'Theme changed'));
         }
 
         return $this->redirect(['index']);

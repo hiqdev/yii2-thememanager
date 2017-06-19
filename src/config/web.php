@@ -22,7 +22,7 @@ return [
         ]),
         'i18n' => [
             'translations' => [
-                'hiqdev:thememanager' => [
+                'hiqdev.thememanager' => [
                     'class' => \yii\i18n\PhpMessageSource::class,
                     'basePath' => '@hiqdev/thememanager/messages',
                 ],
