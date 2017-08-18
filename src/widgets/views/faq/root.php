@@ -4,9 +4,7 @@ use yii\helpers\Html;
 
 /** @var array $items */
 /** @var \yii\web\View $this */
-/** @var \hipanel\site\widgets\Faq $this ->context */
 ?>
-11111111111111111111111111111111111111111111
 <div id="faq" class="faq-tabs">
     <div class="row">
         <div class="col-sm-12">
