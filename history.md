@@ -1,5 +1,31 @@
 # hiqdev/yii2-thememanager
 
+## [Under development]
+
+- Fixed minor issues
+    - [9b75f27] 2017-10-03 csfixed [@hiqsol]
+    - [364fdff] 2017-08-18 Deleted FAQ js from root [@tafid]
+    - [422a47b] 2017-06-19 redone translation category to `hiqdev.thememanager` [@hiqsol]
+    - [7fcb548] 2017-06-13 fixed typo [@hiqsol]
+- Added `NavbarMenu`
+    - [033c02d] 2017-05-10 added `NavbarMenu` [@hiqsol]
+- Moved theme tuning views to `src/views/themes` <- src/themes
+    - [f279ab0] 2017-05-10 moved theme tuning views to `src/views/themes` <- `src/themes` [@hiqsol]
+    - [bdc23c2] 2017-05-08 csfixed [@hiqsol]
+- Improved docs
+    - [f2b73ec] 2017-05-08 docs [@hiqsol]
+    - [968be6d] 2017-05-08 docs [@hiqsol]
+    - [cd4f3cb] 2017-05-07 docs [@hiqsol]
+- Added `Markdown` widget
+    - [9a14757] 2017-05-07 added Markdown widget [@hiqsol]
+    - [76c23de] 2017-05-06 csfixed [@hiqsol]
+- Fixed configs
+    - [4cddce8] 2017-05-06 renamed `hidev.yml` [@hiqsol]
+    - [85de120] 2017-05-06 renamed config `web` <- hisite [@hiqsol]
+    - [523ac50] 2017-04-23 docs [@hiqsol]
+    - [f1ac15b] 2017-04-19 renamed all parameters to dot.style with defaults in params.php [@hiqsol]
+    - [f994a12] 2017-04-19 renamed param `socialLinks.links` <- socialLinks [@hiqsol]
+
 ## [0.3.1] - 2017-04-19
 
 - Renamed poweredBy params to dot style
@@ -331,7 +357,7 @@
 [865f3a1]: https://github.com/hiqdev/yii2-thememanager/commit/865f3a1
 [5b2a1a3]: https://github.com/hiqdev/yii2-thememanager/commit/5b2a1a3
 [466ba7d]: https://github.com/hiqdev/yii2-thememanager/commit/466ba7d
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
@@ -363,3 +389,20 @@
 [489beb1]: https://github.com/hiqdev/yii2-thememanager/commit/489beb1
 [8040d38]: https://github.com/hiqdev/yii2-thememanager/commit/8040d38
 [0.3.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...0.3.1
+[9b75f27]: https://github.com/hiqdev/yii2-thememanager/commit/9b75f27
+[364fdff]: https://github.com/hiqdev/yii2-thememanager/commit/364fdff
+[422a47b]: https://github.com/hiqdev/yii2-thememanager/commit/422a47b
+[7fcb548]: https://github.com/hiqdev/yii2-thememanager/commit/7fcb548
+[033c02d]: https://github.com/hiqdev/yii2-thememanager/commit/033c02d
+[f279ab0]: https://github.com/hiqdev/yii2-thememanager/commit/f279ab0
+[f2b73ec]: https://github.com/hiqdev/yii2-thememanager/commit/f2b73ec
+[968be6d]: https://github.com/hiqdev/yii2-thememanager/commit/968be6d
+[bdc23c2]: https://github.com/hiqdev/yii2-thememanager/commit/bdc23c2
+[cd4f3cb]: https://github.com/hiqdev/yii2-thememanager/commit/cd4f3cb
+[9a14757]: https://github.com/hiqdev/yii2-thememanager/commit/9a14757
+[76c23de]: https://github.com/hiqdev/yii2-thememanager/commit/76c23de
+[4cddce8]: https://github.com/hiqdev/yii2-thememanager/commit/4cddce8
+[85de120]: https://github.com/hiqdev/yii2-thememanager/commit/85de120
+[523ac50]: https://github.com/hiqdev/yii2-thememanager/commit/523ac50
+[f1ac15b]: https://github.com/hiqdev/yii2-thememanager/commit/f1ac15b
+[f994a12]: https://github.com/hiqdev/yii2-thememanager/commit/f994a12

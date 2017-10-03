@@ -1,5 +1,14 @@
 # hiqdev/yii2-thememanager
 
+## [Under development]
+
+- Fixed minor issues ([@hiqsol], [@tafid])
+- Added `NavbarMenu` ([@hiqsol])
+- Moved theme tuning views to `src/views/themes` <- src/themes ([@hiqsol])
+- Improved docs ([@hiqsol])
+- Added `Markdown` widget ([@hiqsol])
+- Fixed configs ([@hiqsol])
+
 ## [0.3.1] - 2017-04-19
 
 - Renamed poweredBy params to dot style ([@hiqsol])
@@ -56,7 +65,7 @@
 [andreyklochok@gmail.com]: https://github.com/tafid
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
