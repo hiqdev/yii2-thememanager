@@ -1,6 +1,6 @@
 <?php
 /**
- * Pluggable themes for Yii2.
+ * Pluggable themes for Yii2
  *
  * @link      https://github.com/hiqdev/yii2-thememanager
  * @package   yii2-thememanager
@@ -115,6 +115,7 @@ class LoginForm extends \yii\base\Widget
             'first_name'        => 'user',
             'last_name'         => 'user',
         ];
+
         return isset($marks[$name]) ? $marks[$name] : '';
     }
 

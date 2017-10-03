@@ -1,6 +1,6 @@
 <?php
 /**
- * Pluggable themes for Yii2.
+ * Pluggable themes for Yii2
  *
  * @link      https://github.com/hiqdev/yii2-thememanager
  * @package   yii2-thememanager

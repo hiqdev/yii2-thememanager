@@ -1,6 +1,6 @@
 <?php
 /**
- * Pluggable themes for Yii2.
+ * Pluggable themes for Yii2
  *
  * @link      https://github.com/hiqdev/yii2-thememanager
  * @package   yii2-thememanager
@@ -30,6 +30,7 @@ class Panel extends \yii\debug\Panel implements ViewContextInterface
         if ($this->_viewPath === null) {
             $this->_viewPath = dirname(__DIR__) . '/views/debug';
         }
+
         return $this->_viewPath;
     }
 

@@ -9,6 +9,7 @@ use yii\helpers\Inflector;
 
 <?php if (empty($panel->data)) {
     echo '<p>No theme was used.</p>';
+
     return;
 } ?>
 <div class="table-responsive">
