@@ -1,6 +1,6 @@
 # hiqdev/yii2-thememanager
 
-## [Under development]
+## [0.3.2] - 2017-10-03
 
 - Fixed minor issues ([@hiqsol], [@tafid])
 - Added `NavbarMenu` ([@hiqsol])
@@ -57,6 +57,8 @@
 
 ## [Development started] - 2015-04-18
 
+## [dev] - 2017-10-03
+
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
 [@SilverFire]: https://github.com/SilverFire
@@ -72,3 +74,5 @@
 [0.0.1]: https://github.com/hiqdev/yii2-thememanager/releases/tag/0.0.1
 [0.3.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.2.0...0.3.0
 [0.3.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...0.3.1
+[0.3.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...0.3.2
+[Development started]: https://github.com/hiqdev/yii2-thememanager/compare/dev...Development started

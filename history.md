@@ -1,6 +1,6 @@
 # hiqdev/yii2-thememanager
 
-## [Under development]
+## [0.3.2] - 2017-10-03
 
 - Fixed minor issues
     - [9b75f27] 2017-10-03 csfixed [@hiqsol]
@@ -224,6 +224,8 @@
 
 ## [Development started] - 2015-04-18
 
+## [dev] - 2017-10-03
+
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
 [@SilverFire]: https://github.com/SilverFire
@@ -406,3 +408,5 @@
 [523ac50]: https://github.com/hiqdev/yii2-thememanager/commit/523ac50
 [f1ac15b]: https://github.com/hiqdev/yii2-thememanager/commit/f1ac15b
 [f994a12]: https://github.com/hiqdev/yii2-thememanager/commit/f994a12
+[0.3.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...0.3.2
+[Development started]: https://github.com/hiqdev/yii2-thememanager/compare/dev...Development started
