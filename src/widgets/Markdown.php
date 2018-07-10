@@ -11,7 +11,6 @@
 namespace hiqdev\thememanager\widgets;
 
 use cebe\markdown\GithubMarkdown;
-use Yii;
 use yii\base\Widget;
 
 /**
@@ -49,6 +48,6 @@ class Markdown extends Widget
 
     protected function readFile($file)
     {
-        return file_get_contents(Yii::getAlias($file));
+        return file_get_contents($this->app->getAlias($file));
     }
 }
