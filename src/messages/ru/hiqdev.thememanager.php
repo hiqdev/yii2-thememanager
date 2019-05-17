@@ -34,4 +34,7 @@ return [
     'version' => 'версия',
     'Layout settings saved' => 'Настройки верстки сохранены',
     'Theme changed' => 'Тема изменена',
+    'Change password' => 'Изменить пароль',
+    'Change email' => 'Изменить е-мейл',
+    'Enter new email' => 'Введите новый е-мейл',
 ];
