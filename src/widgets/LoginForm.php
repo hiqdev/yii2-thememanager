@@ -147,7 +147,9 @@ class LoginForm extends \yii\base\Widget
                 if ($rule[1] === 'boolean') {
                     $attributes = (array) $rule[0];
                     foreach ($attributes as $attribute) {
-                        $this->_boolAttributes[$attribute] = $attribute;
+                        if ($this->model->isAttributeActive($attribute)) {
+                            $this->_boolAttributes[$attribute] = $attribute;
+                        }
                     }
                 }
             }
