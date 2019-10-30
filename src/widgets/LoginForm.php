@@ -19,6 +19,7 @@ use Yii;
 class LoginForm extends \yii\base\Widget
 {
     public $model;
+    public $isCaptchaRequired = false;
     public $options = [];
 
     public $shows = [];
