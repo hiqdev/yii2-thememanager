@@ -76,6 +76,16 @@ return [
                 'smallImage'        => $params['logo.smallImage'],
                 'smallImageOptions' => $params['logo.smallImageOptions'],
             ]),
+            \hiqdev\thememanager\widgets\MailLogoLink::class => array_filter([
+                'websiteUrl'        => $params['logo.websiteUrl'],
+                'url'               => $params['logo.url'] ?: '/',
+                'name'              => $params['logo.name'] ?: $params['organization.name'] ?: 'Logo',
+                'options'           => $params['logo.options'],
+                'image'             => $params['logo.image'],
+                'imageOptions'      => $params['logo.imageOptions'],
+                'smallImage'        => $params['logo.smallImage'],
+                'smallImageOptions' => $params['logo.smallImageOptions'],
+            ]),
         ],
     ],
 ];
