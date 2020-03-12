@@ -32,6 +32,5 @@ return [
     'logo.imageOptions'         => null,
     'logo.smallImage'           => null,
     'logo.smallImageOptions'    => null,
-
     'logo.websiteUrl'           => null,
 ];
