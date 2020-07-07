@@ -24,7 +24,7 @@ return [
             'translations' => [
                 'hiqdev.thememanager' => [
                     'class' => \yii\i18n\PhpMessageSource::class,
-                    'basePath' => '@hiqdev/thememanager/messages',
+                    'basePath' => dirname(__DIR__) . '/src/messages',
                 ],
             ],
         ],
