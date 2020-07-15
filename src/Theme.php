@@ -93,7 +93,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
 
         $res = [];
         foreach ($map as $from => &$tos) {
-            $tos = array_reverse(array_unique(array_values($tos)));
+            $tos = array_unique(array_reverse(array_values($tos)));
             $new = [];
             foreach ($tos as $to) {
                 $to = Yii::getAlias($to);
