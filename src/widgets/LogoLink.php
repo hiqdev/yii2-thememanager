@@ -12,6 +12,7 @@ namespace hiqdev\thememanager\widgets;
 
 use Yii;
 use yii\base\Widget;
+use yii\helpers\Html;
 
 /**
  * LogoLink widget.
@@ -47,26 +48,32 @@ class LogoLink extends Widget
 
     public function run()
     {
-        return $this->render('LogoLink', $this->collectData());
+        if ($this->isImage()) {
+            return $this->renderImage($this->image, $this->imageOptions);
+        }
+
+        if ($this->isSmallImage()) {
+            return $this->renderImage($this->smallImage, $this->smallImageOptions);
+        }
+
+        return Html::a($this->name, $this->url, $this->options);
     }
 
-    protected function collectData()
+    private function isImage(): bool
     {
-        $data = [
-            'name' => $this->name,
-            'url' => $this->url,
-            'options' => $this->options,
-        ];
-        if ($this->smallImage) {
-            $data['smallImage'] = $this->getImage($this->smallImage);
-            $data['smallImageOptions'] = $this->smallImageOptions;
-        }
-        if ($this->image) {
-            $data['image'] = $this->getImage($this->image);
-            $data['imageOptions'] = $this->imageOptions;
-        }
+        return !empty($this->image);
+    }
 
-        return $data;
+    private function isSmallImage(): bool
+    {
+        return !empty($this->smallImage);
+    }
+
+    private function renderImage(string $image, array $imageOptions): string
+    {
+        return Html::beginTag('a', array_merge(['href' => $this->url, 'class' => 'logo'], $this->options))
+                . Html::img($this->getImage($image), $imageOptions)
+                . Html::endTag('a');
     }
 
     protected function getImage($path)
