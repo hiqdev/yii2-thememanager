@@ -18,7 +18,7 @@ use yii\helpers\Inflector;
             <p>
                 Total <b><?= $panel->getCount() ?></b> themes were defined.
                 Current: <a href="#<?= $panel->getCurrent() ?>"><?= $panel->getCurrent() ?></a>.
-                Default: <a href="#<?= $panel->getDefault() ?>"><?= $panel->getDefault() ?></b>.
+                Default: <a href="#<?= $panel->getDefault() ?>"><?= $panel->getDefault() ?></a>.
             </p>
         </caption>
     <?php foreach ($panel->getThemes() as $name => $theme) : ?>
