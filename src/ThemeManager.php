@@ -16,7 +16,6 @@ use Yii;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 use yii\web\Controller;
-use yii\web\Request;
 
 /**
  * Theme Manager. Provides:.
