@@ -35,7 +35,7 @@ use yii\web\Controller;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
+class ThemeManager extends \hiqdev\yii2\collection\Manager
 {
     /**
      * @var array basic pathMap for all themes, will be merged with theme own pathMap
@@ -121,6 +121,8 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
     public function getTheme()
     {
+        $this->ensureBootstrapped();
+
         if (is_string($this->_theme)) {
             if (!$this->has($this->_theme)) {
                 throw new InvalidConfigException('unknown theme: ' . $this->_theme);
@@ -180,10 +182,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
      */
     protected $_isBootstrapped = false;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function bootstrap($app)
+    public function ensureBootstrapped()
     {
         if ($this->_isBootstrapped) {
             return;
@@ -192,7 +191,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
 
         Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
 
-        $data = $this->getSettingsStorage()->get();
+        $data = $this->getThemeSettings();
         $model = new Settings();
         $model->load($data);
         $theme = $this->hasItem($model->theme) ? $model->theme : null;
