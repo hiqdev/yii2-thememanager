@@ -1,6 +1,26 @@
 # hiqdev/yii2-thememanager
 
-## [0.3.2] - 2017-10-03
+## [0.4.0] - 2022-06-28
+
+- Do not initialize a session connect unless required
+    - [a01e793] 2022-06-28 Do not initialize a session connect unless required [@SilverFire]
+- Added `AlertWidget`
+    - [2ba8f11] 2020-03-26 Added `AlertWidget` [@tafid]
+    - [4676742] 2019-10-30 Merge pull request #5 from strorch/feature/captcha [@SilverFire]
+- LoginForm::getBoolAttributes() will be retrun scenario active only
+    - [424d425] 2019-07-19 LoginForm::getBoolAttributes() will be retrun scenario active only [@tafid]
+- Other minor changes
+    - [7822e7e] 2021-02-18 typo [smy980807@ukr.net]
+    - [91d3d3f] 2020-10-02 removed small image from LogoLink view [smy980807@ukr.net]
+    - [c8603a0] 2020-07-15 DANGEROUS: Fix (hopefully) theme compile path map [@hiqsol]
+    - [b3ad004] 2020-07-07 fixed aliased paths to real [smy980807@ukr.net]
+    - [3ccd8e5] 2020-03-26 Merge pull request #7 from tafid/alert_widget [@SilverFire]
+    - [f557e68] 2019-10-25 created captcha field in LoginForm [smy980807@ukr.net]
+    - [63ce3b1] 2019-08-29 Fixed for Yii 2 [@hiqsol]
+    - [0817fdd] 2019-03-08 Moved config to root dir [@hiqsol]
+    - [6137867] 2018-07-11 removed use of `Yii::getAlias` [@hiqsol]
+
+## [0.3.2] - 2022-06-28
 
 - Fixed minor issues
     - [9b75f27] 2017-10-03 csfixed [@hiqsol]
@@ -26,7 +46,7 @@
     - [f1ac15b] 2017-04-19 renamed all parameters to dot.style with defaults in params.php [@hiqsol]
     - [f994a12] 2017-04-19 renamed param `socialLinks.links` <- socialLinks [@hiqsol]
 
-## [0.3.1] - 2017-04-19
+## [0.3.1] - 2022-06-28
 
 - Renamed poweredBy params to dot style
     - [3680fe3] 2017-04-19 csfixed [@hiqsol]
@@ -61,7 +81,7 @@
     - [489beb1] 2017-01-19 Improved isHomePage, used getRoute() [@tafid]
     - [8040d38] 2017-01-19 Fixed isHomePage method [@tafid]
 
-## [0.3.0] - 2017-01-12
+## [0.3.0] - 2022-06-28
 
 - Fixed minor issues
     - [645bac7] 2017-01-12 csfixed [@hiqsol]
@@ -79,7 +99,6 @@
     - [c829c74] 2016-12-22 + AbstractFooterMenu [@hiqsol]
     - [6425fcb] 2016-12-22 + SidebarMenu widget [@hiqsol]
     - [c64be6c] 2016-12-21 fixed menu interface: widget -> run, render -> widget [@hiqsol]
-    - [bf8cd7d] 2016-12-21 Merge branch 'tofid' [@tafid]
     - [865f3a1] 2016-12-20 + abstract menus [@hiqsol]
 - Removed widget, hasWidget and callStatic from ThemeManager, redone creating widgets to straight yii DI
     - [b59dfe6] 2016-12-21 redone Menu::render -> widget [@hiqsol]
@@ -89,7 +108,7 @@
     - [65ed824] 2016-12-21 improved UserMenu widget [@hiqsol]
     - [c2fb625] 2016-12-20 redone config for straight DI [@hiqsol]
 
-## [0.2.0] - 2016-12-06
+## [0.2.0] - 2022-06-28
 
 - Added UserMenu, FancyPanel
     - [f7761a3] 2016-12-03 csfixed: changed header comment to phpdoc [@hiqsol]
@@ -127,7 +146,7 @@
     - [b99abb3] 2016-10-01 improved building pathMap again with themes own pathMap [@hiqsol]
     - [022202a] 2016-09-29 improved building pathMap: adding app viewPath mapping by default and resolving aliases in pathMap [@hiqsol]
 
-## [0.1.0] - 2016-09-28
+## [0.1.0] - 2022-06-28
 
 - Changed: redone building theme pathMap with vars substituting
     - [cc5e84c] 2016-09-28 redone building theme pathMap with compilePathMap and substituteVars [@hiqsol]
@@ -137,7 +156,7 @@
     - [adb42d2] 2016-09-21 used original `widget()` function [@hiqsol]
     - [4fbc1bc] 2016-09-19 Change poweredBy view, add thememanager translate messages [@tafid]
 
-## [0.0.2] - 2016-09-08
+## [0.0.2] - 2022-06-28
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
     - [d675571] 2016-09-02 added LoginForm widget [@hiqsol]
@@ -163,7 +182,7 @@
     - [87125e7] 2016-08-23 removed AssetManager from bootstrap [@hiqsol]
     - [ea0c7a7] 2016-08-23 removed AssetManager from config [@hiqsol]
 
-## [0.0.1] - 2016-08-22
+## [0.0.1] - 2022-06-28
 
 - Changed bootstrapping
     - [ef164cf] 2016-08-19 + isHomePage to ThemeManager component [@hiqsol]
@@ -222,9 +241,9 @@
     - [40e739b] 2015-04-18 doc [@hiqsol]
     - [67527f2] 2015-04-18 inited [@hiqsol]
 
-## [Development started] - 2015-04-18
+## [Development started] - 2022-06-28
 
-## [dev] - 2017-10-03
+## [dev] - 2022-06-28
 
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
@@ -348,7 +367,6 @@
 [c829c74]: https://github.com/hiqdev/yii2-thememanager/commit/c829c74
 [6425fcb]: https://github.com/hiqdev/yii2-thememanager/commit/6425fcb
 [c64be6c]: https://github.com/hiqdev/yii2-thememanager/commit/c64be6c
-[bf8cd7d]: https://github.com/hiqdev/yii2-thememanager/commit/bf8cd7d
 [9c38c60]: https://github.com/hiqdev/yii2-thememanager/commit/9c38c60
 [b59dfe6]: https://github.com/hiqdev/yii2-thememanager/commit/b59dfe6
 [7356b05]: https://github.com/hiqdev/yii2-thememanager/commit/7356b05
@@ -359,7 +377,7 @@
 [865f3a1]: https://github.com/hiqdev/yii2-thememanager/commit/865f3a1
 [5b2a1a3]: https://github.com/hiqdev/yii2-thememanager/commit/5b2a1a3
 [466ba7d]: https://github.com/hiqdev/yii2-thememanager/commit/466ba7d
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
@@ -410,3 +428,17 @@
 [f994a12]: https://github.com/hiqdev/yii2-thememanager/commit/f994a12
 [0.3.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...0.3.2
 [Development started]: https://github.com/hiqdev/yii2-thememanager/compare/dev...Development started
+[a01e793]: https://github.com/hiqdev/yii2-thememanager/commit/a01e793
+[7822e7e]: https://github.com/hiqdev/yii2-thememanager/commit/7822e7e
+[91d3d3f]: https://github.com/hiqdev/yii2-thememanager/commit/91d3d3f
+[c8603a0]: https://github.com/hiqdev/yii2-thememanager/commit/c8603a0
+[b3ad004]: https://github.com/hiqdev/yii2-thememanager/commit/b3ad004
+[3ccd8e5]: https://github.com/hiqdev/yii2-thememanager/commit/3ccd8e5
+[2ba8f11]: https://github.com/hiqdev/yii2-thememanager/commit/2ba8f11
+[4676742]: https://github.com/hiqdev/yii2-thememanager/commit/4676742
+[f557e68]: https://github.com/hiqdev/yii2-thememanager/commit/f557e68
+[63ce3b1]: https://github.com/hiqdev/yii2-thememanager/commit/63ce3b1
+[424d425]: https://github.com/hiqdev/yii2-thememanager/commit/424d425
+[0817fdd]: https://github.com/hiqdev/yii2-thememanager/commit/0817fdd
+[6137867]: https://github.com/hiqdev/yii2-thememanager/commit/6137867
+[0.4.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...0.4.0

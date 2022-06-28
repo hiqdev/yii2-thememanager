@@ -1,6 +1,13 @@
 # hiqdev/yii2-thememanager
 
-## [0.3.2] - 2017-10-03
+## [0.4.0] - 2022-06-28
+
+- Do not initialize a session connect unless required ([@SilverFire])
+- Added `AlertWidget` ([@tafid], [@SilverFire])
+- LoginForm::getBoolAttributes() will be retrun scenario active only ([@tafid])
+- Other minor changes ([smy980807@ukr.net], [@hiqsol], [@SilverFire])
+
+## [0.3.2] - 2022-06-28
 
 - Fixed minor issues ([@hiqsol], [@tafid])
 - Added `NavbarMenu` ([@hiqsol])
@@ -9,7 +16,7 @@
 - Added `Markdown` widget ([@hiqsol])
 - Fixed configs ([@hiqsol])
 
-## [0.3.1] - 2017-04-19
+## [0.3.1] - 2022-06-28
 
 - Renamed poweredBy params to dot style ([@hiqsol])
 - Added `OrientationInterface` ([@tafid])
@@ -19,14 +26,14 @@
 - Added LogoLink widget ([@tafid], [@hiqsol])
 - Added `DetailedTheme` class ([@tafid])
 
-## [0.3.0] - 2017-01-12
+## [0.3.0] - 2022-06-28
 
 - Fixed minor issues ([@hiqsol], [@SilverFire], [@tafid])
 - Added Faq and TextPage widgets ([@tafid])
-- Added abstract menus ([@hiqsol], [@tafid])
+- Added abstract menus ([@hiqsol])
 - Removed widget, hasWidget and callStatic from ThemeManager, redone creating widgets to straight yii DI ([@hiqsol])
 
-## [0.2.0] - 2016-12-06
+## [0.2.0] - 2022-06-28
 
 - Added UserMenu, FancyPanel ([@hiqsol], [@tafid], [@SilverFire])
 - Fixed many widgets ([@hiqsol])
@@ -34,18 +41,18 @@
 - Added Themes debug panel ([@hiqsol])
 - Changed building pathMap ([@hiqsol])
 
-## [0.1.0] - 2016-09-28
+## [0.1.0] - 2022-06-28
 
 - Changed: redone building theme pathMap with vars substituting ([@hiqsol])
 - Changed: redone widgets to pass params through config ([@hiqsol], [@tafid])
 
-## [0.0.2] - 2016-09-08
+## [0.0.2] - 2022-06-28
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs ([@hiqsol], [@tafid])
 - Added viewPaths parameter ([@hiqsol])
 - Removed View, AssetConverter and AssetManager ([@hiqsol])
 
-## [0.0.1] - 2016-08-22
+## [0.0.1] - 2022-06-28
 
 - Changed bootstrapping ([@hiqsol])
 - Changed: redone to `composer-config-plugin` ([@hiqsol])
@@ -55,9 +62,9 @@
 - Added AssetManager and AssetConverter ([@hiqsol])
 - Added basics ([@hiqsol], [@SilverFire])
 
-## [Development started] - 2015-04-18
+## [Development started] - 2022-06-28
 
-## [dev] - 2017-10-03
+## [dev] - 2022-06-28
 
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
@@ -67,7 +74,7 @@
 [andreyklochok@gmail.com]: https://github.com/tafid
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
-[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...HEAD
+[Under development]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...HEAD
 [0.2.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.0.1...0.0.2
@@ -76,3 +83,4 @@
 [0.3.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.0...0.3.1
 [0.3.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...0.3.2
 [Development started]: https://github.com/hiqdev/yii2-thememanager/compare/dev...Development started
+[0.4.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...0.4.0
