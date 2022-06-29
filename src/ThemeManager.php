@@ -16,6 +16,7 @@ use Yii;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 use yii\web\Controller;
+use yii\web\View;
 
 /**
  * Theme Manager. Provides:.
@@ -35,7 +36,7 @@ use yii\web\Controller;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class ThemeManager extends \hiqdev\yii2\collection\Manager
+class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\BootstrapInterface
 {
     /**
      * @var array basic pathMap for all themes, will be merged with theme own pathMap
@@ -214,5 +215,15 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager
     public function getThemeSettings()
     {
         return $this->getSettingsStorage()->get();
+    }
+
+
+    public function bootstrap($app)
+    {
+        if (!$app->has('view')) {
+            return;
+        }
+
+        $app->getView()->on(View::EVENT_BEFORE_RENDER, [$this, 'ensureBootstrapped']);
     }
 }

@@ -9,6 +9,7 @@
  */
 
 return [
+    'bootstrap' => ['themeManager' => 'themeManager'],
     'components' => [
         'themeSettingsStorage' => [
             'class' => \hiqdev\thememanager\storage\SessionSettingsStorage::class,
