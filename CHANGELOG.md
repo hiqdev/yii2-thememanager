@@ -1,13 +1,17 @@
 # hiqdev/yii2-thememanager
 
-## [0.4.0] - 2022-06-28
+## [0.4.1] - 2022-06-29
+
+- ThemeManager have to set View::theme before render ([@SilverFire])
+
+## [0.4.0] - 2022-06-29
 
 - Do not initialize a session connect unless required ([@SilverFire])
 - Added `AlertWidget` ([@tafid], [@SilverFire])
 - LoginForm::getBoolAttributes() will be retrun scenario active only ([@tafid])
 - Other minor changes ([smy980807@ukr.net], [@hiqsol], [@SilverFire])
 
-## [0.3.2] - 2022-06-28
+## [0.3.2] - 2022-06-29
 
 - Fixed minor issues ([@hiqsol], [@tafid])
 - Added `NavbarMenu` ([@hiqsol])
@@ -16,7 +20,7 @@
 - Added `Markdown` widget ([@hiqsol])
 - Fixed configs ([@hiqsol])
 
-## [0.3.1] - 2022-06-28
+## [0.3.1] - 2022-06-29
 
 - Renamed poweredBy params to dot style ([@hiqsol])
 - Added `OrientationInterface` ([@tafid])
@@ -26,14 +30,14 @@
 - Added LogoLink widget ([@tafid], [@hiqsol])
 - Added `DetailedTheme` class ([@tafid])
 
-## [0.3.0] - 2022-06-28
+## [0.3.0] - 2022-06-29
 
 - Fixed minor issues ([@hiqsol], [@SilverFire], [@tafid])
 - Added Faq and TextPage widgets ([@tafid])
 - Added abstract menus ([@hiqsol])
 - Removed widget, hasWidget and callStatic from ThemeManager, redone creating widgets to straight yii DI ([@hiqsol])
 
-## [0.2.0] - 2022-06-28
+## [0.2.0] - 2022-06-29
 
 - Added UserMenu, FancyPanel ([@hiqsol], [@tafid], [@SilverFire])
 - Fixed many widgets ([@hiqsol])
@@ -41,18 +45,18 @@
 - Added Themes debug panel ([@hiqsol])
 - Changed building pathMap ([@hiqsol])
 
-## [0.1.0] - 2022-06-28
+## [0.1.0] - 2022-06-29
 
 - Changed: redone building theme pathMap with vars substituting ([@hiqsol])
 - Changed: redone widgets to pass params through config ([@hiqsol], [@tafid])
 
-## [0.0.2] - 2022-06-28
+## [0.0.2] - 2022-06-29
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs ([@hiqsol], [@tafid])
 - Added viewPaths parameter ([@hiqsol])
 - Removed View, AssetConverter and AssetManager ([@hiqsol])
 
-## [0.0.1] - 2022-06-28
+## [0.0.1] - 2022-06-29
 
 - Changed bootstrapping ([@hiqsol])
 - Changed: redone to `composer-config-plugin` ([@hiqsol])
@@ -62,9 +66,9 @@
 - Added AssetManager and AssetConverter ([@hiqsol])
 - Added basics ([@hiqsol], [@SilverFire])
 
-## [Development started] - 2022-06-28
+## [Development started] - 2022-06-29
 
-## [dev] - 2022-06-28
+## [dev] - 2022-06-29
 
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
@@ -84,3 +88,4 @@
 [0.3.2]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.1...0.3.2
 [Development started]: https://github.com/hiqdev/yii2-thememanager/compare/dev...Development started
 [0.4.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...0.4.0
+[0.4.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.4.0...0.4.1

@@ -1,7 +1,13 @@
 # hiqdev/yii2-thememanager
 
-## [0.4.0] - 2022-06-28
+## [0.4.1] - 2022-06-29
 
+- ThemeManager have to set View::theme before render
+    - [1b52083] 2022-06-29 ThemeManager have to set View::theme before render [@SilverFire]
+
+## [0.4.0] - 2022-06-29
+
+    - [8cf602a] 2022-06-28 Released 0.4.0 [@SilverFire]
 - Do not initialize a session connect unless required
     - [a01e793] 2022-06-28 Do not initialize a session connect unless required [@SilverFire]
 - Added `AlertWidget`
@@ -20,7 +26,7 @@
     - [0817fdd] 2019-03-08 Moved config to root dir [@hiqsol]
     - [6137867] 2018-07-11 removed use of `Yii::getAlias` [@hiqsol]
 
-## [0.3.2] - 2022-06-28
+## [0.3.2] - 2022-06-29
 
 - Fixed minor issues
     - [9b75f27] 2017-10-03 csfixed [@hiqsol]
@@ -46,7 +52,7 @@
     - [f1ac15b] 2017-04-19 renamed all parameters to dot.style with defaults in params.php [@hiqsol]
     - [f994a12] 2017-04-19 renamed param `socialLinks.links` <- socialLinks [@hiqsol]
 
-## [0.3.1] - 2022-06-28
+## [0.3.1] - 2022-06-29
 
 - Renamed poweredBy params to dot style
     - [3680fe3] 2017-04-19 csfixed [@hiqsol]
@@ -81,7 +87,7 @@
     - [489beb1] 2017-01-19 Improved isHomePage, used getRoute() [@tafid]
     - [8040d38] 2017-01-19 Fixed isHomePage method [@tafid]
 
-## [0.3.0] - 2022-06-28
+## [0.3.0] - 2022-06-29
 
 - Fixed minor issues
     - [645bac7] 2017-01-12 csfixed [@hiqsol]
@@ -108,7 +114,7 @@
     - [65ed824] 2016-12-21 improved UserMenu widget [@hiqsol]
     - [c2fb625] 2016-12-20 redone config for straight DI [@hiqsol]
 
-## [0.2.0] - 2022-06-28
+## [0.2.0] - 2022-06-29
 
 - Added UserMenu, FancyPanel
     - [f7761a3] 2016-12-03 csfixed: changed header comment to phpdoc [@hiqsol]
@@ -146,7 +152,7 @@
     - [b99abb3] 2016-10-01 improved building pathMap again with themes own pathMap [@hiqsol]
     - [022202a] 2016-09-29 improved building pathMap: adding app viewPath mapping by default and resolving aliases in pathMap [@hiqsol]
 
-## [0.1.0] - 2022-06-28
+## [0.1.0] - 2022-06-29
 
 - Changed: redone building theme pathMap with vars substituting
     - [cc5e84c] 2016-09-28 redone building theme pathMap with compilePathMap and substituteVars [@hiqsol]
@@ -156,7 +162,7 @@
     - [adb42d2] 2016-09-21 used original `widget()` function [@hiqsol]
     - [4fbc1bc] 2016-09-19 Change poweredBy view, add thememanager translate messages [@tafid]
 
-## [0.0.2] - 2022-06-28
+## [0.0.2] - 2022-06-29
 
 - Added widgets: OrganizationLink, SocialLinks, PoweredBy, LoginForm, Breadcrumbs
     - [d675571] 2016-09-02 added LoginForm widget [@hiqsol]
@@ -182,7 +188,7 @@
     - [87125e7] 2016-08-23 removed AssetManager from bootstrap [@hiqsol]
     - [ea0c7a7] 2016-08-23 removed AssetManager from config [@hiqsol]
 
-## [0.0.1] - 2022-06-28
+## [0.0.1] - 2022-06-29
 
 - Changed bootstrapping
     - [ef164cf] 2016-08-19 + isHomePage to ThemeManager component [@hiqsol]
@@ -241,9 +247,9 @@
     - [40e739b] 2015-04-18 doc [@hiqsol]
     - [67527f2] 2015-04-18 inited [@hiqsol]
 
-## [Development started] - 2022-06-28
+## [Development started] - 2022-06-29
 
-## [dev] - 2022-06-28
+## [dev] - 2022-06-29
 
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
@@ -442,3 +448,6 @@
 [0817fdd]: https://github.com/hiqdev/yii2-thememanager/commit/0817fdd
 [6137867]: https://github.com/hiqdev/yii2-thememanager/commit/6137867
 [0.4.0]: https://github.com/hiqdev/yii2-thememanager/compare/0.3.2...0.4.0
+[1b52083]: https://github.com/hiqdev/yii2-thememanager/commit/1b52083
+[8cf602a]: https://github.com/hiqdev/yii2-thememanager/commit/8cf602a
+[0.4.1]: https://github.com/hiqdev/yii2-thememanager/compare/0.4.0...0.4.1
