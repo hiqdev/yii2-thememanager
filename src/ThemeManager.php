@@ -152,7 +152,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
             /** @var Controller $controller */
             $actualRoute = Yii::$app->controller->getRoute();
 
-            list($controller, $actionId) = Yii::$app->createController('');
+            [$controller, $actionId] = Yii::$app->createController('');
             $actionId = !empty($actionId) ? $actionId : $controller->defaultAction;
             $defaultRoute = $controller->getUniqueId() . '/' . $actionId;
 
@@ -190,7 +190,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         }
         $this->_isBootstrapped = true;
 
-        Yii::trace('Bootstrap themes', get_called_class() . '::bootstrap');
+        Yii::debug('Bootstrap themes', get_called_class() . '::bootstrap');
 
         $data = $this->getThemeSettings();
         $model = new Settings();
@@ -217,13 +217,11 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
         return $this->getSettingsStorage()->get();
     }
 
-
-    public function bootstrap($app)
+    public function bootstrap($app): void
     {
         if (!$app->has('view')) {
             return;
         }
-
-        $app->getView()->on(View::EVENT_BEFORE_RENDER, [$this, 'ensureBootstrapped']);
+        $app->on($app::EVENT_BEFORE_ACTION, [$this, 'ensureBootstrapped']);
     }
 }
