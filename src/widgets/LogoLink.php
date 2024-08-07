@@ -10,6 +10,7 @@
 
 namespace hiqdev\thememanager\widgets;
 
+use yii\helpers\Url;
 use Yii;
 use yii\base\Widget;
 
@@ -71,6 +72,6 @@ class LogoLink extends Widget
 
     protected function getImage($path)
     {
-        return mb_substr($path, 0, 1, 'utf-8') === '@' ? Yii::$app->assetManager->publish($path)[1] : $path;
+        return Url::to(mb_substr($path, 0, 1, 'utf-8') === '@' ? Yii::$app->assetManager->publish($path)[1] : $path, 'https');
     }
 }
