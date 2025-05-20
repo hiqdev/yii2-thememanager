@@ -72,6 +72,11 @@ class LogoLink extends Widget
 
     protected function getImage($path)
     {
-        return Url::to(mb_substr($path, 0, 1, 'utf-8') === '@' ? Yii::$app->assetManager->publish($path)[1] : $path, 'https');
+        return Url::to(
+            mb_substr($path, 0, 1, 'utf-8') === '@'
+                ? Yii::$app->assetManager->publish($path)[1]
+                : $path,
+            true,
+        );
     }
 }
