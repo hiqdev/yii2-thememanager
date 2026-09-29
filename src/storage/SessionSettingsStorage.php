@@ -23,6 +23,7 @@ class SessionSettingsStorage extends Component implements SettingsStorageInterfa
 
     /**
      * @param Model $model the settings model
+     * @return void
      */
     public function set(Model $model)
     {

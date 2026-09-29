@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="5"
+    phpVersion="8.4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    xmlns="https://getpsalm.org/schema/config"
+    strictBinaryOperands="true"
+    allowStringToStandInForClass="true"
+    usePhpDocPropertiesWithoutMagicCall="true"
+    usePhpDocMethodsWithoutMagicCall="true"
+    ignoreInternalFunctionNullReturn="false"
+    findUnusedVariablesAndParams="true"
+    findUnusedPsalmSuppress="true"
+    ensureArrayStringOffsetsExist="true"
+    ensureArrayIntOffsetsExist="true"
+    ignoreInternalFunctionFalseReturn="false"
+>
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+    <stubs>
+        <!-- The global Yii class is not autoloadable; applications require this file at bootstrap. -->
+        <file name="vendor/yiisoft/yii2/Yii.php"/>
+    </stubs>
+    <issueHandlers>
+        <!--
+          The checks enabled by ensureArray*OffsetsExist report these issue
+          types, which Psalm downgrades to non-blocking "info" by default even
+          at errorLevel 5 (the child types inherit the level of their parent
+          PossiblyUndefinedArrayOffset). Force all three to "error" so
+          undefined-array-key bugs actually fail the build.
+        -->
+        <PossiblyUndefinedStringArrayOffset errorLevel="error" />
+        <PossiblyUndefinedIntArrayOffset errorLevel="error" />
+        <PossiblyUndefinedArrayOffset errorLevel="error" />
+
+        <!--
+          This is a library: widgets, menus, storages, the debug panel and the
+          settings controller are referenced from config/web.php (outside the
+          analyzed src/ tree) or by consuming applications, and setters like
+          setDefaultTheme()/setView() are called by Yii's configuration
+          arrays via BaseObject::__set(). Psalm's unused-code detection only
+          sees calls inside src/, so every finding of these types is public API.
+        -->
+        <UnusedClass errorLevel="suppress" />
+        <PossiblyUnusedMethod errorLevel="suppress" />
+        <PossiblyUnusedProperty errorLevel="suppress" />
+        <PossiblyUnusedReturnValue errorLevel="suppress" />
+
+        <!--
+          The package declares no minimum PHP version and does not use the
+          PHP 8.3 #[Override] attribute anywhere; this is a style check, not a bug.
+        -->
+        <MissingOverrideAttribute errorLevel="suppress" />
+
+        <!--
+          Yii view templates are included by yii\base\View::renderPhpFile()
+          inside a closure bound to the View object, after extract()-ing the
+          render parameters. $this and the template variables therefore exist
+          at runtime but are invisible to Psalm (each render() call site in
+          src/ was checked to pass the variables its template uses).
+        -->
+        <UndefinedGlobalVariable>
+            <errorLevel type="suppress">
+                <directory name="src/views"/>
+                <directory name="src/widgets/views"/>
+            </errorLevel>
+        </UndefinedGlobalVariable>
+        <InvalidScope>
+            <errorLevel type="suppress">
+                <directory name="src/views"/>
+                <directory name="src/widgets/views"/>
+            </errorLevel>
+        </InvalidScope>
+    </issueHandlers>
+</psalm>

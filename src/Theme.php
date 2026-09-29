@@ -58,7 +58,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
     /**
      * Sets the view object to be used.
      *
-     * @param View $view the view object that can be used to render views or view files
+     * @param \yii\web\View $view the view object that can be used to render views or view files
      */
     public function setView($view)
     {
@@ -80,7 +80,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         $this->pathMap = $this->compilePathMap(ArrayHelper::merge([
             '$themedViewPaths' => $this->buildThemedViewPaths(),
             '$themedWidgetPaths' => '$themedViewPaths/widgets',
-            Yii::$app->viewPath => '$themedViewPaths',
+            Yii::$app->getViewPath() => '$themedViewPaths',
             __DIR__ . '/widgets/views' => '$themedWidgetPaths',
         ], $this->getManager()->pathMap, $this->pathMap));
     }
@@ -95,6 +95,7 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         foreach ($map as $from => &$tos) {
             $tos = array_unique(array_reverse(array_values($tos)));
             $new = [];
+            /** @var string $to path map targets are paths or path aliases */
             foreach ($tos as $to) {
                 $to = Yii::getAlias($to);
                 $alt = preg_replace('#(.*)/src/views(.*)$#', '${1}' . $themeSubpath . '${2}', $to);
@@ -146,7 +147,8 @@ class Theme extends \yii\base\Theme implements \hiqdev\yii2\collection\ItemWithN
         if ($pos === false) {
             return $vars[$exp];
         }
-        list($name, $suffix) = explode('/', $exp, 2);
+        $name = substr($exp, 0, $pos);
+        $suffix = substr($exp, $pos + 1);
 
         return array_map(function ($a) use ($suffix) {
             return "$a/$suffix";

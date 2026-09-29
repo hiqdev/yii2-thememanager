@@ -17,6 +17,9 @@ use hiqdev\thememanager\storage\SettingsStorageInterface;
 use Yii;
 use yii\web\Response;
 
+/**
+ * @extends \yii\web\Controller<Module>
+ */
 class SettingsController extends \yii\web\Controller
 {
     /**
@@ -61,7 +64,9 @@ class SettingsController extends \yii\web\Controller
 
         if (Yii::$app->request->getIsPost() && $model->load($data) && $model->validate()) {
             $this->getThemeSettingsStorage()->set($model);
-            $this->setGlobalOrientation($model->filterOrientation);
+            if ($model->canGetProperty('filterOrientation')) {
+                $this->setGlobalOrientation($model->filterOrientation);
+            }
             Yii::$app->session->setFlash('success', Yii::t('hiqdev.thememanager', 'Layout settings saved.'));
         }
 
@@ -73,11 +78,19 @@ class SettingsController extends \yii\web\Controller
     }
 
     /**
-     * @param null $orientation
+     * Applies the orientation to every stored index page UI options set.
+     * Does nothing unless the host application provides the `uiOptionsStorage`
+     * component and `hipanel\models\IndexPageUiOptions` (from hiqdev/hipanel-core,
+     * which is not a dependency of this package).
+     *
+     * @param string|null $orientation
      */
     public function setGlobalOrientation($orientation = null)
     {
-        if ($orientation !== null) {
+        if (!class_exists(IndexPageUiOptions::class)) {
+            return;
+        }
+        if ($orientation !== null && Yii::$app->has('uiOptionsStorage')) {
             $settings = $this->getUiOptionsStorage()->getAllUiOptions();
             foreach ($settings as $route => $data) {
                 $model = new IndexPageUiOptions($data);

@@ -66,7 +66,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     /**
      * Returns the default theme. Returns the first of available themes by default.
      *
-     * @return string default theme name
+     * @return string|false default theme name, false when no themes are configured
      */
     public function getDefaultTheme()
     {
@@ -103,7 +103,7 @@ class ThemeManager extends \hiqdev\yii2\collection\Manager implements \yii\base\
     }
 
     /**
-     * @var Theme current theme object
+     * @var Theme|string|null current theme object, or theme name until it is resolved by getTheme()
      */
     protected $_theme;
 

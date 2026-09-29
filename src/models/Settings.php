@@ -46,6 +46,7 @@ class Settings extends \yii\base\Model implements OrientationInterface
      * @param $name  string         attribute name
      * @param $value boolean|string attribute value
      * @return string css class
+     * @psalm-suppress PossiblyUnusedParam $name is unused by this default, but used by overriding theme settings models
      */
     public static function cssClassProvider($name, $value)
     {

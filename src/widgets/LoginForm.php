@@ -161,6 +161,8 @@ class LoginForm extends \yii\base\Widget
 
     public function getBoolAttribute()
     {
-        return reset($this->getBoolAttributes());
+        $attributes = $this->getBoolAttributes();
+
+        return reset($attributes);
     }
 }
