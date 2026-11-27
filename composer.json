@@ -48,7 +48,7 @@
     "require-dev": {
         "hiqdev/hidev-php": "<2.0",
         "hiqdev/hidev-hiqdev": "<2.0",
-        "vimeo/psalm": "^6.0",
+        "vimeo/psalm": "^6.14",
         "yiisoft/yii2-bootstrap": "^2.0",
         "yiisoft/yii2-debug": "^2.1",
         "hiqdev/yii2-menus": "dev-master"

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <psalm
     errorLevel="5"
-    phpVersion="8.4"
+    phpVersion="8.5"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     xmlns="https://getpsalm.org/schema/config"
